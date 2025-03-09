@@ -29,24 +29,23 @@ jobs:
           # Initialize and update all submodules
           git submodule update --init --recursive
 
-          # Store whether any updates were made
-          UPDATES_MADE=false
-
           # Create a detailed update report
-          UPDATE_REPORT="# Submodule Updates $(date +%Y-%m-%d)\n\n"
+          echo "# Submodule Updates $(date +%Y-%m-%d)" > .git/UPDATE_REPORT_TMP
+          echo "" >> .git/UPDATE_REPORT_TMP
+
 
           # For each submodule
           git submodule foreach '
             echo "Checking $name for updates..."
-            UPDATE_REPORT="$UPDATE_REPORT## $name\n"
+            echo "## $name" >> $toplevel/.git/UPDATE_REPORT_TMP
 
             # Save current commit and its description
             CURRENT_COMMIT=$(git rev-parse HEAD)
             CURRENT_DESC=$(git show -s --format="%h - %s" $CURRENT_COMMIT)
-            UPDATE_REPORT="$UPDATE_REPORT\nCurrent version: $CURRENT_DESC\n"
+            echo "Current version: $CURRENT_DESC" >> $toplevel/.git/UPDATE_REPORT_TMP
 
             # Checkout the default branch
-            git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@" || echo "master")
+            git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed "s@^refs/remotes/origin/@@" || echo "main")
 
             # Fetch latest changes including tags
             git fetch --tags
@@ -65,20 +64,30 @@ jobs:
               # If the current commit is different from the latest tag
               if [ "$CURRENT_COMMIT" != "$NEW_COMMIT" ]; then
                 echo "Updating $name to $LATEST_TAG"
-                UPDATE_REPORT="$UPDATE_REPORT\nUpdated to: $NEW_DESC (tag: $LATEST_TAG)\n"
+                echo "Updated to: $NEW_DESC (tag: $LATEST_TAG)" >> $toplevel/.git/UPDATE_REPORT_TMP
                 cd $toplevel
                 git add $name
-                UPDATES_MADE=true
+                echo "true" > $toplevel/.git/UPDATES_MADE_FLAG
               else
                 echo "$name is already at the latest release"
-                UPDATE_REPORT="$UPDATE_REPORT\nAlready at latest release\n"
               fi
             else
-              echo "No tags found for $name, pulling latest changes"
+              echo "No tags found for $name"
             fi
-            UPDATE_REPORT="$UPDATE_REPORT\n"
+            echo "" >> $toplevel/.git/UPDATE_REPORT_TMP
           '
 
+          if [ -f .git/UPDATE_REPORT_TMP ]; then
+            UPDATE_REPORT=$(cat .git/UPDATE_REPORT_TMP)
+            rm .git/UPDATE_REPORT_TMP
+          fi
+
+          # Store whether any updates were made
+          UPDATES_MADE=false
+          if [ -f .git/UPDATES_MADE_FLAG ]; then
+            UPDATES_MADE=true
+            rm .git/UPDATES_MADE_FLAG
+          fi
           # Set the update report as an environment variable
           echo "UPDATE_REPORT<<EOF" >> $GITHUB_ENV
           echo -e "$UPDATE_REPORT" >> $GITHUB_ENV
@@ -104,7 +113,26 @@ jobs:
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: "const pr = await github.rest.pulls.create({\n  owner: context.repo.owner,\n  repo: context.repo.repo,\n  title: 'Weekly Submodule Updates - ' + new Date().toISOString().split('T')[0],\n  head: process.env.UPDATE_BRANCH,\n  base: 'master', \n  body: process.env.UPDATE_REPORT,\n  maintainer_can_modify: true\n});\n\nconsole.log(`Pull Request created: ${pr.data.html_url}`);\n\n// Add labels to the PR\nawait github.rest.issues.addLabels({\n  owner: context.repo.owner,\n  repo: context.repo.repo,\n  issue_number: pr.data.number,\n  labels: ['dependencies', 'automated-pr']\n});\n"
+          script: |
+            const pr = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Weekly Submodule Updates - ' + new Date().toISOString().split('T')[0],
+              head: process.env.UPDATE_BRANCH,
+              base: 'master',
+              body: process.env.UPDATE_REPORT,
+              maintainer_can_modify: true
+            });
+
+            console.log(`Pull Request created: ${pr.data.html_url}`);
+
+            // Add labels to the PR
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.data.number,
+              labels: ['dependencies', 'automated-pr']
+            });
       - name: Create issue if update fails
         if: failure()
         uses: actions/github-script@v6
