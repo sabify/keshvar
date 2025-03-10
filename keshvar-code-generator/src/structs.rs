@@ -64,6 +64,7 @@ pub struct CountryInfo {
     pub g20_member: Option<bool>,
     pub eea_member: Option<bool>,
     pub eu_member: Option<bool>,
+    pub un_member: Option<bool>,
     pub vat_rates: Option<VatRates>,
     pub distance_unit: DistanceUnit,
     #[serde(default)]

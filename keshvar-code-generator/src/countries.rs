@@ -221,6 +221,11 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             info.eu_member.unwrap_or(false).to_string(),
         ),
         (
+            "const UN_MEMBER",
+            "bool",
+            info.un_member.unwrap_or(false).to_string(),
+        ),
+        (
             "const EEA_MEMBER",
             "bool",
             info.eu_member.unwrap_or(false).to_string(),
@@ -463,6 +468,7 @@ pub fn new() -> Country {{
         g7_member: {},
         g20_member: {},
         eu_member: {},
+        un_member: {},
         eea_member: {},
         maybe_vat_rates: {},
         distance_unit: {},
@@ -517,6 +523,7 @@ pub fn new() -> Country {{
             info.g7_member.unwrap_or(false).to_string(),
             info.g20_member.unwrap_or(false).to_string(),
             info.eu_member.unwrap_or(false).to_string(),
+            info.un_member.unwrap_or(false).to_string(),
             info.eea_member.unwrap_or(false).to_string(),
             if let Some(ref vat_rates) = info.vat_rates {
                 format!(
