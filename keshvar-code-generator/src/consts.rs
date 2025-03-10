@@ -1,9 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::utils;
+use crate::{structs::CountryInfo, utils};
 use anyhow::Result;
-use std::collections::HashMap;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{collections::HashMap, io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -18,7 +15,7 @@ pub fn generate(
     consts_rs_file.write_all(b"#[allow(unused_imports)]\n")?;
     consts_rs_file
         .write_all(b"use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};\n")?;
-    consts_rs_file.write_all(b"use lazy_static::lazy_static;\n")?;
+    consts_rs_file.write_all(b"use std::sync::LazyLock;\n")?;
     consts_rs_file.write_all(
         format!(
             "pub const ALL_COUNTRIES_COUNT: usize = {};",
@@ -28,8 +25,8 @@ pub fn generate(
     )?;
     consts_rs_file.write_all(
         r#"
-lazy_static! { pub static ref SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len(); }
-lazy_static! { pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize = ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT; }
+pub static SUPPORTED_COUNTRIES_COUNT: LazyLock<usize> = LazyLock::new(|| SUPPORTED_ALPHA2_LIST.len());
+pub static UNSUPPORTED_COUNTRIES_COUNT: LazyLock<usize> = LazyLock::new(|| ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT);
 "#
         .as_bytes(),
     )?;

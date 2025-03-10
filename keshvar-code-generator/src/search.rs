@@ -1,8 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::{log, utils};
+use crate::{log, structs::CountryInfo, utils};
 use anyhow::Result;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{io::Write, path::PathBuf};
 
 pub fn generate_mod(
     destination_file: &PathBuf,
@@ -39,17 +37,17 @@ where
     file.write_all(format!("#[cfg(feature = {feature_name:?})]\n").as_bytes())?;
     file.write_all(b"use hashbrown::HashMap;\n")?;
     file.write_all(format!("#[cfg(feature = {feature_name:?})]\n").as_bytes())?;
-    file.write_all(b"use lazy_static::lazy_static;\n")?;
+    file.write_all(b"use std::sync::LazyLock;\n")?;
     for import in import_list {
         file.write_all(format!("#[cfg(feature = {feature_name:?})]\n").as_bytes())?;
         file.write_all(format!("use {};\n", import).as_bytes())?;
     }
     file.write_all(format!("#[cfg(feature = {feature_name:?})]\n").as_bytes())?;
-    file.write_all(format!("lazy_static! {{ pub static ref {static_hashmap_name}: {static_hashmap_type} = HashMap::from([\n").as_bytes())?;
+    file.write_all(format!("pub static {static_hashmap_name}: LazyLock<{static_hashmap_type}> = LazyLock::new(|| HashMap::from([\n").as_bytes())?;
     for data in iterator_function(countries_info_list) {
         file.write_all(data.as_bytes())?;
     }
-    file.write_all(b"]);}\n")?;
+    file.write_all(b"]));\n")?;
     log!("Generated {destination_file:?}");
     Ok(())
 }
