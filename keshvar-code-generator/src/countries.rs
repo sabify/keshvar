@@ -1,9 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::{log, utils};
+use crate::{log, structs::CountryInfo, utils};
 use anyhow::{Context, Result};
-use std::fs;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{fs, io::Write, path::PathBuf};
 
 pub fn generate_mod(
     destination_file: &PathBuf,
@@ -157,6 +154,11 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             "Option<&str>",
             utils::option_string_to_string(&info.nationality),
         ),
+        (
+            "const VEHICLE_REGISTRATION_CODE",
+            "Option<&str>",
+            utils::option_string_to_string(&info.vehicle_registration_code),
+        ),
         ("const NUMBER", "&str", format!("{:?}", info.number)),
         (
             "const POSTAL_CODE",
@@ -206,11 +208,6 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             ),
         ),
         (
-            "const VEHICLE_REGISTRATION_CODE",
-            "Option<&str>",
-            utils::option_string_to_string(&info.vehicle_registration_code),
-        ),
-        (
             "const G7_MEMBER",
             "bool",
             info.g7_member.unwrap_or(false).to_string(),
@@ -233,7 +230,7 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
         (
             "const EEA_MEMBER",
             "bool",
-            info.eu_member.unwrap_or(false).to_string(),
+            info.eea_member.unwrap_or(false).to_string(),
         ),
         (
             "const DISTANCE_UNIT",
@@ -507,6 +504,7 @@ pub fn new() -> Country {{
             info.national_number_lengths,
             info.national_prefix,
             utils::option_string_to_string(&info.nationality),
+            utils::option_string_to_string(&info.vehicle_registration_code),
             info.number,
             info.postal_code,
             utils::option_string_to_string(&info.postal_code_format),
@@ -524,7 +522,6 @@ pub fn new() -> Country {{
             info.un_locode,
             info.unofficial_names,
             utils::capitalize(&info.world_region).to_uppercase(),
-            utils::option_string_to_string(&info.vehicle_registration_code),
             info.emoji,
             info.translation_list,
             info.g7_member.unwrap_or(false).to_string(),
