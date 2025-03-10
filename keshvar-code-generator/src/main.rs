@@ -85,6 +85,7 @@ fn code_gen_countries(data_directory: PathBuf, output_directory: PathBuf) -> Res
             (&info.gec, "gec"),
             (&info.ioc, "ioc"),
             (&info.nationality, "nationality"),
+            (&info.vehicle_registration_code, "vehicle_registration_code"),
             (&info.postal_code_format, "postal_code_format"),
             (&info.region, "region"),
             (&info.subregion, "subregion"),

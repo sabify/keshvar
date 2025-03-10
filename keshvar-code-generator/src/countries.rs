@@ -206,6 +206,11 @@ pub fn generate_country(destination_file: &PathBuf, info: &CountryInfo) -> Resul
             ),
         ),
         (
+            "const VEHICLE_REGISTRATION_CODE",
+            "Option<&str>",
+            utils::option_string_to_string(&info.vehicle_registration_code),
+        ),
+        (
             "const G7_MEMBER",
             "bool",
             info.g7_member.unwrap_or(false).to_string(),
@@ -450,6 +455,7 @@ pub fn new() -> Country {{
         national_number_length_list: {:?}.to_vec(),
         national_prefix: {:?},
         maybe_nationality: {},
+        maybe_vehicle_registration_code: {},
         number: {:?},
         postal_code: {:?},
         postal_code_format: {},
@@ -518,6 +524,7 @@ pub fn new() -> Country {{
             info.un_locode,
             info.unofficial_names,
             utils::capitalize(&info.world_region).to_uppercase(),
+            utils::option_string_to_string(&info.vehicle_registration_code),
             info.emoji,
             info.translation_list,
             info.g7_member.unwrap_or(false).to_string(),

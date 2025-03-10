@@ -67,6 +67,7 @@ pub struct CountryInfo {
     pub un_member: Option<bool>,
     pub vat_rates: Option<VatRates>,
     pub distance_unit: DistanceUnit,
+    pub vehicle_registration_code: Option<String>,
     #[serde(default)]
     pub population: u64,
 }
@@ -197,6 +198,7 @@ pub fn load_country_info(filename: &PathBuf) -> Result<(String, CountryInfo)> {
     utils::set_none_if_empty_string(&mut info.gec);
     utils::set_none_if_empty_string(&mut info.ioc);
     utils::set_none_if_empty_string(&mut info.nationality);
+    utils::set_none_if_empty_string(&mut info.vehicle_registration_code);
     utils::set_none_if_empty_string(&mut info.postal_code_format);
     utils::set_none_if_empty_string(&mut info.region);
     utils::set_none_if_empty_string(&mut info.subregion);
