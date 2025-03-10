@@ -190,7 +190,7 @@ pub enum IOC {
     }
 
     impl std::fmt::Display for IOC {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        fn fmt(&self, _f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             unimplemented!("No country feature with IOC code is used");
         }
     }

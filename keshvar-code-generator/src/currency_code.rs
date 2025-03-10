@@ -1,10 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::utils;
-use crate::utils::country_name;
+use crate::{structs::CountryInfo, utils, utils::country_name};
 use anyhow::Result;
-use std::collections::HashMap;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{collections::HashMap, io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -104,9 +100,9 @@ impl CurrencyCode {
 
     currency_code_rs_file.write_all(
         r#"
-impl ToString for CurrencyCode {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for CurrencyCode {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -121,7 +117,7 @@ impl ToString for CurrencyCode {
         )?;
     }
     currency_code_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }
 "#

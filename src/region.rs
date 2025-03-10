@@ -337,18 +337,21 @@ impl TryFrom<&str> for Continent {
         }
     }
 }
-impl ToString for Continent {
-    fn to_string(&self) -> String {
-        match self {
-            Self::Africa => "africa",
-            Self::Antarctica => "antarctica",
-            Self::Asia => "asia",
-            Self::Australia => "australia",
-            Self::Europe => "europe",
-            Self::NorthAmerica => "north-america",
-            Self::SouthAmerica => "south-america",
-        }
-        .to_string()
+impl std::fmt::Display for Continent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::Africa => "africa",
+                Self::Antarctica => "antarctica",
+                Self::Asia => "asia",
+                Self::Australia => "australia",
+                Self::Europe => "europe",
+                Self::NorthAmerica => "north-america",
+                Self::SouthAmerica => "south-america",
+            }
+        )
     }
 }
 
@@ -679,17 +682,20 @@ impl TryFrom<&str> for Region {
         }
     }
 }
-impl ToString for Region {
-    fn to_string(&self) -> String {
-        match self {
-            Self::Africa => "africa",
-            Self::Americas => "americas",
-            Self::Antarctica => "antarctica",
-            Self::Asia => "asia",
-            Self::Europe => "europe",
-            Self::Oceania => "oceania",
-        }
-        .to_string()
+impl std::fmt::Display for Region {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::Africa => "africa",
+                Self::Americas => "americas",
+                Self::Antarctica => "antarctica",
+                Self::Asia => "asia",
+                Self::Europe => "europe",
+                Self::Oceania => "oceania",
+            }
+        )
     }
 }
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -1065,33 +1071,36 @@ impl TryFrom<&str> for SubRegion {
         }
     }
 }
-impl ToString for SubRegion {
-    fn to_string(&self) -> String {
-        match self {
-            Self::AustraliaAndNewZealand => "australia-and-new-zealand",
-            Self::Caribbean => "caribbean",
-            Self::CentralAmerica => "central-america",
-            Self::CentralAsia => "central-asia",
-            Self::EasternAfrica => "eastern-africa",
-            Self::EasternAsia => "eastern-asia",
-            Self::EasternEurope => "eastern-europe",
-            Self::Melanesia => "melanesia",
-            Self::Micronesia => "micronesia",
-            Self::MiddleAfrica => "middle-africa",
-            Self::NorthernAfrica => "northern-africa",
-            Self::NorthernAmerica => "northern-america",
-            Self::NorthernEurope => "northern-europe",
-            Self::Polynesia => "polynesia",
-            Self::SouthAmerica => "south-america",
-            Self::SouthEasternAsia => "south-eastern-asia",
-            Self::SouthernAfrica => "southern-africa",
-            Self::SouthernAsia => "southern-asia",
-            Self::SouthernEurope => "southern-europe",
-            Self::WesternAfrica => "western-africa",
-            Self::WesternAsia => "western-asia",
-            Self::WesternEurope => "western-europe",
-        }
-        .to_string()
+impl std::fmt::Display for SubRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::AustraliaAndNewZealand => "australia-and-new-zealand",
+                Self::Caribbean => "caribbean",
+                Self::CentralAmerica => "central-america",
+                Self::CentralAsia => "central-asia",
+                Self::EasternAfrica => "eastern-africa",
+                Self::EasternAsia => "eastern-asia",
+                Self::EasternEurope => "eastern-europe",
+                Self::Melanesia => "melanesia",
+                Self::Micronesia => "micronesia",
+                Self::MiddleAfrica => "middle-africa",
+                Self::NorthernAfrica => "northern-africa",
+                Self::NorthernAmerica => "northern-america",
+                Self::NorthernEurope => "northern-europe",
+                Self::Polynesia => "polynesia",
+                Self::SouthAmerica => "south-america",
+                Self::SouthEasternAsia => "south-eastern-asia",
+                Self::SouthernAfrica => "southern-africa",
+                Self::SouthernAsia => "southern-asia",
+                Self::SouthernEurope => "southern-europe",
+                Self::WesternAfrica => "western-africa",
+                Self::WesternAsia => "western-asia",
+                Self::WesternEurope => "western-europe",
+            }
+        )
     }
 }
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -1412,14 +1421,17 @@ impl TryFrom<&str> for WorldRegion {
         }
     }
 }
-impl ToString for WorldRegion {
-    fn to_string(&self) -> String {
-        match self {
-            Self::AMER => "AMER",
-            Self::APAC => "APAC",
-            Self::EMEA => "EMEA",
-        }
-        .to_string()
+impl std::fmt::Display for WorldRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::AMER => "AMER",
+                Self::APAC => "APAC",
+                Self::EMEA => "EMEA",
+            }
+        )
     }
 }
 #[cfg(feature = "subdivisions")]
@@ -2036,122 +2048,124 @@ impl TryFrom<&str> for SubdivisionType {
     }
 }
 #[cfg(feature = "subdivisions")]
-impl ToString for SubdivisionType {
-    fn to_string(&self) -> String {
-        match self {
-            Self::Administration => "administration",
-            Self::AdministrativeAtoll => "administrative_atoll",
-            Self::AdministrativePrecinct => "administrative_precinct",
-            Self::AdministrativeRegion => "administrative_region",
-            Self::AdministrativeTerritory => "administrative_territory",
-            Self::ArcticRegion => "arctic_region",
-            Self::Area => "area",
-            Self::AutonomousCity => "autonomous_city",
-            Self::AutonomousCityInNorthAfrica => "autonomous_city_in_north_africa",
-            Self::AutonomousCommunity => "autonomous_community",
-            Self::AutonomousDistrict => "autonomous_district",
-            Self::AutonomousMunicipality => "autonomous_municipality",
-            Self::AutonomousProvince => "autonomous_province",
-            Self::AutonomousRegion => "autonomous_region",
-            Self::AutonomousRepublic => "autonomous_republic",
-            Self::AutonomousSector => "autonomous_sector",
-            Self::AutonomousTerritorialUnit => "autonomous_territorial_unit",
-            Self::Borough => "borough",
-            Self::Canton => "canton",
-            Self::Capital => "capital",
-            Self::CapitalCity => "capital_city",
-            Self::CapitalDistrict => "capital_district",
-            Self::CapitalRegion => "capital_region",
-            Self::CapitalTerritory => "capital_territory",
-            Self::ChainOfIslands => "chain_of_islands",
-            Self::City => "city",
-            Self::CityCorporation => "city_corporation",
-            Self::CityMunicipality => "city_municipality",
-            Self::CityWithCountyRights => "city_with_county_rights",
-            Self::Commune => "commune",
-            Self::CouncilArea => "council_area",
-            Self::Country => "country",
-            Self::County => "county",
-            Self::DecentralizedRegionalEntity => "decentralized_regional_entity",
-            Self::Department => "department",
-            Self::Departments => "departments",
-            Self::Dependency => "dependency",
-            Self::DevelopmentRegion => "development_region",
-            Self::District => "district",
-            Self::DistrictMunicipality => "district_municipality",
-            Self::DistrictWithSpecialStatus => "district_with_special_status",
-            Self::DistrictsUnderRepublicAdministration => "districts_under_republic_administration",
-            Self::Division => "division",
-            Self::EconomicPrefecture => "economic_prefecture",
-            Self::Emirate => "emirate",
-            Self::Entity => "entity",
-            Self::EuropeanCollectivity => "european_collectivity",
-            Self::FederalCapitalTerritory => "federal_capital_territory",
-            Self::FederalDependency => "federal_dependency",
-            Self::FederalDistrict => "federal_district",
-            Self::FederalTerritory => "federal_territory",
-            Self::FreeMunicipalConsortium => "free_municipal_consortium",
-            Self::GeographicalEntity => "geographical_entity",
-            Self::GeographicalRegion => "geographical_region",
-            Self::GeographicalUnit => "geographical_unit",
-            Self::Governorate => "governorate",
-            Self::GroupOfIslands => "group_of_islands",
-            Self::IndigenousRegion => "indigenous_region",
-            Self::Island => "island",
-            Self::IslandCouncil => "island_council",
-            Self::LocalCouncil => "local_council",
-            Self::LondonBorough => "london_borough",
-            Self::MetropolitanAdministration => "metropolitan_administration",
-            Self::MetropolitanCity => "metropolitan_city",
-            Self::MetropolitanCollectivityWithSpecialStatus => {
-                "metropolitan_collectivity_with_special_status"
+impl std::fmt::Display for SubdivisionType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::Administration => "administration",
+                Self::AdministrativeAtoll => "administrative_atoll",
+                Self::AdministrativePrecinct => "administrative_precinct",
+                Self::AdministrativeRegion => "administrative_region",
+                Self::AdministrativeTerritory => "administrative_territory",
+                Self::ArcticRegion => "arctic_region",
+                Self::Area => "area",
+                Self::AutonomousCity => "autonomous_city",
+                Self::AutonomousCityInNorthAfrica => "autonomous_city_in_north_africa",
+                Self::AutonomousCommunity => "autonomous_community",
+                Self::AutonomousDistrict => "autonomous_district",
+                Self::AutonomousMunicipality => "autonomous_municipality",
+                Self::AutonomousProvince => "autonomous_province",
+                Self::AutonomousRegion => "autonomous_region",
+                Self::AutonomousRepublic => "autonomous_republic",
+                Self::AutonomousSector => "autonomous_sector",
+                Self::AutonomousTerritorialUnit => "autonomous_territorial_unit",
+                Self::Borough => "borough",
+                Self::Canton => "canton",
+                Self::Capital => "capital",
+                Self::CapitalCity => "capital_city",
+                Self::CapitalDistrict => "capital_district",
+                Self::CapitalRegion => "capital_region",
+                Self::CapitalTerritory => "capital_territory",
+                Self::ChainOfIslands => "chain_of_islands",
+                Self::City => "city",
+                Self::CityCorporation => "city_corporation",
+                Self::CityMunicipality => "city_municipality",
+                Self::CityWithCountyRights => "city_with_county_rights",
+                Self::Commune => "commune",
+                Self::CouncilArea => "council_area",
+                Self::Country => "country",
+                Self::County => "county",
+                Self::DecentralizedRegionalEntity => "decentralized_regional_entity",
+                Self::Department => "department",
+                Self::Departments => "departments",
+                Self::Dependency => "dependency",
+                Self::DevelopmentRegion => "development_region",
+                Self::District => "district",
+                Self::DistrictMunicipality => "district_municipality",
+                Self::DistrictWithSpecialStatus => "district_with_special_status",
+                Self::DistrictsUnderRepublicAdministration =>
+                    "districts_under_republic_administration",
+                Self::Division => "division",
+                Self::EconomicPrefecture => "economic_prefecture",
+                Self::Emirate => "emirate",
+                Self::Entity => "entity",
+                Self::EuropeanCollectivity => "european_collectivity",
+                Self::FederalCapitalTerritory => "federal_capital_territory",
+                Self::FederalDependency => "federal_dependency",
+                Self::FederalDistrict => "federal_district",
+                Self::FederalTerritory => "federal_territory",
+                Self::FreeMunicipalConsortium => "free_municipal_consortium",
+                Self::GeographicalEntity => "geographical_entity",
+                Self::GeographicalRegion => "geographical_region",
+                Self::GeographicalUnit => "geographical_unit",
+                Self::Governorate => "governorate",
+                Self::GroupOfIslands => "group_of_islands",
+                Self::IndigenousRegion => "indigenous_region",
+                Self::Island => "island",
+                Self::IslandCouncil => "island_council",
+                Self::LocalCouncil => "local_council",
+                Self::LondonBorough => "london_borough",
+                Self::MetropolitanAdministration => "metropolitan_administration",
+                Self::MetropolitanCity => "metropolitan_city",
+                Self::MetropolitanCollectivityWithSpecialStatus =>
+                    "metropolitan_collectivity_with_special_status",
+                Self::MetropolitanDepartment => "metropolitan_department",
+                Self::MetropolitanDistrict => "metropolitan_district",
+                Self::MetropolitanRegion => "metropolitan_region",
+                Self::Municipality => "municipality",
+                Self::Oblast => "oblast",
+                Self::OutlyingArea => "outlying_area",
+                Self::OverseasCollectivity => "overseas_collectivity",
+                Self::OverseasDepartmentalCollectivity => "overseas_departmental_collectivity",
+                Self::OverseasUniqueTerritorialCollectivity =>
+                    "overseas_unique_territorial_collectivity",
+                Self::PakistanAdministeredArea => "pakistan_administered_area",
+                Self::Parish => "parish",
+                Self::Popularate => "popularate",
+                Self::Prefecture => "prefecture",
+                Self::Province => "province",
+                Self::Quarter => "quarter",
+                Self::Rayon => "rayon",
+                Self::Region => "region",
+                Self::RegionalState => "regional_state",
+                Self::Republic => "republic",
+                Self::RuralMunicipality => "rural_municipality",
+                Self::SelfGovernedPart => "self-governed_part",
+                Self::SpecialAdministrativeCity => "special_administrative_city",
+                Self::SpecialAdministrativeRegion => "special_administrative_region",
+                Self::SpecialCity => "special_city",
+                Self::SpecialIslandAuthority => "special_island_authority",
+                Self::SpecialMunicipality => "special_municipality",
+                Self::SpecialRegion => "special_region",
+                Self::SpecialSelfGoverningCity => "special_self-governing_city",
+                Self::SpecialSelfGoverningProvince => "special_self-governing_province",
+                Self::State => "state",
+                Self::StateCity => "state_city",
+                Self::TerritorialUnit => "territorial_unit",
+                Self::Territory => "territory",
+                Self::Town => "town",
+                Self::TownCouncil => "town_council",
+                Self::TwoTierCounty => "two-tier_county",
+                Self::UnionTerritory => "union_territory",
+                Self::UnitaryAuthority => "unitary_authority",
+                Self::UrbanCommunity => "urban_community",
+                Self::UrbanMunicipality => "urban_municipality",
+                Self::Voivodeship => "voivodeship",
+                Self::Ward => "ward",
+                Self::Zone => "zone",
             }
-            Self::MetropolitanDepartment => "metropolitan_department",
-            Self::MetropolitanDistrict => "metropolitan_district",
-            Self::MetropolitanRegion => "metropolitan_region",
-            Self::Municipality => "municipality",
-            Self::Oblast => "oblast",
-            Self::OutlyingArea => "outlying_area",
-            Self::OverseasCollectivity => "overseas_collectivity",
-            Self::OverseasDepartmentalCollectivity => "overseas_departmental_collectivity",
-            Self::OverseasUniqueTerritorialCollectivity => {
-                "overseas_unique_territorial_collectivity"
-            }
-            Self::PakistanAdministeredArea => "pakistan_administered_area",
-            Self::Parish => "parish",
-            Self::Popularate => "popularate",
-            Self::Prefecture => "prefecture",
-            Self::Province => "province",
-            Self::Quarter => "quarter",
-            Self::Rayon => "rayon",
-            Self::Region => "region",
-            Self::RegionalState => "regional_state",
-            Self::Republic => "republic",
-            Self::RuralMunicipality => "rural_municipality",
-            Self::SelfGovernedPart => "self-governed_part",
-            Self::SpecialAdministrativeCity => "special_administrative_city",
-            Self::SpecialAdministrativeRegion => "special_administrative_region",
-            Self::SpecialCity => "special_city",
-            Self::SpecialIslandAuthority => "special_island_authority",
-            Self::SpecialMunicipality => "special_municipality",
-            Self::SpecialRegion => "special_region",
-            Self::SpecialSelfGoverningCity => "special_self-governing_city",
-            Self::SpecialSelfGoverningProvince => "special_self-governing_province",
-            Self::State => "state",
-            Self::StateCity => "state_city",
-            Self::TerritorialUnit => "territorial_unit",
-            Self::Territory => "territory",
-            Self::Town => "town",
-            Self::TownCouncil => "town_council",
-            Self::TwoTierCounty => "two-tier_county",
-            Self::UnionTerritory => "union_territory",
-            Self::UnitaryAuthority => "unitary_authority",
-            Self::UrbanCommunity => "urban_community",
-            Self::UrbanMunicipality => "urban_municipality",
-            Self::Voivodeship => "voivodeship",
-            Self::Ward => "ward",
-            Self::Zone => "zone",
-        }
-        .to_string()
+        )
     }
 }

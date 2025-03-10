@@ -230,7 +230,7 @@ impl Alpha3 {
     }
 
     impl std::fmt::Display for Alpha3 {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        fn fmt(&self, _f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             unimplemented!("No country feature is used");
         }
     }

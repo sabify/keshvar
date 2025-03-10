@@ -1,10 +1,7 @@
 use crate::{log, utils};
 use anyhow::{bail, Context, Result};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-use std::fs;
-use std::io::BufReader;
-use std::path::PathBuf;
+use std::{collections::HashMap, fs, io::BufReader, path::PathBuf};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(untagged)]

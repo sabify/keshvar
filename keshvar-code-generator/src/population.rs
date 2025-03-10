@@ -1,8 +1,6 @@
 use crate::structs::CountryInfo;
 use anyhow::{Context, Result};
-use std::fs;
-use std::io::BufReader;
-use std::path::Path;
+use std::{fs, io::BufReader, path::Path};
 
 pub fn read_from_file<F: AsRef<Path>>(
     filename: F,

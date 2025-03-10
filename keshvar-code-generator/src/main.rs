@@ -16,8 +16,7 @@ mod utils;
 use structs::CountryInfo;
 
 use anyhow::{bail, Context, Result};
-use std::str::FromStr;
-use std::{collections::HashMap, env, fs, path::PathBuf};
+use std::{collections::HashMap, env, fs, path::PathBuf, str::FromStr};
 
 fn main() -> Result<()> {
     if env::args().len() != 3 {

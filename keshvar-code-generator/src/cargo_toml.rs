@@ -1,9 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::utils;
+use crate::{structs::CountryInfo, utils};
 use anyhow::Result;
-use std::collections::HashMap;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{collections::HashMap, io::Write, path::PathBuf};
 
 #[allow(clippy::too_many_arguments)]
 pub fn generate(

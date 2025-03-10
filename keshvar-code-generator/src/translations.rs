@@ -1,8 +1,5 @@
 use anyhow::{Context, Result};
-use std::collections::HashMap;
-use std::fs;
-use std::io::BufReader;
-use std::path::PathBuf;
+use std::{collections::HashMap, fs, io::BufReader, path::PathBuf};
 
 pub fn load_translations(filename: &PathBuf) -> Result<HashMap<String, String>> {
     let file = fs::File::open(filename.clone())
