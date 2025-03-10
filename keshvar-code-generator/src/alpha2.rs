@@ -1,8 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::utils;
+use crate::{structs::CountryInfo, utils};
 use anyhow::Result;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -143,9 +141,9 @@ impl From<Alpha3> for Alpha2 {
 
     alpha2_rs_file.write_all(
         r#"
-    impl ToString for Alpha2 {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for Alpha2 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -161,7 +159,7 @@ impl From<Alpha3> for Alpha2 {
             .as_bytes(),
         )?;
     }
-    alpha2_rs_file.write_all("            }.to_string()\n        }\n    }\n".as_bytes())?;
+    alpha2_rs_file.write_all("            })\n        }\n    }\n".as_bytes())?;
 
     alpha2_rs_file.write_all(
         r#"
@@ -258,8 +256,8 @@ impl From<Alpha3> for Alpha2 {
         }
     }
 
-    impl ToString for Alpha2 {
-        fn to_string(&self) -> String {
+    impl std::fmt::Display for Alpha2 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             unimplemented!("No country feature is used");
         }
     }

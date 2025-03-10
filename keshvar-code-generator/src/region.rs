@@ -1,10 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::{log, utils};
+use crate::{log, structs::CountryInfo, utils};
 use anyhow::{Context, Result};
-use std::collections::HashMap;
-use std::fs;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{collections::HashMap, fs, io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -123,9 +119,9 @@ impl TryFrom<&str> for Continent {
     )?;
     region_rs_file.write_all(
         r#"
-impl ToString for Continent {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for Continent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -140,7 +136,7 @@ impl ToString for Continent {
         )?
     }
     region_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }"#
         .as_bytes(),
@@ -245,9 +241,9 @@ impl TryFrom<&str> for Region {
     )?;
     region_rs_file.write_all(
         r#"
-impl ToString for Region {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for Region {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -262,7 +258,7 @@ impl ToString for Region {
         )?
     }
     region_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }"#
         .as_bytes(),
@@ -366,9 +362,9 @@ impl TryFrom<&str> for SubRegion {
     )?;
     region_rs_file.write_all(
         r#"
-impl ToString for SubRegion {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for SubRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -383,7 +379,7 @@ impl ToString for SubRegion {
         )?
     }
     region_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }"#
         .as_bytes(),
@@ -491,9 +487,9 @@ impl TryFrom<&str> for WorldRegion {
     )?;
     region_rs_file.write_all(
         r#"
-impl ToString for WorldRegion {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for WorldRegion {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -508,7 +504,7 @@ impl ToString for WorldRegion {
         )?
     }
     region_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }"#
         .as_bytes(),
@@ -582,9 +578,9 @@ impl TryFrom<&str> for SubdivisionType {
     region_rs_file.write_all(
         r#"
 #[cfg(feature = "subdivisions")]
-impl ToString for SubdivisionType {
-    fn to_string(&self) -> String {
-        match self {
+impl std::fmt::Display for SubdivisionType {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -599,7 +595,7 @@ impl ToString for SubdivisionType {
         )?
     }
     region_rs_file.write_all(
-        r#"        }.to_string()
+        r#"        })
     }
 }"#
         .as_bytes(),

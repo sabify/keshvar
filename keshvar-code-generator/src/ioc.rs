@@ -1,8 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::{log, utils};
+use crate::{log, structs::CountryInfo, utils};
 use anyhow::Result;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -106,9 +104,9 @@ pub enum IOC {
 
     ioc_rs_file.write_all(
         r#"
-    impl ToString for IOC {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for IOC {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -124,7 +122,7 @@ pub enum IOC {
         )?;
     }
     ioc_rs_file.write_all(
-        r#"            }.to_string()
+        r#"            })
         }
     }
 "#
@@ -191,8 +189,8 @@ pub enum IOC {
         }
     }
 
-    impl ToString for IOC {
-        fn to_string(&self) -> String {
+    impl std::fmt::Display for IOC {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             unimplemented!("No country feature with IOC code is used");
         }
     }

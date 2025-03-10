@@ -524,18 +524,21 @@ impl TryFrom<&str> for WeekDay {
     }
 }
 
-impl ToString for WeekDay {
-    fn to_string(&self) -> String {
-        match self {
-            Self::Monday => "Monday",
-            Self::Tuesday => "Tuesday",
-            Self::Wednesday => "Wednesday",
-            Self::Thursday => "Thursday",
-            Self::Friday => "Friday",
-            Self::Saturday => "Saturday",
-            Self::Sunday => "Sunday",
-        }
-        .to_string()
+impl std::fmt::Display for WeekDay {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Self::Monday => "Monday",
+                Self::Tuesday => "Tuesday",
+                Self::Wednesday => "Wednesday",
+                Self::Thursday => "Thursday",
+                Self::Friday => "Friday",
+                Self::Saturday => "Saturday",
+                Self::Sunday => "Sunday",
+            }
+        )
     }
 }
 

@@ -1,9 +1,6 @@
-use crate::structs::CountryInfo;
-use crate::utils;
+use crate::{structs::CountryInfo, utils};
 use anyhow::{Context, Result};
-use std::fs;
-use std::io::Write;
-use std::path::PathBuf;
+use std::{fs, io::Write, path::PathBuf};
 
 pub fn generate(
     destination_file: &PathBuf,
@@ -165,9 +162,9 @@ impl Alpha3 {
 
     alpha3_rs_file.write_all(
         r#"
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
-            match self {
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+            write!(f, "{}", match self {
 "#
         .as_bytes(),
     )?;
@@ -183,7 +180,7 @@ impl Alpha3 {
             .as_bytes(),
         )?;
     }
-    alpha3_rs_file.write_all("            }.to_string()\n        }\n    }\n".as_bytes())?;
+    alpha3_rs_file.write_all("            })\n        }\n    }\n".as_bytes())?;
 
     alpha3_rs_file.write_all(
         r#"
@@ -232,8 +229,8 @@ impl Alpha3 {
         }
     }
 
-    impl ToString for Alpha3 {
-        fn to_string(&self) -> String {
+    impl std::fmt::Display for Alpha3 {
+        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             unimplemented!("No country feature is used");
         }
     }
