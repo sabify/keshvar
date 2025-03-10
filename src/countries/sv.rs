@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Salvadoran");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("ES");
     pub const NUMBER: &str = "222";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("CP [1-3][1-7][0-2]\\d");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(6336392);
@@ -335,7 +337,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Departments,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إدارة مورازان"), ("bg", "Морасан"), ("bn", "ম\u{9c1}র\u{9be}জ\u{9be}ন বিভ\u{9be}গ"), ("ca", "Departament de Morazán"), ("ccp", "𑄟\u{1112e}𑄢𑄎𑄚\u{11134}"), ("ceb", "Departamento de Morazán"), ("da", "Morazán Department"), ("de", "Departamento Morazán"), ("el", "Διαμέρισμα Μοραζάν"), ("en", "Morazán"), ("es", "Morazán"), ("eu", "Morazán departamendua"), ("fa", "بخش مرازان"), ("fi", "Morazánin departmentti"), ("fr", "département de Morazán"), ("gl", "Departamento de Morazán"), ("gu", "મોરાઝાન વિભાગ"), ("he", "מחוז מורסאן"), ("hi", "मोरसान"), ("hu", "Morazán megye"), ("id", "Departemen Morazán"), ("it", "dipartimento di Morazán"), ("ja", "モラサン県"), ("ka", "მორასანის დეპარტამენტი"), ("kn", "ಮೊರಾಜನ\u{ccd} ಇಲಾಖ\u{cc6}"), ("ko", "모라산 주"), ("lt", "Morasano departamentas"), ("lv", "Morasanas departaments"), ("mr", "मोराझान विभाग"), ("ms", "Morazan Department"), ("nb", "Morazan department"), ("nl", "Morazán"), ("no", "Morazan department"), ("pl", "Morazán"), ("pt", "Morazán"), ("ro", "Departamentul Morazán"), ("ru", "Морасан"), ("si", "මොරස\u{dcf}න\u{dca} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Morazan Department"), ("ta", "மொர\u{bbe}சன\u{bcd} துறை"), ("te", "మ\u{c4b}ర\u{c3e}జన\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดโมราซ\u{e31}ง"), ("tr", "Morazan Departmanı"), ("uk", "Морасан"), ("ur", "مورازان محکمہ"), ("vi", "Khu vực hành chính Morazán"), ("zh", "莫拉桑省")]),
+                        translations: HashMap::from([("ar", "إدارة مورازان"), ("bg", "Морасан"), ("bn", "ম\u{9c1}র\u{9be}জ\u{9be}ন বিভ\u{9be}গ"), ("ca", "Departament de Morazán"), ("ccp", "𑄟\u{1112e}𑄢𑄎𑄚\u{11134}"), ("ceb", "Departamento de Morazán"), ("da", "Morazán Department"), ("de", "Departamento Morazán"), ("el", "Διαμέρισμα Μοραζάν"), ("en", "Morazán"), ("es", "Morazán"), ("eu", "Morazán departamendua"), ("fa", "بخش مرازان"), ("fi", "Morazánin departmentti"), ("fr", "département de Morazán"), ("gl", "Departamento de Morazán"), ("gu", "મોરાઝાન વિભાગ"), ("he", "מחוז מורסאן"), ("hi", "मोरसान"), ("hu", "Morazán megye"), ("id", "Departemen Morazán"), ("it", "dipartimento di Morazán"), ("ja", "モラサン県"), ("ka", "მორასანის დეპარტამენტი"), ("kn", "ಮ\u{cca}ರಾಜನ\u{ccd} ಇಲಾಖ\u{cc6}"), ("ko", "모라산 주"), ("lt", "Morasano departamentas"), ("lv", "Morasanas departaments"), ("mr", "मोराझान विभाग"), ("ms", "Morazan Department"), ("nb", "Morazan department"), ("nl", "Morazán"), ("no", "Morazan department"), ("pl", "Morazán"), ("pt", "Morazán"), ("ro", "Departamentul Morazán"), ("ru", "Морасан"), ("si", "මොරස\u{dcf}න\u{dca} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Morazan Department"), ("ta", "மொர\u{bbe}சன\u{bcd} துறை"), ("te", "మ\u{c4b}ర\u{c3e}జన\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดโมราซ\u{e31}ง"), ("tr", "Morazan Departmanı"), ("uk", "Морасан"), ("ur", "مورازان محکمہ"), ("vi", "Khu vực hành chính Morazán"), ("zh", "莫拉桑省")]),
                         unofficial_name_list: ["Morazán"].to_vec(),
                     }
                 ),
@@ -395,7 +397,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Departments,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إدارة سونسونات"), ("bg", "Сонсонате"), ("bn", "সোন\u{9cd}সোন\u{9be}টে বিভ\u{9be}গ"), ("ca", "Departament de Sonsonate"), ("ccp", "𑄥\u{1112e}𑄚\u{11134}𑄥\u{1112e}𑄚𑄬𑄖\u{11134}"), ("ceb", "Departamento de Sonsonate"), ("cs", "Sonsonate²"), ("da", "Sonsonate Department"), ("de", "Departamento Sonsonate"), ("el", "Διαμέρισμα Σονσονάτε"), ("en", "Sonsonate"), ("es", "Sonsonate"), ("eu", "Sonsonate departamendua"), ("fa", "بخش سونسوناتی"), ("fi", "Sonsonate"), ("fr", "département de Sonsonate"), ("gu", "સોન\u{acd}સોન\u{ac7}ટ વિભાગ"), ("hi", "सोनसोनात\u{947} प\u{94d}रद\u{947}श"), ("hu", "Sonsonate megye"), ("id", "Departemen Sonsonate"), ("it", "dipartimento di Sonsonate"), ("ja", "ソンソナーテ県"), ("ka", "სონსონატეს დეპარტამენტი"), ("kn", "ಸನ\u{ccd}ಸೊನೇಟ\u{ccd} ಇಲಾಖ\u{cc6}"), ("ko", "손소나테 주"), ("lt", "Sonsonatės departamentas"), ("lv", "Sonsonates departaments"), ("mr", "सो\u{902}सोन\u{947}ट विभाग"), ("ms", "Sonsonate Department"), ("nb", "Sonsonate department"), ("nl", "Sonsonate"), ("no", "Sonsonate department"), ("pl", "Sonsonate"), ("pt", "Sonsonate"), ("ro", "Departamentul Sonsonate"), ("ru", "Сонсонате"), ("si", "සොන\u{dca}සොන\u{dcf}ටේ දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Sonsonate Department"), ("ta", "சோனிசோனட\u{bcd} துறை"), ("te", "సన\u{c4d}స\u{c4b}న\u{c47}ట\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดซอนโซนาเต"), ("tr", "Sonsonate Departmanı"), ("uk", "Регіон Сонсонате"), ("ur", "سونسوناتے محکمہ"), ("vi", "Khu vực hành chính Sonsonate"), ("zh", "松索纳特省")]),
+                        translations: HashMap::from([("ar", "إدارة سونسونات"), ("bg", "Сонсонате"), ("bn", "সোন\u{9cd}সোন\u{9be}টে বিভ\u{9be}গ"), ("ca", "Departament de Sonsonate"), ("ccp", "𑄥\u{1112e}𑄚\u{11134}𑄥\u{1112e}𑄚𑄬𑄖\u{11134}"), ("ceb", "Departamento de Sonsonate"), ("cs", "Sonsonate²"), ("da", "Sonsonate Department"), ("de", "Departamento Sonsonate"), ("el", "Διαμέρισμα Σονσονάτε"), ("en", "Sonsonate"), ("es", "Sonsonate"), ("eu", "Sonsonate departamendua"), ("fa", "بخش سونسوناتی"), ("fi", "Sonsonate"), ("fr", "département de Sonsonate"), ("gu", "સોન\u{acd}સોન\u{ac7}ટ વિભાગ"), ("hi", "सोनसोनात\u{947} प\u{94d}रद\u{947}श"), ("hu", "Sonsonate megye"), ("id", "Departemen Sonsonate"), ("it", "dipartimento di Sonsonate"), ("ja", "ソンソナーテ県"), ("ka", "სონსონატეს დეპარტამენტი"), ("kn", "ಸನ\u{ccd}ಸ\u{cca}ನ\u{cc7}ಟ\u{ccd} ಇಲಾಖ\u{cc6}"), ("ko", "손소나테 주"), ("lt", "Sonsonatės departamentas"), ("lv", "Sonsonates departaments"), ("mr", "सो\u{902}सोन\u{947}ट विभाग"), ("ms", "Sonsonate Department"), ("nb", "Sonsonate department"), ("nl", "Sonsonate"), ("no", "Sonsonate department"), ("pl", "Sonsonate"), ("pt", "Sonsonate"), ("ro", "Departamentul Sonsonate"), ("ru", "Сонсонате"), ("si", "සොන\u{dca}සොන\u{dcf}ටේ දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Sonsonate Department"), ("ta", "சோனிசோனட\u{bcd} துறை"), ("te", "సన\u{c4d}స\u{c4b}న\u{c47}ట\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "จ\u{e31}งหว\u{e31}ดซอนโซนาเต"), ("tr", "Sonsonate Departmanı"), ("uk", "Регіон Сонсонате"), ("ur", "سونسوناتے محکمہ"), ("vi", "Khu vực hành chính Sonsonate"), ("zh", "松索纳特省")]),
                         unofficial_name_list: ["Sonsonate"].to_vec(),
                     }
                 ),
@@ -494,6 +496,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Salvadoran"),
+        maybe_vehicle_registration_code: Some("ES"),
         number: "222",
         postal_code: true,
         postal_code_format: Some("CP [1-3][1-7][0-2]\\d"),
@@ -653,6 +656,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

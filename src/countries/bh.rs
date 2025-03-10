@@ -31,6 +31,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Bahraini");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BRN");
     pub const NUMBER: &str = "048";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("(?:\\d|1[0-2])\\d{2}");
@@ -44,6 +45,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(1472233);
@@ -115,7 +117,7 @@ pub mod consts {
         ("kk", "Бахрейн"),
         ("kl", "Bahrain"),
         ("km", "បារ\u{17c9}ែន"),
-        ("kn", "ಬಹರೈನ\u{ccd}"),
+        ("kn", "ಬಹರ\u{cc8}ನ\u{ccd}"),
         ("ko", "바레인"),
         ("ku", "Bahrayîn"),
         ("kv", "Бахрейн"),
@@ -403,7 +405,7 @@ pub mod subdivisions {
                         ("id", "Kegubernuran Al Muharraq"),
                         ("it", "Governatorato di Muharraq"),
                         ("ja", "ムハッラク県"),
-                        ("kn", "ಮುಹರಾಕ\u{ccd} ಗವರ\u{ccd}ನೇಟ\u{ccd}"),
+                        ("kn", "ಮುಹರಾಕ\u{ccd} ಗವರ\u{ccd}ನ\u{cc7}ಟ\u{ccd}"),
                         ("ko", "무하라크 주"),
                         ("lt", "Muharako muchafaza"),
                         ("lv", "Muharrakas muhāfaza"),
@@ -525,6 +527,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Bahraini"),
+        maybe_vehicle_registration_code: Some("BRN"),
         number: "048",
         postal_code: true,
         postal_code_format: Some("(?:\\d|1[0-2])\\d{2}"),
@@ -602,7 +605,7 @@ pub fn new() -> Country {
             ("kk", "Бахрейн"),
             ("kl", "Bahrain"),
             ("km", "បារ\u{17c9}ែន"),
-            ("kn", "ಬಹರೈನ\u{ccd}"),
+            ("kn", "ಬಹರ\u{cc8}ನ\u{ccd}"),
             ("ko", "바레인"),
             ("ku", "Bahrayîn"),
             ("kv", "Бахрейн"),
@@ -678,6 +681,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

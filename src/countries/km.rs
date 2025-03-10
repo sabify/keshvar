@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Comoran");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("COM");
     pub const NUMBER: &str = "174";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(836774);
@@ -119,7 +121,7 @@ pub mod consts {
         ("kk", "Комор аралдары"),
         ("kl", "Comoros"),
         ("km", "ក\u{17bb}\u{17c6}ម\u{17c9}\u{17bc}រ\u{17c9}\u{17bc}ស"),
-        ("kn", "ಕೊಮೊರೋಸ\u{ccd}"),
+        ("kn", "ಕ\u{cca}ಮ\u{cca}ರ\u{ccb}ಸ\u{ccd}"),
         ("ko", "코모로"),
         ("ku", "Komoros"),
         ("kv", "Comoros"),
@@ -371,7 +373,7 @@ pub mod subdivisions {
                         ("it", "Grande Comore"),
                         ("ja", "グランドコモロ島"),
                         ("ka", "ნგაზიჯა"),
-                        ("kn", "ಗ\u{ccd}ರಾಂಡ\u{cc6} ಕೊಮೊರ\u{ccd}"),
+                        ("kn", "ಗ\u{ccd}ರಾಂಡ\u{cc6} ಕ\u{cca}ಮ\u{cca}ರ\u{ccd}"),
                         ("ko", "그랑드코모르 섬"),
                         ("lt", "Grand Komoras"),
                         ("lv", "Nazidža (Grankomora)"),
@@ -446,7 +448,7 @@ pub mod subdivisions {
                         ("it", "Mohéli"),
                         ("ja", "モヘリ島"),
                         ("ka", "მვალი"),
-                        ("kn", "ಮೊಹ\u{cc6}ಲ\u{cbf}"),
+                        ("kn", "ಮ\u{cca}ಹ\u{cc6}ಲ\u{cbf}"),
                         ("ko", "모엘리 섬"),
                         ("lt", "Mohelis"),
                         ("lv", "Mvali"),
@@ -509,6 +511,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Comoran"),
+        maybe_vehicle_registration_code: Some("COM"),
         number: "174",
         postal_code: false,
         postal_code_format: None,
@@ -521,12 +524,13 @@ pub fn new() -> Country {
         #[cfg(feature = "emojis")]
         emoji: "🇰🇲",
         #[cfg(feature = "translations")]
-        translations: HashMap::from([("ab", "Comoros"), ("af", "Comore"), ("ak", "Comoros"), ("am", "ጥሥስስ"), ("an", "Comoros"), ("ar", "جزر القمر"), ("as", "কমোৰছ"), ("ay", "Comoros"), ("az", "Komor"), ("ba", "Comoros"), ("be", "Каморскія астравы"), ("bg", "Комори"), ("bi", "Comoros"), ("bn", "কোমোরোস"), ("bn_IN", "কোমোরোস"), ("br", "Komorez"), ("bs", "Komori"), ("ca", "Comores"), ("ce", "Комора Гlайреш"), ("ch", "Comoros"), ("cs", "Komory"), ("cv", "Комора Гlайреш"), ("cy", "Comoros"), ("da", "Comorerne"), ("de", "Komoren"), ("dv", "ޖ\u{7aa}ޒ\u{7aa}ރ\u{7aa}ޤ\u{7a6}މ\u{7a6}ރ\u{7aa}"), ("dz", "ཀ\u{f7c}་མ\u{f7c}་ར\u{f71}\u{f7c}ས\u{f72}།"), ("ee", "Comoros"), ("el", "Κομόρες"), ("en", "Comoros"), ("eo", "Komoroj"), ("es", "Comores, Islas"), ("et", "Komoorid"), ("eu", "Komoreak"), ("fa", "کومورو"), ("ff", "Comoros"), ("fi", "Komorit"), ("fo", "Komorooyggjarnar"), ("fr", "Comores"), ("fy", "Komoaren"), ("ga", "Oileán Chomóra"), ("gl", "Comores"), ("gn", "Comoros"), ("gu", "કોમોરોસ"), ("gv", "Ny h-Ellanyn Chomoro"), ("ha", "Komoros"), ("he", "קומורו"), ("hi", "कोमोरोस"), ("hr", "Komori"), ("ht", "Komò"), ("hu", "Comore-szigetek"), ("hy", "Կոմորոս"), ("ia", "Comores"), ("id", "Komoro"), ("io", "Komori"), ("is", "Kómoreyjar"), ("it", "Comore"), ("iu", "Comoros"), ("ja", "コモロ"), ("ka", "კომორის კუნძულები"), ("ki", "Comoros"), ("kk", "Комор аралдары"), ("kl", "Comoros"), ("km", "ក\u{17bb}\u{17c6}ម\u{17c9}\u{17bc}រ\u{17c9}\u{17bc}ស"), ("kn", "ಕೊಮೊರೋಸ\u{ccd}"), ("ko", "코모로"), ("ku", "Komoros"), ("kv", "Comoros"), ("kw", "Komorys"), ("ky", "Комор аралдары"), ("lo", "Comoros"), ("lt", "Komorai"), ("lv", "Komoras"), ("mi", "Comoros"), ("mk", "Коморос"), ("ml", "കൊമോറോസ\u{d4d}"), ("mn", "Comoros"), ("mr", "कोमरोस"), ("ms", "Comoros"), ("mt", "Komoros"), ("my", "က\u{102d}\u{102f}မ\u{102d}\u{102f}ရ\u{102d}\u{102f}န\u{102d}\u{102f}င\u{103a}င\u{1036}"), ("na", "Komorot"), ("nb", "Komorene"), ("ne", "कोमोरोस"), ("nl", "Comoren"), ("nn", "Komorane"), ("nv", "Ooljééʼ Bikéyah Yázhí"), ("oc", "Comòras"), ("or", "କୋମୋରୋସ"), ("pa", "ਕ\u{a4b}ਮ\u{a4b}ਰਸ"), ("pi", "कोमोरोस"), ("pl", "Komory"), ("ps", "Comoros"), ("pt", "Comores"), ("pt_BR", "Comores"), ("ro", "Comoros"), ("ru", "Коморы"), ("rw", "Komore"), ("sc", "Comoras"), ("sd", "Comoros"), ("si", "කොමොරොස\u{dca}"), ("sk", "Komory"), ("sl", "Komori"), ("so", "Comoros"), ("sq", "Komoros"), ("sr", "Комори"), ("sv", "Comorerna"), ("sw", "Komori"), ("ta", "கோமரோஸ\u{bcd}"), ("te", "క\u{c4b}మర\u{c4b}స\u{c4d}"), ("tg", "Комор"), ("th", "คอโมโรส"), ("ti", "ኮሞሮስ"), ("tk", "Komor Adalary"), ("tl", "Comoros"), ("tr", "Komorlar"), ("tt", "Коморлар"), ("ug", "كوموروس"), ("uk", "Коморські острови"), ("ur", "اتحاد القمری"), ("uz", "Komoros"), ("ve", "Comoros"), ("vi", "Cô-mô-rô-xợ"), ("wa", "Comores"), ("wo", "Komoor"), ("xh", "Comoros"), ("yo", "Kòmórò"), ("zh_CN", "科摩罗"), ("zh_HK", "科摩羅"), ("zh_TW", "葛摩"), ("zu", "IsiKhomorosi")]),
+        translations: HashMap::from([("ab", "Comoros"), ("af", "Comore"), ("ak", "Comoros"), ("am", "ጥሥስስ"), ("an", "Comoros"), ("ar", "جزر القمر"), ("as", "কমোৰছ"), ("ay", "Comoros"), ("az", "Komor"), ("ba", "Comoros"), ("be", "Каморскія астравы"), ("bg", "Комори"), ("bi", "Comoros"), ("bn", "কোমোরোস"), ("bn_IN", "কোমোরোস"), ("br", "Komorez"), ("bs", "Komori"), ("ca", "Comores"), ("ce", "Комора Гlайреш"), ("ch", "Comoros"), ("cs", "Komory"), ("cv", "Комора Гlайреш"), ("cy", "Comoros"), ("da", "Comorerne"), ("de", "Komoren"), ("dv", "ޖ\u{7aa}ޒ\u{7aa}ރ\u{7aa}ޤ\u{7a6}މ\u{7a6}ރ\u{7aa}"), ("dz", "ཀ\u{f7c}་མ\u{f7c}་ར\u{f71}\u{f7c}ས\u{f72}།"), ("ee", "Comoros"), ("el", "Κομόρες"), ("en", "Comoros"), ("eo", "Komoroj"), ("es", "Comores, Islas"), ("et", "Komoorid"), ("eu", "Komoreak"), ("fa", "کومورو"), ("ff", "Comoros"), ("fi", "Komorit"), ("fo", "Komorooyggjarnar"), ("fr", "Comores"), ("fy", "Komoaren"), ("ga", "Oileán Chomóra"), ("gl", "Comores"), ("gn", "Comoros"), ("gu", "કોમોરોસ"), ("gv", "Ny h-Ellanyn Chomoro"), ("ha", "Komoros"), ("he", "קומורו"), ("hi", "कोमोरोस"), ("hr", "Komori"), ("ht", "Komò"), ("hu", "Comore-szigetek"), ("hy", "Կոմորոս"), ("ia", "Comores"), ("id", "Komoro"), ("io", "Komori"), ("is", "Kómoreyjar"), ("it", "Comore"), ("iu", "Comoros"), ("ja", "コモロ"), ("ka", "კომორის კუნძულები"), ("ki", "Comoros"), ("kk", "Комор аралдары"), ("kl", "Comoros"), ("km", "ក\u{17bb}\u{17c6}ម\u{17c9}\u{17bc}រ\u{17c9}\u{17bc}ស"), ("kn", "ಕ\u{cca}ಮ\u{cca}ರ\u{ccb}ಸ\u{ccd}"), ("ko", "코모로"), ("ku", "Komoros"), ("kv", "Comoros"), ("kw", "Komorys"), ("ky", "Комор аралдары"), ("lo", "Comoros"), ("lt", "Komorai"), ("lv", "Komoras"), ("mi", "Comoros"), ("mk", "Коморос"), ("ml", "കൊമോറോസ\u{d4d}"), ("mn", "Comoros"), ("mr", "कोमरोस"), ("ms", "Comoros"), ("mt", "Komoros"), ("my", "က\u{102d}\u{102f}မ\u{102d}\u{102f}ရ\u{102d}\u{102f}န\u{102d}\u{102f}င\u{103a}င\u{1036}"), ("na", "Komorot"), ("nb", "Komorene"), ("ne", "कोमोरोस"), ("nl", "Comoren"), ("nn", "Komorane"), ("nv", "Ooljééʼ Bikéyah Yázhí"), ("oc", "Comòras"), ("or", "କୋମୋରୋସ"), ("pa", "ਕ\u{a4b}ਮ\u{a4b}ਰਸ"), ("pi", "कोमोरोस"), ("pl", "Komory"), ("ps", "Comoros"), ("pt", "Comores"), ("pt_BR", "Comores"), ("ro", "Comoros"), ("ru", "Коморы"), ("rw", "Komore"), ("sc", "Comoras"), ("sd", "Comoros"), ("si", "කොමොරොස\u{dca}"), ("sk", "Komory"), ("sl", "Komori"), ("so", "Comoros"), ("sq", "Komoros"), ("sr", "Комори"), ("sv", "Comorerna"), ("sw", "Komori"), ("ta", "கோமரோஸ\u{bcd}"), ("te", "క\u{c4b}మర\u{c4b}స\u{c4d}"), ("tg", "Комор"), ("th", "คอโมโรส"), ("ti", "ኮሞሮስ"), ("tk", "Komor Adalary"), ("tl", "Comoros"), ("tr", "Komorlar"), ("tt", "Коморлар"), ("ug", "كوموروس"), ("uk", "Коморські острови"), ("ur", "اتحاد القمری"), ("uz", "Komoros"), ("ve", "Comoros"), ("vi", "Cô-mô-rô-xợ"), ("wa", "Comores"), ("wo", "Komoor"), ("xh", "Comoros"), ("yo", "Kòmórò"), ("zh_CN", "科摩罗"), ("zh_HK", "科摩羅"), ("zh_TW", "葛摩"), ("zu", "IsiKhomorosi")]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

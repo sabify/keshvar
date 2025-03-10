@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Gibraltar");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("GBZ");
     pub const NUMBER: &str = "292";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("GX11 1AA");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(32649);
@@ -273,6 +275,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Gibraltar"),
+        maybe_vehicle_registration_code: Some("GBZ"),
         number: "292",
         postal_code: true,
         postal_code_format: Some("GX11 1AA"),
@@ -426,6 +429,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

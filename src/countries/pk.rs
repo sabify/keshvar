@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9, 10];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Pakistani");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("PK");
     pub const NUMBER: &str = "586";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{5}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(235824862);
@@ -299,7 +301,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::PakistanAdministeredArea,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "آزاد كشمير"), ("az", "Azad Kəşmir"), ("be", "Азад Кашмір"), ("bg", "Азад Кашмир"), ("bn", "আজ\u{9be}দ ক\u{9be}শ\u{9cd}মীর"), ("ca", "Azad Kashmir"), ("ccp", "𑄃𑄎𑄖\u{11134} 𑄇𑄌\u{11134}𑄟\u{11128}𑄢\u{11134}"), ("ceb", "Azad Kashmir"), ("cs", "Ázád Kašmír"), ("da", "Azad Kashmir"), ("de", "Asad Jammu und Kaschmir"), ("el", "Αζάντ Κασμίρ"), ("en", "Azad Kashmir"), ("es", "Azad Cachemira"), ("eu", "Azad Kaxmir"), ("fa", "کشمیر آزاد"), ("fi", "Azad Kashmir"), ("fr", "Azad Cachemire"), ("gu", "આઝાદ કાશ\u{acd}મીર"), ("he", "אזאד קשמיר"), ("hi", "आज\u{93c}ाद कश\u{94d}मीर"), ("hr", "Azad Kašmir"), ("hy", "Ազադ Քաշմիր"), ("id", "Azad Kashmir"), ("it", "Azad Kashmir"), ("ja", "アザド・カシミール"), ("ka", "აზად-ქაშმირი"), ("kn", "ಆಜಾದ\u{ccd} ಕಾಶ\u{ccd}ಮೀರ"), ("ko", "아자드 카슈미르 주"), ("ky", "Азад Кашмир"), ("lt", "Laisvasis Kašmyras"), ("lv", "Azadkašmīra"), ("ml", "ആസ\u{d3e}ദ\u{d4d} കശ\u{d4d}മീർ"), ("mr", "पाकव\u{94d}याप\u{94d}त काश\u{94d}मीर"), ("ms", "Azad Kashmir"), ("nb", "Azad Kashmir"), ("ne", "आजाद कश\u{94d}मीर"), ("nl", "Azad Kasjmir"), ("no", "Azad Kashmir"), ("pa", "ਅਜ\u{a3c}ਾਦ ਕਸ\u{a3c}ਮੀਰ"), ("pl", "Azad Dżammu i Kaszmir"), ("ps", "آزاد کشمير"), ("pt", "Caxemira Livre"), ("ru", "Азад Кашмир"), ("sd", "آزاد ڪشمير"), ("si", "අස\u{dcf}ද\u{dca} ක\u{dcf}ශ\u{dca}ම\u{dd3}ර\u{dca}"), ("sl", "Azad Kašmir"), ("sr", "Азад Кашмир"), ("sr_Latn", "Azad Kašmir"), ("sv", "Azad Kashmir"), ("ta", "ஆச\u{bbe}த\u{bcd} க\u{bbe}ஷ\u{bcd}ம\u{bc0}ர\u{bcd}"), ("te", "ఆజ\u{c3e}ద\u{c4d} కశ\u{c4d}మ\u{c40}ర\u{c4d}"), ("th", "อาซาดแคชเม\u{e35}ยร\u{e4c}"), ("tr", "Azad Keşmir"), ("uk", "Азад Кашмір"), ("ur", "آزاد کشمیر"), ("vi", "Azad Kashmir"), ("zh", "自由克什米爾")]),
+                        translations: HashMap::from([("ar", "آزاد كشمير"), ("az", "Azad Kəşmir"), ("be", "Азад Кашмір"), ("bg", "Азад Кашмир"), ("bn", "আজ\u{9be}দ ক\u{9be}শ\u{9cd}মীর"), ("ca", "Azad Kashmir"), ("ccp", "𑄃𑄎𑄖\u{11134} 𑄇𑄌\u{11134}𑄟\u{11128}𑄢\u{11134}"), ("ceb", "Azad Kashmir"), ("cs", "Ázád Kašmír"), ("da", "Azad Kashmir"), ("de", "Asad Jammu und Kaschmir"), ("el", "Αζάντ Κασμίρ"), ("en", "Azad Kashmir"), ("es", "Azad Cachemira"), ("eu", "Azad Kaxmir"), ("fa", "کشمیر آزاد"), ("fi", "Azad Kashmir"), ("fr", "Azad Cachemire"), ("gu", "આઝાદ કાશ\u{acd}મીર"), ("he", "אזאד קשמיר"), ("hi", "आज\u{93c}ाद कश\u{94d}मीर"), ("hr", "Azad Kašmir"), ("hy", "Ազադ Քաշմիր"), ("id", "Azad Kashmir"), ("it", "Azad Kashmir"), ("ja", "アザド・カシミール"), ("ka", "აზად-ქაშმირი"), ("kn", "ಆಜಾದ\u{ccd} ಕಾಶ\u{ccd}ಮ\u{cc0}ರ"), ("ko", "아자드 카슈미르 주"), ("ky", "Азад Кашмир"), ("lt", "Laisvasis Kašmyras"), ("lv", "Azadkašmīra"), ("ml", "ആസ\u{d3e}ദ\u{d4d} കശ\u{d4d}മീർ"), ("mr", "पाकव\u{94d}याप\u{94d}त काश\u{94d}मीर"), ("ms", "Azad Kashmir"), ("nb", "Azad Kashmir"), ("ne", "आजाद कश\u{94d}मीर"), ("nl", "Azad Kasjmir"), ("no", "Azad Kashmir"), ("pa", "ਅਜ\u{a3c}ਾਦ ਕਸ\u{a3c}ਮੀਰ"), ("pl", "Azad Dżammu i Kaszmir"), ("ps", "آزاد کشمير"), ("pt", "Caxemira Livre"), ("ru", "Азад Кашмир"), ("sd", "آزاد ڪشمير"), ("si", "අස\u{dcf}ද\u{dca} ක\u{dcf}ශ\u{dca}ම\u{dd3}ර\u{dca}"), ("sl", "Azad Kašmir"), ("sr", "Азад Кашмир"), ("sr_Latn", "Azad Kašmir"), ("sv", "Azad Kashmir"), ("ta", "ஆச\u{bbe}த\u{bcd} க\u{bbe}ஷ\u{bcd}ம\u{bc0}ர\u{bcd}"), ("te", "ఆజ\u{c3e}ద\u{c4d} కశ\u{c4d}మ\u{c40}ర\u{c4d}"), ("th", "อาซาดแคชเม\u{e35}ยร\u{e4c}"), ("tr", "Azad Keşmir"), ("uk", "Азад Кашмір"), ("ur", "آزاد کشمیر"), ("vi", "Azad Kashmir"), ("zh", "自由克什米爾")]),
                         unofficial_name_list: ["Azad Kashmir"].to_vec(),
                     }
                 ),
@@ -383,6 +385,7 @@ pub fn new() -> Country {
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Pakistani"),
+        maybe_vehicle_registration_code: Some("PK"),
         number: "586",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -536,6 +539,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

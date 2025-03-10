@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Swazi");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SD");
     pub const NUMBER: &str = "748";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("[HLMS]\\d{3}");
@@ -43,6 +44,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(1201670);
@@ -252,7 +254,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة هوهو"), ("be", "Хоха"), ("bg", "Хохо"), ("bn", "হোহো জেল\u{9be}"), ("ca", "Hhohho"), ("ccp", "𑄦\u{1112e}𑄦\u{1112e}"), ("ceb", "Hhohho District"), ("cs", "Hhohho"), ("da", "Hhohho District"), ("de", "Hhohho"), ("el", "Χνόχο"), ("en", "Hhohho"), ("es", "Hhohho"), ("fa", "ناحیه هووهو"), ("fi", "Hhohho"), ("fr", "Hhohho"), ("gu", "હહહો જિલ\u{acd}લો"), ("he", "מחוז האהוהאהו"), ("hi", "होहो जिला"), ("hy", "Հոհո"), ("id", "Distrik Hhohho"), ("it", "distretto di Hhohho"), ("ja", "ホホ"), ("ka", "ჰოჰო"), ("kn", "ಹ\u{ccd}ಹೋ ಹ\u{ccd}ಹೋ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "호호 구"), ("lt", "Hhohho rajonas"), ("lv", "Hoho reģions"), ("mr", "होहो जिल\u{94d}हा"), ("ms", "Hhohho District"), ("nb", "Hhohho"), ("nl", "Hhohho"), ("no", "Hhohho"), ("pl", "Dystrykt Hhohho"), ("pt", "Hhohho"), ("ro", "Districtul Hhohho"), ("ru", "Хохо"), ("si", "හොහ\u{dca}හෝ ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Хохо"), ("sr_Latn", "Hoho"), ("sv", "Hhohho"), ("ta", "ஹ\u{bcd}ஹஒஹொ ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "హ\u{c4b}హ\u{c4d}హ\u{c4b} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "จ\u{e31}งหว\u{e31}ดโฮโฮ"), ("tr", "Hhohho District"), ("uk", "Хохо"), ("ur", "ہوہو علاقہ"), ("vi", "Quận Hhohho"), ("zh", "霍霍"), ("zu", "IHhohho")]),
+                        translations: HashMap::from([("ar", "مقاطعة هوهو"), ("be", "Хоха"), ("bg", "Хохо"), ("bn", "হোহো জেল\u{9be}"), ("ca", "Hhohho"), ("ccp", "𑄦\u{1112e}𑄦\u{1112e}"), ("ceb", "Hhohho District"), ("cs", "Hhohho"), ("da", "Hhohho District"), ("de", "Hhohho"), ("el", "Χνόχο"), ("en", "Hhohho"), ("es", "Hhohho"), ("fa", "ناحیه هووهو"), ("fi", "Hhohho"), ("fr", "Hhohho"), ("gu", "હહહો જિલ\u{acd}લો"), ("he", "מחוז האהוהאהו"), ("hi", "होहो जिला"), ("hy", "Հոհո"), ("id", "Distrik Hhohho"), ("it", "distretto di Hhohho"), ("ja", "ホホ"), ("ka", "ჰოჰო"), ("kn", "ಹ\u{ccd}ಹ\u{ccb} ಹ\u{ccd}ಹ\u{ccb} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "호호 구"), ("lt", "Hhohho rajonas"), ("lv", "Hoho reģions"), ("mr", "होहो जिल\u{94d}हा"), ("ms", "Hhohho District"), ("nb", "Hhohho"), ("nl", "Hhohho"), ("no", "Hhohho"), ("pl", "Dystrykt Hhohho"), ("pt", "Hhohho"), ("ro", "Districtul Hhohho"), ("ru", "Хохо"), ("si", "හොහ\u{dca}හෝ ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Хохо"), ("sr_Latn", "Hoho"), ("sv", "Hhohho"), ("ta", "ஹ\u{bcd}ஹஒஹொ ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "హ\u{c4b}హ\u{c4d}హ\u{c4b} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "จ\u{e31}งหว\u{e31}ดโฮโฮ"), ("tr", "Hhohho District"), ("uk", "Хохо"), ("ur", "ہوہو علاقہ"), ("vi", "Quận Hhohho"), ("zh", "霍霍"), ("zu", "IHhohho")]),
                         unofficial_name_list: ["Hhohho"].to_vec(),
                     }
                 ),
@@ -267,7 +269,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Region,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة لوبومبو"), ("bg", "Лубомбо"), ("bn", "ল\u{9c1}বোম\u{9cd}ব\u{9c1} জেল\u{9be}"), ("ca", "Lubombo"), ("ccp", "𑄣\u{1112a}𑄝\u{1112a}𑄟\u{11134}𑄝\u{1112e}"), ("ceb", "Lubombo District"), ("da", "Lubombo District"), ("de", "Lubombo"), ("el", "Λουμπόμπο"), ("en", "Lubombo"), ("es", "Lubombo"), ("fa", "ناحیه لوبومبو"), ("fi", "Lubombo"), ("fr", "Lubombo"), ("gu", "લ\u{ac1}મોમ\u{acd}બો જિલ\u{acd}લો"), ("he", "מחוז לובומבו"), ("hi", "ल\u{941}बोम\u{94d}बो जिला"), ("hy", "Լուբոմբո"), ("id", "Distrik Lubombo"), ("it", "distretto di Lubombo"), ("ja", "ルボンボ"), ("ka", "ლუბომბო"), ("kn", "ಲುಬೊಂಬಾ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "루봄보 구"), ("lt", "Lubombo rajonas"), ("lv", "Lubombo reģions"), ("mr", "ल\u{941}ब\u{94d}म\u{94d}बो जिल\u{94d}हा"), ("ms", "Lubombo District"), ("nb", "Lubombo"), ("nl", "Lubombo"), ("no", "Lubombo"), ("pl", "Dystrykt Lubombo"), ("pt", "Lubombo"), ("ro", "Districtul Lubombo"), ("ru", "Лубомбо"), ("si", "ල\u{dd4}බෝම\u{dca}බෝ ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Лубомбо"), ("sr_Latn", "Lubombo"), ("sv", "Lubombo"), ("ta", "லுப\u{bbe}ம\u{bcd}போ ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "లుబ\u{c4b}ంబ\u{c4b} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "ล\u{e39}บอมโบ"), ("tr", "Lubombo District"), ("uk", "Лубомбо"), ("ur", "لوبومبو علاقہ"), ("vi", "Quận Lubombo"), ("zh", "卢邦博")]),
+                        translations: HashMap::from([("ar", "مقاطعة لوبومبو"), ("bg", "Лубомбо"), ("bn", "ল\u{9c1}বোম\u{9cd}ব\u{9c1} জেল\u{9be}"), ("ca", "Lubombo"), ("ccp", "𑄣\u{1112a}𑄝\u{1112a}𑄟\u{11134}𑄝\u{1112e}"), ("ceb", "Lubombo District"), ("da", "Lubombo District"), ("de", "Lubombo"), ("el", "Λουμπόμπο"), ("en", "Lubombo"), ("es", "Lubombo"), ("fa", "ناحیه لوبومبو"), ("fi", "Lubombo"), ("fr", "Lubombo"), ("gu", "લ\u{ac1}મોમ\u{acd}બો જિલ\u{acd}લો"), ("he", "מחוז לובומבו"), ("hi", "ल\u{941}बोम\u{94d}बो जिला"), ("hy", "Լուբոմբո"), ("id", "Distrik Lubombo"), ("it", "distretto di Lubombo"), ("ja", "ルボンボ"), ("ka", "ლუბომბო"), ("kn", "ಲುಬ\u{cca}ಂಬಾ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "루봄보 구"), ("lt", "Lubombo rajonas"), ("lv", "Lubombo reģions"), ("mr", "ल\u{941}ब\u{94d}म\u{94d}बो जिल\u{94d}हा"), ("ms", "Lubombo District"), ("nb", "Lubombo"), ("nl", "Lubombo"), ("no", "Lubombo"), ("pl", "Dystrykt Lubombo"), ("pt", "Lubombo"), ("ro", "Districtul Lubombo"), ("ru", "Лубомбо"), ("si", "ල\u{dd4}බෝම\u{dca}බෝ ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Лубомбо"), ("sr_Latn", "Lubombo"), ("sv", "Lubombo"), ("ta", "லுப\u{bbe}ம\u{bcd}போ ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "లుబ\u{c4b}ంబ\u{c4b} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "ล\u{e39}บอมโบ"), ("tr", "Lubombo District"), ("uk", "Лубомбо"), ("ur", "لوبومبو علاقہ"), ("vi", "Quận Lubombo"), ("zh", "卢邦博")]),
                         unofficial_name_list: ["Lebombo"].to_vec(),
                     }
                 ),
@@ -336,6 +338,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Swazi"),
+        maybe_vehicle_registration_code: Some("SD"),
         number: "748",
         postal_code: true,
         postal_code_format: Some("[HLMS]\\d{3}"),
@@ -486,6 +489,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

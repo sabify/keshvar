@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "8";
     pub const NATIONALITY: Option<&str> = Some("Turkmen");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("TM");
     pub const NUMBER: &str = "795";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{6}");
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(6430770);
@@ -609,7 +611,7 @@ pub mod subdivisions {
                         ("ja", "マル州"),
                         ("ka", "მარის ველაიათი"),
                         ("kk", "Мары уәлаяты"),
-                        ("kn", "ಮೇರ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ಮ\u{cc7}ರ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "마리 주"),
                         ("lt", "Maro velajatas"),
                         ("lv", "Mari vilajets"),
@@ -777,6 +779,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "8",
         maybe_nationality: Some("Turkmen"),
+        maybe_vehicle_registration_code: Some("TM"),
         number: "795",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -795,6 +798,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

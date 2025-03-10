@@ -31,6 +31,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Belgian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("B");
     pub const NUMBER: &str = "056";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{4}");
@@ -50,6 +51,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(11685814);
@@ -397,7 +399,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Hainaut"), ("ar", "هينو"), ("az", "Eno"), ("be", "Правінцыя Эно"), ("bg", "Ено"), ("bn", "হ\u{9be}ইনট"), ("ca", "Hainaut"), ("ccp", "𑄦\u{1112d}𑄚𑄅\u{1112a}𑄖\u{11134}"), ("ceb", "Province du Hainaut"), ("cs", "Henegavsko"), ("cy", "Hainaut"), ("da", "Hainaut"), ("de", "Hennegau"), ("el", "Αινώ"), ("en", "Hainaut"), ("es", "Provincia de Henao"), ("et", "Hainaut"), ("eu", "Hainauteko probintzia"), ("fa", "استان انو"), ("fi", "Hainaut’n lääni"), ("fr", "Hainaut"), ("ga", "Hainaut"), ("gl", "Provincia de Hainaut"), ("gu", "હ\u{ac8}નૌટ"), ("he", "אנו"), ("hi", "ह\u{948}नौत (प\u{94d}रा\u{902}त)"), ("hr", "Hainaut"), ("hu", "Hainaut"), ("hy", "Էնո"), ("id", "Hainaut"), ("is", "Hainaut"), ("it", "provincia dell’Hainaut"), ("ja", "エノー州"), ("ka", "ენოს პროვინცია"), ("kn", "ಹೈನಾಟ\u{ccd}"), ("ko", "에노 주"), ("lt", "Heno provincija"), ("lv", "Eno"), ("mk", "Ено"), ("mr", "एनो"), ("ms", "Hainaut"), ("nb", "Hainaut"), ("nl", "Henegouwen"), ("no", "Hainaut"), ("pl", "Prowincja Hainaut"), ("pt", "Hainaut"), ("ro", "Hainaut"), ("ru", "Эно"), ("si", "හය\u{dd2}නෞට\u{dca}"), ("sk", "Hennegavsko"), ("sq", "Provinca Hainaut"), ("sr", "Провинција Ено"), ("sr_Latn", "Provincija Eno"), ("sv", "Hainaut"), ("ta", "ஹெயின\u{bbe}ட\u{bcd}"), ("te", "హ\u{c3e}య\u{c3f}న\u{c3e}ట\u{c4d}"), ("th", "มณฑลแอโน"), ("tr", "Hainaut"), ("uk", "Ено"), ("ur", "ہائنو"), ("vi", "Hainaut"), ("zh", "埃諾省")]),
+                        translations: HashMap::from([("af", "Hainaut"), ("ar", "هينو"), ("az", "Eno"), ("be", "Правінцыя Эно"), ("bg", "Ено"), ("bn", "হ\u{9be}ইনট"), ("ca", "Hainaut"), ("ccp", "𑄦\u{1112d}𑄚𑄅\u{1112a}𑄖\u{11134}"), ("ceb", "Province du Hainaut"), ("cs", "Henegavsko"), ("cy", "Hainaut"), ("da", "Hainaut"), ("de", "Hennegau"), ("el", "Αινώ"), ("en", "Hainaut"), ("es", "Provincia de Henao"), ("et", "Hainaut"), ("eu", "Hainauteko probintzia"), ("fa", "استان انو"), ("fi", "Hainaut’n lääni"), ("fr", "Hainaut"), ("ga", "Hainaut"), ("gl", "Provincia de Hainaut"), ("gu", "હ\u{ac8}નૌટ"), ("he", "אנו"), ("hi", "ह\u{948}नौत (प\u{94d}रा\u{902}त)"), ("hr", "Hainaut"), ("hu", "Hainaut"), ("hy", "Էնո"), ("id", "Hainaut"), ("is", "Hainaut"), ("it", "provincia dell’Hainaut"), ("ja", "エノー州"), ("ka", "ენოს პროვინცია"), ("kn", "ಹ\u{cc8}ನಾಟ\u{ccd}"), ("ko", "에노 주"), ("lt", "Heno provincija"), ("lv", "Eno"), ("mk", "Ено"), ("mr", "एनो"), ("ms", "Hainaut"), ("nb", "Hainaut"), ("nl", "Henegouwen"), ("no", "Hainaut"), ("pl", "Prowincja Hainaut"), ("pt", "Hainaut"), ("ro", "Hainaut"), ("ru", "Эно"), ("si", "හය\u{dd2}නෞට\u{dca}"), ("sk", "Hennegavsko"), ("sq", "Provinca Hainaut"), ("sr", "Провинција Ено"), ("sr_Latn", "Provincija Eno"), ("sv", "Hainaut"), ("ta", "ஹெயின\u{bbe}ட\u{bcd}"), ("te", "హ\u{c3e}య\u{c3f}న\u{c3e}ట\u{c4d}"), ("th", "มณฑลแอโน"), ("tr", "Hainaut"), ("uk", "Ено"), ("ur", "ہائنو"), ("vi", "Hainaut"), ("zh", "埃諾省")]),
                         unofficial_name_list: ["Henegouwen", "Hennegau"].to_vec(),
                     }
                 ),
@@ -412,7 +414,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Province,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Luik"), ("ar", "لياج"), ("az", "Lej"), ("be", "правінцыя Льеж"), ("bg", "Лиеж"), ("bn", "লিয\u{9bc}েজ"), ("ca", "Província de Lieja"), ("ccp", "𑄣\u{1112d}𑄎𑄬"), ("ceb", "Province de Liège"), ("cs", "Lutych"), ("cy", "Liège"), ("da", "Liège"), ("de", "Lüttich"), ("el", "Λιέγη"), ("en", "Liège"), ("es", "Provincia de Lieja"), ("et", "Liège’i provints"), ("eu", "Liejako probintzia"), ("fa", "استان لیژ"), ("fi", "Liègen pronssi"), ("fr", "Liège"), ("ga", "Cúige Liege"), ("gl", "Provincia de Liexa"), ("gu", "લીજ"), ("he", "לייז׳"), ("hi", "लीज"), ("hr", "Liège"), ("hu", "Liège"), ("hy", "Լիեժ"), ("id", "Liège"), ("is", "Liege"), ("it", "provincia di Liegi"), ("ja", "リエージュ州"), ("ka", "ლიეჟის პროვინცია"), ("kn", "ಲೀಜ\u{ccd}"), ("ko", "리에주 주"), ("lt", "Lježo provincija"), ("lv", "Ljēža"), ("mk", "Лиеж"), ("mr", "लीज"), ("ms", "Liege"), ("nb", "Liège"), ("nl", "provincie Luik"), ("no", "Liège"), ("pl", "Prowincja Liège"), ("pt", "Liège"), ("ro", "Liège"), ("ru", "Льеж"), ("si", "ලය\u{dd2}ගේ"), ("sk", "Lutyšsko"), ("sl", "provinca Liège"), ("sq", "Provinca Liège"), ("sr", "Провинција Лијеж"), ("sr_Latn", "Provincija Lijež"), ("sv", "Liège"), ("ta", "ல\u{bc0}ஜ\u{bcd}"), ("te", "ల\u{c3f}య\u{c47}జ\u{c4d}"), ("th", "มณฑลล\u{e35}แยฌ"), ("tr", "Liège"), ("uk", "Льєж"), ("ur", "لییج"), ("vi", "Liège"), ("zh", "列日省")]),
+                        translations: HashMap::from([("af", "Luik"), ("ar", "لياج"), ("az", "Lej"), ("be", "правінцыя Льеж"), ("bg", "Лиеж"), ("bn", "লিয\u{9bc}েজ"), ("ca", "Província de Lieja"), ("ccp", "𑄣\u{1112d}𑄎𑄬"), ("ceb", "Province de Liège"), ("cs", "Lutych"), ("cy", "Liège"), ("da", "Liège"), ("de", "Lüttich"), ("el", "Λιέγη"), ("en", "Liège"), ("es", "Provincia de Lieja"), ("et", "Liège’i provints"), ("eu", "Liejako probintzia"), ("fa", "استان لیژ"), ("fi", "Liègen pronssi"), ("fr", "Liège"), ("ga", "Cúige Liege"), ("gl", "Provincia de Liexa"), ("gu", "લીજ"), ("he", "לייז׳"), ("hi", "लीज"), ("hr", "Liège"), ("hu", "Liège"), ("hy", "Լիեժ"), ("id", "Liège"), ("is", "Liege"), ("it", "provincia di Liegi"), ("ja", "リエージュ州"), ("ka", "ლიეჟის პროვინცია"), ("kn", "ಲ\u{cc0}ಜ\u{ccd}"), ("ko", "리에주 주"), ("lt", "Lježo provincija"), ("lv", "Ljēža"), ("mk", "Лиеж"), ("mr", "लीज"), ("ms", "Liege"), ("nb", "Liège"), ("nl", "provincie Luik"), ("no", "Liège"), ("pl", "Prowincja Liège"), ("pt", "Liège"), ("ro", "Liège"), ("ru", "Льеж"), ("si", "ලය\u{dd2}ගේ"), ("sk", "Lutyšsko"), ("sl", "provinca Liège"), ("sq", "Provinca Liège"), ("sr", "Провинција Лијеж"), ("sr_Latn", "Provincija Lijež"), ("sv", "Liège"), ("ta", "ல\u{bc0}ஜ\u{bcd}"), ("te", "ల\u{c3f}య\u{c47}జ\u{c4d}"), ("th", "มณฑลล\u{e35}แยฌ"), ("tr", "Liège"), ("uk", "Льєж"), ("ur", "لییج"), ("vi", "Liège"), ("zh", "列日省")]),
                         unofficial_name_list: ["Luik", "Lüttich"].to_vec(),
                     }
                 ),
@@ -481,6 +483,7 @@ pub fn new() -> Country {
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Belgian"),
+        maybe_vehicle_registration_code: Some("B"),
         number: "056",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -642,6 +645,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: true,
+        un_member: true,
         eea_member: true,
         maybe_vat_rates: Some(VatRates {
             standard: 21.0,

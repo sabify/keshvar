@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6, 7, 8, 9];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Andorran");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("AND");
     pub const NUMBER: &str = "020";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("AD[1-7]0\\d");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(79824);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Андорра"),
         ("kl", "Andorra"),
         ("km", "អង\u{17cb}ដ\u{17bc}រ\u{17c9}ា"),
-        ("kn", "ಆಂಡೋರ\u{ccd}ರಾ"),
+        ("kn", "ಆಂಡ\u{ccb}ರ\u{ccd}ರಾ"),
         ("ko", "안도라"),
         ("ku", "Andora"),
         ("kv", "Андорра"),
@@ -437,6 +439,7 @@ pub fn new() -> Country {
         national_number_length_list: [6, 7, 8, 9].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Andorran"),
+        maybe_vehicle_registration_code: Some("AND"),
         number: "020",
         postal_code: true,
         postal_code_format: Some("AD[1-7]0\\d"),
@@ -514,7 +517,7 @@ pub fn new() -> Country {
             ("kk", "Андорра"),
             ("kl", "Andorra"),
             ("km", "អង\u{17cb}ដ\u{17bc}រ\u{17c9}ា"),
-            ("kn", "ಆಂಡೋರ\u{ccd}ರಾ"),
+            ("kn", "ಆಂಡ\u{ccb}ರ\u{ccd}ರಾ"),
             ("ko", "안도라"),
             ("ku", "Andora"),
             ("kv", "Андорра"),
@@ -590,6 +593,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

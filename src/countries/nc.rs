@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("New Caledonian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("NCL");
     pub const NUMBER: &str = "540";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("988\\d{2}");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(269220);
@@ -126,7 +128,7 @@ pub mod consts {
         ("kk", "Жаңа Каледония"),
         ("kl", "New Caledonia"),
         ("km", "ន\u{17bc}វែលកាលេដ\u{17bc}ន\u{17b8}"),
-        ("kn", "ಹೊಸ ಕ\u{cc6}ಲ\u{cc6}ಡೊನ\u{cbf}ಯಾ"),
+        ("kn", "ಹ\u{cca}ಸ ಕ\u{cc6}ಲ\u{cc6}ಡ\u{cca}ನ\u{cbf}ಯಾ"),
         ("ko", "누벨칼레도니"),
         ("ku", "Kaledonyaya Nû"),
         ("kv", "New Caledonia"),
@@ -283,6 +285,7 @@ pub fn new() -> Country {
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("New Caledonian"),
+        maybe_vehicle_registration_code: Some("NCL"),
         number: "540",
         postal_code: true,
         postal_code_format: Some("988\\d{2}"),
@@ -374,7 +377,7 @@ pub fn new() -> Country {
             ("kk", "Жаңа Каледония"),
             ("kl", "New Caledonia"),
             ("km", "ន\u{17bc}វែលកាលេដ\u{17bc}ន\u{17b8}"),
-            ("kn", "ಹೊಸ ಕ\u{cc6}ಲ\u{cc6}ಡೊನ\u{cbf}ಯಾ"),
+            ("kn", "ಹ\u{cca}ಸ ಕ\u{cc6}ಲ\u{cc6}ಡ\u{cca}ನ\u{cbf}ಯಾ"),
             ("ko", "누벨칼레도니"),
             ("ku", "Kaledonyaya Nû"),
             ("kv", "New Caledonia"),
@@ -447,6 +450,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

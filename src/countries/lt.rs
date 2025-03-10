@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "8";
     pub const NATIONALITY: Option<&str> = Some("Lithuanian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("LT");
     pub const NUMBER: &str = "440";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{5}");
@@ -51,6 +52,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(2831639);
@@ -122,7 +124,7 @@ pub mod consts {
         ("kk", "Литва"),
         ("kl", "Lithuania"),
         ("km", "ល\u{17b8}ទ\u{17bb}យអាន\u{17b8}"),
-        ("kn", "ಲ\u{cbf}ಥುವೇನ\u{cbf}ಯಾ"),
+        ("kn", "ಲ\u{cbf}ಥುವ\u{cc7}ನ\u{cbf}ಯಾ"),
         ("ko", "리투아니아"),
         ("ku", "Lîtvanya"),
         ("kv", "Литва"),
@@ -1208,7 +1210,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::County,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة ميرايامبوله"), ("az", "Mariyampol qəzası"), ("be", "Марыямпальскі павет"), ("bg", "Мариямполски окръг"), ("bn", "ম\u{9be}রিজ\u{9be}ম\u{9cd}পোল ক\u{9be}উন\u{9cd}টি"), ("bs", "Okrug Marijampolė"), ("ca", "Comtat de Marijampolė"), ("ccp", "𑄟𑄢\u{11128}𑄟\u{11134}𑄛\u{1112e}𑄣\u{11134} 𑄇𑄅\u{1112a}𑄚\u{11134}𑄑\u{11128}"), ("ceb", "Marijampolės apskritis"), ("cs", "Marijampolský kraj"), ("cy", "Sir Marijampolė"), ("da", "Marijampolė amt"), ("de", "Bezirk Marijampolė"), ("el", "Επαρχία Μαριγιαμπολέ"), ("en", "Marijampolė County"), ("es", "Marijampolė²"), ("et", "Marijampolė maakond"), ("eu", "Marijampolėko konderria"), ("fa", "شهرستان ماریامپوله"), ("fi", "Marijampolėn lääni"), ("fr", "apskritis de Marijampolė"), ("ga", "Contae Marijampolė"), ("gu", "મારિજ\u{ac7}મ\u{acd}પોલ\u{ac7} કાઉન\u{acd}ટી"), ("he", "מחוז מריאמפולה"), ("hi", "मारिय\u{947}म\u{94d}पोल काउ\u{902}टी"), ("hr", "Okrug Marijampolė"), ("id", "County Marijampolė"), ("it", "contea di Marijampolė"), ("ja", "マリヤーンポレ県"), ("ka", "მარიამპოლის მაზრა"), ("kn", "ಮರ\u{cbf}ಜಾಂಪೊಲ\u{cc6} ಕ\u{ccc}ಂಟ\u{cbf}"), ("ko", "마리얌폴레 주"), ("lt", "Marijampolės apskritis"), ("lv", "Marijampoles apriņķis"), ("mk", "Маријамполски округ"), ("mr", "मारिजपोल\u{94d}ल\u{947} काउ\u{902}टी"), ("ms", "Marijampole County"), ("nb", "Marijampolė fylke"), ("nl", "Marijampolė²"), ("no", "Marijampolė fylke"), ("pl", "Okręg mariampolski"), ("pt", "Marijampolė (condado)"), ("ro", "Județul Marijampolė"), ("ru", "Мариямпольский уезд"), ("si", "මර\u{dd2}ජම\u{dca}පොලේ ප\u{dca}\u{200d}ර\u{dcf}න\u{dca}තය"), ("sr", "Маријамполе округ"), ("sr_Latn", "Marijampole okrug"), ("sv", "Marijampolė (provins)"), ("sw", "Wilaya ya Marijampolė"), ("ta", "மரிசம\u{bcd}போலே கவுண\u{bcd}டி"), ("te", "మ\u{c3e}ర\u{c3f}జ\u{c3e}ంప\u{c4b}ల\u{c4d} క\u{c4c}ంట\u{c40}"), ("th", "มาร\u{e34}ยามโปเล"), ("tr", "Marijampolė County"), ("uk", "Маріямпольський повіт"), ("ur", "مارییامپولے کاؤنٹی"), ("vi", "Marijampolė (hạt)"), ("yue", "馬麗漢普縣"), ("yue_Hans", "马丽汉普县"), ("zh", "馬里揚泊列縣")]),
+                        translations: HashMap::from([("ar", "مقاطعة ميرايامبوله"), ("az", "Mariyampol qəzası"), ("be", "Марыямпальскі павет"), ("bg", "Мариямполски окръг"), ("bn", "ম\u{9be}রিজ\u{9be}ম\u{9cd}পোল ক\u{9be}উন\u{9cd}টি"), ("bs", "Okrug Marijampolė"), ("ca", "Comtat de Marijampolė"), ("ccp", "𑄟𑄢\u{11128}𑄟\u{11134}𑄛\u{1112e}𑄣\u{11134} 𑄇𑄅\u{1112a}𑄚\u{11134}𑄑\u{11128}"), ("ceb", "Marijampolės apskritis"), ("cs", "Marijampolský kraj"), ("cy", "Sir Marijampolė"), ("da", "Marijampolė amt"), ("de", "Bezirk Marijampolė"), ("el", "Επαρχία Μαριγιαμπολέ"), ("en", "Marijampolė County"), ("es", "Marijampolė²"), ("et", "Marijampolė maakond"), ("eu", "Marijampolėko konderria"), ("fa", "شهرستان ماریامپوله"), ("fi", "Marijampolėn lääni"), ("fr", "apskritis de Marijampolė"), ("ga", "Contae Marijampolė"), ("gu", "મારિજ\u{ac7}મ\u{acd}પોલ\u{ac7} કાઉન\u{acd}ટી"), ("he", "מחוז מריאמפולה"), ("hi", "मारिय\u{947}म\u{94d}पोल काउ\u{902}टी"), ("hr", "Okrug Marijampolė"), ("id", "County Marijampolė"), ("it", "contea di Marijampolė"), ("ja", "マリヤーンポレ県"), ("ka", "მარიამპოლის მაზრა"), ("kn", "ಮರ\u{cbf}ಜಾಂಪ\u{cca}ಲ\u{cc6} ಕ\u{ccc}ಂಟ\u{cbf}"), ("ko", "마리얌폴레 주"), ("lt", "Marijampolės apskritis"), ("lv", "Marijampoles apriņķis"), ("mk", "Маријамполски округ"), ("mr", "मारिजपोल\u{94d}ल\u{947} काउ\u{902}टी"), ("ms", "Marijampole County"), ("nb", "Marijampolė fylke"), ("nl", "Marijampolė²"), ("no", "Marijampolė fylke"), ("pl", "Okręg mariampolski"), ("pt", "Marijampolė (condado)"), ("ro", "Județul Marijampolė"), ("ru", "Мариямпольский уезд"), ("si", "මර\u{dd2}ජම\u{dca}පොලේ ප\u{dca}\u{200d}ර\u{dcf}න\u{dca}තය"), ("sr", "Маријамполе округ"), ("sr_Latn", "Marijampole okrug"), ("sv", "Marijampolė (provins)"), ("sw", "Wilaya ya Marijampolė"), ("ta", "மரிசம\u{bcd}போலே கவுண\u{bcd}டி"), ("te", "మ\u{c3e}ర\u{c3f}జ\u{c3e}ంప\u{c4b}ల\u{c4d} క\u{c4c}ంట\u{c40}"), ("th", "มาร\u{e34}ยามโปเล"), ("tr", "Marijampolė County"), ("uk", "Маріямпольський повіт"), ("ur", "مارییامپولے کاؤنٹی"), ("vi", "Marijampolė (hạt)"), ("yue", "馬麗漢普縣"), ("yue_Hans", "马丽汉普县"), ("zh", "馬里揚泊列縣")]),
                         unofficial_name_list: ["Mariampoles"].to_vec(),
                     }
                 ),
@@ -1337,6 +1339,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "8",
         maybe_nationality: Some("Lithuanian"),
+        maybe_vehicle_registration_code: Some("LT"),
         number: "440",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -1424,7 +1427,7 @@ pub fn new() -> Country {
             ("kk", "Литва"),
             ("kl", "Lithuania"),
             ("km", "ល\u{17b8}ទ\u{17bb}យអាន\u{17b8}"),
-            ("kn", "ಲ\u{cbf}ಥುವೇನ\u{cbf}ಯಾ"),
+            ("kn", "ಲ\u{cbf}ಥುವ\u{cc7}ನ\u{cbf}ಯಾ"),
             ("ko", "리투아니아"),
             ("ku", "Lîtvanya"),
             ("kv", "Литва"),
@@ -1500,6 +1503,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: true,
+        un_member: true,
         eea_member: true,
         maybe_vat_rates: Some(VatRates {
             standard: 21.0,

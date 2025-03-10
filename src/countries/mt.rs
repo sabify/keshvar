@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "21";
     pub const NATIONALITY: Option<&str> = Some("Maltese");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("M");
     pub const NUMBER: &str = "470";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("[A-Z]{3} ?\\d{2,4}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(531113);
@@ -857,7 +859,7 @@ pub mod subdivisions {
                         ("id", "Floriana"),
                         ("it", "Floriana"),
                         ("ja", "フロリアーナ"),
-                        ("kn", "ಫ\u{ccd}ಲೋರ\u{cbf}ಯಾನಾ"),
+                        ("kn", "ಫ\u{ccd}ಲ\u{ccb}ರ\u{cbf}ಯಾನಾ"),
                         ("ko", "플로리아나"),
                         ("lt", "Floriana"),
                         ("lv", "Floriana"),
@@ -1811,7 +1813,7 @@ pub mod subdivisions {
                         ("id", "Kirkop"),
                         ("it", "Chircop"),
                         ("ja", "キルコップ"),
-                        ("kn", "ಕ\u{cbf}ರ\u{ccd}ಕ\u{ccd}ಕೋಪ\u{ccd}"),
+                        ("kn", "ಕ\u{cbf}ರ\u{ccd}ಕ\u{ccd}ಕ\u{ccb}ಪ\u{ccd}"),
                         ("ko", "키르코프"),
                         ("lt", "Kirkopas"),
                         ("lv", "Kirkopa"),
@@ -2139,7 +2141,7 @@ pub mod subdivisions {
                         ("it", "Marsa Scirocco"),
                         ("ja", "マルサシロク"),
                         ("kk", "Марсашлокк"),
-                        ("kn", "ಮರಾಕ\u{ccd}ಸ\u{ccd}ಲೋಕ\u{ccd}"),
+                        ("kn", "ಮರಾಕ\u{ccd}ಸ\u{ccd}ಲ\u{ccb}ಕ\u{ccd}"),
                         ("ko", "마르사실로크"),
                         ("lt", "Marsašlokas"),
                         ("lv", "Marsašloka"),
@@ -2424,7 +2426,7 @@ pub mod subdivisions {
                         ("id", "Mosta"),
                         ("it", "Musta"),
                         ("ja", "モスタ"),
-                        ("kn", "ಮೋಸ\u{ccd}ಟ"),
+                        ("kn", "ಮ\u{ccb}ಸ\u{ccd}ಟ"),
                         ("ko", "모스타"),
                         ("lt", "Mosta"),
                         ("lv", "Mosta"),
@@ -2892,7 +2894,7 @@ pub mod subdivisions {
                         ("id", "Paola"),
                         ("it", "Paola"),
                         ("ja", "パウラ"),
-                        ("kn", "ಪಾವೊಲಾ"),
+                        ("kn", "ಪಾವ\u{cca}ಲಾ"),
                         ("ko", "파올라"),
                         ("lt", "Paola"),
                         ("lv", "Paola"),
@@ -2957,7 +2959,7 @@ pub mod subdivisions {
                         ("id", "Pembroke"),
                         ("it", "Pembroke"),
                         ("ja", "ペンブローク"),
-                        ("kn", "ಪ\u{cc6}ಂಬ\u{ccd}ರೋಕ\u{ccd}"),
+                        ("kn", "ಪ\u{cc6}ಂಬ\u{ccd}ರ\u{ccb}ಕ\u{ccd}"),
                         ("ko", "펨브로크"),
                         ("lt", "Pembrukas"),
                         ("lv", "Pembroka"),
@@ -3142,7 +3144,7 @@ pub mod subdivisions {
                         ("id", "Qormi"),
                         ("it", "Curmi"),
                         ("ja", "オルミ"),
-                        ("kn", "ಕ\u{ccd}ರೋಮ\u{cbf}"),
+                        ("kn", "ಕ\u{ccd}ರ\u{ccb}ಮ\u{cbf}"),
                         ("ko", "오르미"),
                         ("lt", "Kormis"),
                         ("lv", "Kormi"),
@@ -3282,7 +3284,7 @@ pub mod subdivisions {
                         ("id", "Victoria"),
                         ("it", "Rabat"),
                         ("ja", "ラバット"),
-                        ("kn", "ವ\u{cbf}ಕ\u{ccd}ಟೋರ\u{cbf}ಯ"),
+                        ("kn", "ವ\u{cbf}ಕ\u{ccd}ಟ\u{ccb}ರ\u{cbf}ಯ"),
                         ("ko", "빅토리아"),
                         ("lt", "Viktorija"),
                         ("lv", "Viktorija"),
@@ -3501,7 +3503,7 @@ pub mod subdivisions {
                         ("id", "St. Julian’s"),
                         ("it", "San Giuliano"),
                         ("ja", "センジュリアン"),
-                        ("kn", "ಸೇಂಟ\u{ccd} ಜ\u{cc2}ಲ\u{cbf}ಯನ\u{ccd}ಸ\u{ccd}"),
+                        ("kn", "ಸ\u{cc7}ಂಟ\u{ccd} ಜ\u{cc2}ಲ\u{cbf}ಯನ\u{ccd}ಸ\u{ccd}"),
                         ("ko", "세인트줄리언스"),
                         ("lt", "Sent Džuliansas"),
                         ("lv", "Sentdžuliansa"),
@@ -3644,7 +3646,7 @@ pub mod subdivisions {
                         ("id", "Saint Lawrence"),
                         ("it", "San Lorenzo"),
                         ("ja", "サン・ローレンツ"),
-                        ("kn", "ಸೇಂಟ\u{ccd} ಲಾರ\u{cc6}ನ\u{ccd}ಸ\u{ccd}"),
+                        ("kn", "ಸ\u{cc7}ಂಟ\u{ccd} ಲಾರ\u{cc6}ನ\u{ccd}ಸ\u{ccd}"),
                         ("ko", "산라우렌츠"),
                         ("lt", "San Lavrencas"),
                         ("lv", "Senlorenca"),
@@ -3715,7 +3717,7 @@ pub mod subdivisions {
                         ("id", "St. Paul’s Bay"),
                         ("it", "Baia di San Paolo"),
                         ("ja", "セントポールズ・ベイ"),
-                        ("kn", "ಸೇಂಟ\u{ccd} ಪಾಲ\u{ccd}ಸ\u{ccd} ಬೇ"),
+                        ("kn", "ಸ\u{cc7}ಂಟ\u{ccd} ಪಾಲ\u{ccd}ಸ\u{ccd} ಬ\u{cc7}"),
                         ("ko", "세인트폴스베이"),
                         ("lt", "San Polo Bėjus"),
                         ("lv", "Senpola līcis"),
@@ -4058,7 +4060,7 @@ pub mod subdivisions {
                         ("it", "Sliema"),
                         ("ja", "スリマ"),
                         ("ka", "სლიმა"),
-                        ("kn", "ಸ\u{ccd}ಲೀಮಾ"),
+                        ("kn", "ಸ\u{ccd}ಲ\u{cc0}ಮಾ"),
                         ("ko", "슬리마"),
                         ("lt", "Slima"),
                         ("lv", "Sliema"),
@@ -4267,7 +4269,7 @@ pub mod subdivisions {
                         ("id", "Tarxien"),
                         ("it", "Tarscen"),
                         ("ja", "タルシーン"),
-                        ("kn", "ಟ\u{ccd}ಯಾಕ\u{ccd}ಸೀನ\u{ccd}"),
+                        ("kn", "ಟ\u{ccd}ಯಾಕ\u{ccd}ಸ\u{cc0}ನ\u{ccd}"),
                         ("ko", "타르신"),
                         ("lt", "Taršinas"),
                         ("lv", "Taršina"),
@@ -4955,6 +4957,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "21",
         maybe_nationality: Some("Maltese"),
+        maybe_vehicle_registration_code: Some("M"),
         number: "470",
         postal_code: true,
         postal_code_format: Some("[A-Z]{3} ?\\d{2,4}"),
@@ -5105,6 +5108,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: true,
+        un_member: true,
         eea_member: true,
         maybe_vat_rates: Some(VatRates {
             standard: 18.0,

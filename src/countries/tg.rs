@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Togolese");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RT");
     pub const NUMBER: &str = "768";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(8848699);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Того"),
         ("kl", "Togo"),
         ("km", "ត\u{17bc}ហ\u{17d2}គោ"),
-        ("kn", "ಟೋಗೋ"),
+        ("kn", "ಟ\u{ccb}ಗ\u{ccb}"),
         ("ko", "토고"),
         ("ku", "Togo"),
         ("kv", "Togo"),
@@ -280,7 +282,7 @@ pub mod subdivisions {
                         ("id", "Region Centrale"),
                         ("it", "regione Centrale"),
                         ("ja", "中央州"),
-                        ("kn", "ಸ\u{cc6}ಂಟ\u{ccd}ರೇಲ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಸ\u{cc6}ಂಟ\u{ccd}ರ\u{cc7}ಲ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "중앙 주"),
                         ("lt", "Centrinis regionas"),
                         ("lv", "Centrālais reģions"),
@@ -350,7 +352,7 @@ pub mod subdivisions {
                         ("id", "Region Kara"),
                         ("it", "regione di Kara"),
                         ("ja", "カラ州"),
-                        ("kn", "ಕಾರಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕಾರಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "카라 주"),
                         ("lt", "Karos regionas"),
                         ("lv", "Karas reģions"),
@@ -423,7 +425,7 @@ pub mod subdivisions {
                         ("id", "Region Maritime"),
                         ("it", "regione Marittima"),
                         ("ja", "沿岸州"),
-                        ("kn", "ಕಡಲ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕಡಲ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "마리팀 주"),
                         ("lt", "Pajūrio regionas"),
                         ("lv", "Piejūras reģions"),
@@ -490,7 +492,10 @@ pub mod subdivisions {
                         ("id", "Region Plateaux"),
                         ("it", "regione degli Altopiani"),
                         ("ja", "高原州"),
-                        ("kn", "ಪ\u{ccd}ಲಾಟ\u{cc6}ಯಾಕ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        (
+                            "kn",
+                            "ಪ\u{ccd}ಲಾಟ\u{cc6}ಯಾಕ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ",
+                        ),
                         ("ko", "플라토 주"),
                         ("lt", "Plynaukštės regionas"),
                         ("lv", "Plato reģions"),
@@ -559,7 +564,7 @@ pub mod subdivisions {
                         ("id", "Region Savanes"),
                         ("it", "regione delle Savane"),
                         ("ja", "サバナ州"),
-                        ("kn", "ಸವನ\u{cc6}ಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಸವನ\u{cc6}ಸ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "사반 주"),
                         ("lt", "Savanų regionas"),
                         ("lv", "Savanes reģions"),
@@ -620,6 +625,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Togolese"),
+        maybe_vehicle_registration_code: Some("RT"),
         number: "768",
         postal_code: false,
         postal_code_format: None,
@@ -697,7 +703,7 @@ pub fn new() -> Country {
             ("kk", "Того"),
             ("kl", "Togo"),
             ("km", "ត\u{17bc}ហ\u{17d2}គោ"),
-            ("kn", "ಟೋಗೋ"),
+            ("kn", "ಟ\u{ccb}ಗ\u{ccb}"),
             ("ko", "토고"),
             ("ku", "Togo"),
             ("kv", "Togo"),
@@ -773,6 +779,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

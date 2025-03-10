@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Guinea-Bissauan");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("GUB");
     pub const NUMBER: &str = "624";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{4}");
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(2105566);
@@ -119,7 +121,7 @@ pub mod consts {
         ("kk", "Гвинея-Бисау"),
         ("kl", "Guinea-Bissau"),
         ("km", "ហ\u{17d2}គ\u{17b8}ណេប\u{17ca}\u{17b8}សៅ"),
-        ("kn", "ಗ\u{cbf}ನೀ-ಬ\u{cbf}ಸ\u{ccd}ಸೋ"),
+        ("kn", "ಗ\u{cbf}ನ\u{cc0}-ಬ\u{cbf}ಸ\u{ccd}ಸ\u{ccb}"),
         ("ko", "기니비사우"),
         ("ku", "Gîneya Bisoî"),
         ("kv", "Guinea-Bissau"),
@@ -286,7 +288,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Bafatá"),
                         ("it", "regione di Bafatá"),
                         ("ja", "バファタ州"),
-                        ("kn", "ಬಫಾಟಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಬಫಾಟಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "바파타 주"),
                         ("lt", "Bafatos regionas"),
                         ("lv", "Bafatas reģions"),
@@ -353,7 +355,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Bolama"),
                         ("it", "regione di Bolama"),
                         ("ja", "ボラマ州"),
-                        ("kn", "ಬೋಲಾಮಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಬ\u{ccb}ಲಾಮಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "볼라마 주"),
                         ("lt", "Bolamos regionas"),
                         ("lv", "Bolamas reģions"),
@@ -418,7 +420,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Biombo"),
                         ("it", "regione di Biombo"),
                         ("ja", "ビオンボ州"),
-                        ("kn", "ಬಯೋಂಬೊ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಬಯ\u{ccb}ಂಬ\u{cca} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "비옴부 주"),
                         ("lt", "Biombo regionas"),
                         ("lv", "Biombo reģions"),
@@ -587,7 +589,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Cacheu"),
                         ("it", "regione di Cacheu"),
                         ("ja", "カシェウ州"),
-                        ("kn", "ಕ\u{ccd}ಯಾಚ\u{cc6} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕ\u{ccd}ಯಾಚ\u{cc6} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "카셰우 주"),
                         ("lt", "Kašeu regionas"),
                         ("lv", "Kašeu reģions"),
@@ -653,7 +655,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Gabú"),
                         ("it", "regione di Gabú"),
                         ("ja", "ガブ州"),
-                        ("kn", "ಗಾಬು ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಗಾಬು ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "가부 주"),
                         ("lt", "Gabu regionas"),
                         ("lv", "Gabu reģions"),
@@ -768,7 +770,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Oio"),
                         ("it", "regione di Oio"),
                         ("ja", "オイオ州"),
-                        ("kn", "ಓಯೊ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಓಯ\u{cca} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "오이우 주"),
                         ("lt", "Ojo regionas"),
                         ("lv", "Oio reģions"),
@@ -835,7 +837,7 @@ pub mod subdivisions {
                         ("id", "Wilayah Quinara"),
                         ("it", "regione di Quinara"),
                         ("ja", "キナラ州"),
-                        ("kn", "ಕ\u{ccd}ವ\u{cbf}ನಾರ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕ\u{ccd}ವ\u{cbf}ನಾರ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "키나라 주"),
                         ("lt", "Kinaros regionas"),
                         ("lv", "Kinaras reģions"),
@@ -924,7 +926,7 @@ pub mod subdivisions {
                         ("id", "TombaliWilayah"),
                         ("it", "regione di Tombali"),
                         ("ja", "トンバリ州"),
-                        ("kn", "ಟೋಂಬಲ\u{cbf} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಟ\u{ccb}ಂಬಲ\u{cbf} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "톰발리 주"),
                         ("lt", "Tombali regionas"),
                         ("lv", "Tombali reģions"),
@@ -984,6 +986,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Guinea-Bissauan"),
+        maybe_vehicle_registration_code: Some("GUB"),
         number: "624",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -1068,7 +1071,7 @@ pub fn new() -> Country {
             ("kk", "Гвинея-Бисау"),
             ("kl", "Guinea-Bissau"),
             ("km", "ហ\u{17d2}គ\u{17b8}ណេប\u{17ca}\u{17b8}សៅ"),
-            ("kn", "ಗ\u{cbf}ನೀ-ಬ\u{cbf}ಸ\u{ccd}ಸೋ"),
+            ("kn", "ಗ\u{cbf}ನ\u{cc0}-ಬ\u{cbf}ಸ\u{ccd}ಸ\u{ccb}"),
             ("ko", "기니비사우"),
             ("ku", "Gîneya Bisoî"),
             ("kv", "Guinea-Bissau"),
@@ -1144,6 +1147,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

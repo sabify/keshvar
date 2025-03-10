@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "1";
     pub const NATIONALITY: Option<&str> = Some("Marshallese");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MH");
     pub const NUMBER: &str = "584";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("(969[67]\\d)(?:[ \\-](\\d{4}))?");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(41569);
@@ -129,7 +131,7 @@ pub mod consts {
         ("kk", "Маршалл аралдары"),
         ("kl", "Marshall Islands"),
         ("km", "កោះ\u{200b}ម\u{17c9}ាស\u{17d2}យល"),
-        ("kn", "ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+        ("kn", "ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
         ("ko", "마셜 제도"),
         ("ku", "Giravên Marsal"),
         ("kv", "Marshall Islands"),
@@ -420,7 +422,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::ChainOfIslands,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "راليك تشين"), ("bn", "র\u{9be}লিকচেইন"), ("ccp", "𑄢𑄣\u{11128}𑄇\u{11134} 𑄌𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Ralik Chain"), ("da", "Ralik Chain"), ("de", "Ralik-Kette"), ("el", "Ράλικ Τσέιν"), ("en", "Ralik Chain"), ("es", "Ralik Cadena"), ("et", "Raliki saared"), ("fa", "زنجیره رالیک"), ("fi", "Ralik"), ("fr", "Îles Ralik"), ("gu", "રાલિક ચ\u{ac7}ઇન"), ("he", "שרשרת רליק"), ("hi", "रालिक च\u{947}न"), ("hr", "Ralik"), ("id", "Ralik Chain"), ("it", "Ralik"), ("ja", "ラリック列島"), ("ka", "რალიკის ჯაჭვი"), ("kn", "ರಾಲ\u{cbf}ಕ\u{ccd} ಚೈನ\u{ccd}"), ("ko", "랄리크 열도"), ("lt", "Raliko salos"), ("lv", "Raliku salas"), ("mk", "Ралички Острови"), ("mr", "रालिक च\u{947}न"), ("ms", "Ralik Chain"), ("nb", "Ralik-kjeden"), ("nl", "Ralik Chain"), ("no", "Ralik-kjeden"), ("pl", "Ralik Chain"), ("pt", "Cadeia Ralik"), ("ru", "Цепь Ралик"), ("si", "රල\u{dd2}ක\u{dca} චේන\u{dca}"), ("sv", "Raliköarna"), ("ta", "ர\u{bbe}லிக\u{bcd} செயின\u{bcd}"), ("te", "ర\u{c3e}ల\u{c3f}క\u{c4d} చ\u{c48}న\u{c4d}"), ("th", "ลาล\u{e34}ก เชน"), ("tr", "Ralik Chain"), ("uk", "Ланцюг Ралік"), ("ur", "رالیک چین"), ("vi", "Chuỗi đảo Ralik"), ("zh", "拉利克礁鏈")]),
+                        translations: HashMap::from([("ar", "راليك تشين"), ("bn", "র\u{9be}লিকচেইন"), ("ccp", "𑄢𑄣\u{11128}𑄇\u{11134} 𑄌𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Ralik Chain"), ("da", "Ralik Chain"), ("de", "Ralik-Kette"), ("el", "Ράλικ Τσέιν"), ("en", "Ralik Chain"), ("es", "Ralik Cadena"), ("et", "Raliki saared"), ("fa", "زنجیره رالیک"), ("fi", "Ralik"), ("fr", "Îles Ralik"), ("gu", "રાલિક ચ\u{ac7}ઇન"), ("he", "שרשרת רליק"), ("hi", "रालिक च\u{947}न"), ("hr", "Ralik"), ("id", "Ralik Chain"), ("it", "Ralik"), ("ja", "ラリック列島"), ("ka", "რალიკის ჯაჭვი"), ("kn", "ರಾಲ\u{cbf}ಕ\u{ccd} ಚ\u{cc8}ನ\u{ccd}"), ("ko", "랄리크 열도"), ("lt", "Raliko salos"), ("lv", "Raliku salas"), ("mk", "Ралички Острови"), ("mr", "रालिक च\u{947}न"), ("ms", "Ralik Chain"), ("nb", "Ralik-kjeden"), ("nl", "Ralik Chain"), ("no", "Ralik-kjeden"), ("pl", "Ralik Chain"), ("pt", "Cadeia Ralik"), ("ru", "Цепь Ралик"), ("si", "රල\u{dd2}ක\u{dca} චේන\u{dca}"), ("sv", "Raliköarna"), ("ta", "ர\u{bbe}லிக\u{bcd} செயின\u{bcd}"), ("te", "ర\u{c3e}ల\u{c3f}క\u{c4d} చ\u{c48}న\u{c4d}"), ("th", "ลาล\u{e34}ก เชน"), ("tr", "Ralik Chain"), ("uk", "Ланцюг Ралік"), ("ur", "رالیک چین"), ("vi", "Chuỗi đảo Ralik"), ("zh", "拉利克礁鏈")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -480,7 +482,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Municipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Majuro"), ("am", "ማጁሮ"), ("ar", "ماجورو"), ("az", "Macuro"), ("be", "Горад Маджура"), ("bg", "Маджуро"), ("bn", "ম\u{9be}জ\u{9c1}রো"), ("bs", "Majuro"), ("ca", "Majuro"), ("ccp", "𑄟𑄎\u{1112a}𑄢\u{1112e}"), ("ceb", "Majuro Atoll (munisipyo)"), ("cs", "Majuro"), ("cy", "Majuro"), ("da", "Majuro"), ("de", "Majuro-Atoll"), ("el", "Ματζούρο"), ("en", "Majuro"), ("es", "Majuro"), ("et", "Majuro atoll"), ("eu", "Majuro"), ("fa", "ماجورو"), ("fi", "Majuro"), ("fr", "Majuro"), ("gl", "Majuro"), ("gu", "માજ\u{ac1}રો"), ("he", "מג׳ורו"), ("hi", "माज\u{941}रो"), ("hr", "Majuro"), ("hu", "Majuro"), ("hy", "Մաջուրո"), ("id", "Majuro"), ("is", "Majúró"), ("it", "Majuro"), ("ja", "マジュロ"), ("ka", "მაჯურო"), ("kk", "Маджуро"), ("kn", "ಮಜುರೊ"), ("ko", "마주로"), ("lt", "Madžūras"), ("lv", "Madžuro"), ("mk", "Маџуро"), ("ml", "മ\u{d3e}ജ\u{d41}റോ"), ("mr", "माज\u{941}रो"), ("ms", "Majuro"), ("nb", "Majuro"), ("nl", "Majuro"), ("no", "Majuro"), ("pa", "ਮਾਜ\u{a41}ਰ\u{a4b}"), ("pl", "Majuro"), ("ps", "ماجورو"), ("pt", "Majuro"), ("ro", "Majuro"), ("ru", "Маджуро"), ("si", "මජ\u{dd4}රෝ"), ("sk", "Dalap-Uliga-Darrit"), ("sl", "Majuro"), ("sq", "Majuro"), ("sr", "Маџуро"), ("sr_Latn", "Madžuro"), ("sv", "Majuro"), ("sw", "Majuro"), ("ta", "ம\u{bbe}சூரோ"), ("te", "మ\u{c3e}జుర\u{c4b}"), ("th", "มาจ\u{e39}โร"), ("tr", "Majuro"), ("uk", "Маджуро"), ("ur", "ماجورو"), ("uz", "Majuro"), ("vi", "Majuro"), ("yue", "馬祖盧"), ("yue_Hans", "马祖卢"), ("zh", "馬久羅")]),
+                        translations: HashMap::from([("af", "Majuro"), ("am", "ማጁሮ"), ("ar", "ماجورو"), ("az", "Macuro"), ("be", "Горад Маджура"), ("bg", "Маджуро"), ("bn", "ম\u{9be}জ\u{9c1}রো"), ("bs", "Majuro"), ("ca", "Majuro"), ("ccp", "𑄟𑄎\u{1112a}𑄢\u{1112e}"), ("ceb", "Majuro Atoll (munisipyo)"), ("cs", "Majuro"), ("cy", "Majuro"), ("da", "Majuro"), ("de", "Majuro-Atoll"), ("el", "Ματζούρο"), ("en", "Majuro"), ("es", "Majuro"), ("et", "Majuro atoll"), ("eu", "Majuro"), ("fa", "ماجورو"), ("fi", "Majuro"), ("fr", "Majuro"), ("gl", "Majuro"), ("gu", "માજ\u{ac1}રો"), ("he", "מג׳ורו"), ("hi", "माज\u{941}रो"), ("hr", "Majuro"), ("hu", "Majuro"), ("hy", "Մաջուրո"), ("id", "Majuro"), ("is", "Majúró"), ("it", "Majuro"), ("ja", "マジュロ"), ("ka", "მაჯურო"), ("kk", "Маджуро"), ("kn", "ಮಜುರ\u{cca}"), ("ko", "마주로"), ("lt", "Madžūras"), ("lv", "Madžuro"), ("mk", "Маџуро"), ("ml", "മ\u{d3e}ജ\u{d41}റോ"), ("mr", "माज\u{941}रो"), ("ms", "Majuro"), ("nb", "Majuro"), ("nl", "Majuro"), ("no", "Majuro"), ("pa", "ਮਾਜ\u{a41}ਰ\u{a4b}"), ("pl", "Majuro"), ("ps", "ماجورو"), ("pt", "Majuro"), ("ro", "Majuro"), ("ru", "Маджуро"), ("si", "මජ\u{dd4}රෝ"), ("sk", "Dalap-Uliga-Darrit"), ("sl", "Majuro"), ("sq", "Majuro"), ("sr", "Маџуро"), ("sr_Latn", "Madžuro"), ("sv", "Majuro"), ("sw", "Majuro"), ("ta", "ம\u{bbe}சூரோ"), ("te", "మ\u{c3e}జుర\u{c4b}"), ("th", "มาจ\u{e39}โร"), ("tr", "Majuro"), ("uk", "Маджуро"), ("ur", "ماجورو"), ("uz", "Majuro"), ("vi", "Majuro"), ("yue", "馬祖盧"), ("yue_Hans", "马祖卢"), ("zh", "馬久羅")]),
                         unofficial_name_list: ["Mājro"].to_vec(),
                     }
                 ),
@@ -585,7 +587,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::ChainOfIslands,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "سلسلة راتاك"), ("bn", "র\u{9be}ত\u{9be}ক চেইন"), ("ccp", "𑄢𑄑𑄇\u{11134} 𑄌𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Ratak Chain"), ("da", "Ratak Chain"), ("de", "Ratak-Kette"), ("el", "Ρατάκ Τσέιν"), ("en", "Ratak Chain"), ("es", "Ratak Chain"), ("et", "Rataki saared"), ("eu", "Ratak Katea"), ("fa", "زنجیره راتاک"), ("fi", "Ratak"), ("fr", "Îles Ratak"), ("gu", "રાતક ચ\u{ac7}ઇન"), ("he", "שרשרת רטק"), ("hi", "रतक च\u{947}न"), ("hr", "Ratak"), ("id", "Ratak Chain"), ("it", "Isole Ratak"), ("ja", "ラタック列島"), ("ka", "რატაკის ჯაჭვი"), ("kn", "ರಟಾಕ\u{ccd} ಚೈನ\u{ccd}"), ("ko", "라타크 열도"), ("lt", "Ratako salos"), ("lv", "Rataku salas"), ("mk", "Ратачки Острови"), ("mr", "रत\u{94d}क च\u{947}न"), ("ms", "Ratak Chain"), ("nb", "Ratak Chain"), ("nl", "Ratak Chain"), ("no", "Ratak Chain"), ("pl", "Ratak Chain"), ("pt", "Cadeia Ratak"), ("ru", "Цепь Ратак"), ("si", "රටක\u{dca} චේන\u{dca}"), ("sv", "Rataköarna"), ("ta", "ர\u{bbe}டக\u{bcd} செயின\u{bcd}"), ("te", "ర\u{c3e}టక\u{c4d} చ\u{c48}న\u{c4d}"), ("th", "แนวเกาะราต\u{e31}ก"), ("tr", "Ratak Chain"), ("uk", "Ланцюг Ратак"), ("ur", "راتاک چین"), ("vi", "Chuỗi đảo Ratak"), ("zh", "拉塔克礁鏈")]),
+                        translations: HashMap::from([("ar", "سلسلة راتاك"), ("bn", "র\u{9be}ত\u{9be}ক চেইন"), ("ccp", "𑄢𑄑𑄇\u{11134} 𑄌𑄬\u{1112d}𑄚\u{11134}"), ("ceb", "Ratak Chain"), ("da", "Ratak Chain"), ("de", "Ratak-Kette"), ("el", "Ρατάκ Τσέιν"), ("en", "Ratak Chain"), ("es", "Ratak Chain"), ("et", "Rataki saared"), ("eu", "Ratak Katea"), ("fa", "زنجیره راتاک"), ("fi", "Ratak"), ("fr", "Îles Ratak"), ("gu", "રાતક ચ\u{ac7}ઇન"), ("he", "שרשרת רטק"), ("hi", "रतक च\u{947}न"), ("hr", "Ratak"), ("id", "Ratak Chain"), ("it", "Isole Ratak"), ("ja", "ラタック列島"), ("ka", "რატაკის ჯაჭვი"), ("kn", "ರಟಾಕ\u{ccd} ಚ\u{cc8}ನ\u{ccd}"), ("ko", "라타크 열도"), ("lt", "Ratako salos"), ("lv", "Rataku salas"), ("mk", "Ратачки Острови"), ("mr", "रत\u{94d}क च\u{947}न"), ("ms", "Ratak Chain"), ("nb", "Ratak Chain"), ("nl", "Ratak Chain"), ("no", "Ratak Chain"), ("pl", "Ratak Chain"), ("pt", "Cadeia Ratak"), ("ru", "Цепь Ратак"), ("si", "රටක\u{dca} චේන\u{dca}"), ("sv", "Rataköarna"), ("ta", "ர\u{bbe}டக\u{bcd} செயின\u{bcd}"), ("te", "ర\u{c3e}టక\u{c4d} చ\u{c48}న\u{c4d}"), ("th", "แนวเกาะราต\u{e31}ก"), ("tr", "Ratak Chain"), ("uk", "Ланцюг Ратак"), ("ur", "راتاک چین"), ("vi", "Chuỗi đảo Ratak"), ("zh", "拉塔克礁鏈")]),
                         unofficial_name_list: [].to_vec(),
                     }
                 ),
@@ -699,6 +701,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "1",
         maybe_nationality: Some("Marshallese"),
+        maybe_vehicle_registration_code: Some("MH"),
         number: "584",
         postal_code: true,
         postal_code_format: Some("(969[67]\\d)(?:[ \\-](\\d{4}))?"),
@@ -793,7 +796,7 @@ pub fn new() -> Country {
             ("kk", "Маршалл аралдары"),
             ("kl", "Marshall Islands"),
             ("km", "កោះ\u{200b}ម\u{17c9}ាស\u{17d2}យល"),
-            ("kn", "ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+            ("kn", "ಮಾರ\u{ccd}ಷಲ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
             ("ko", "마셜 제도"),
             ("ku", "Giravên Marsal"),
             ("kv", "Marshall Islands"),
@@ -869,6 +872,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

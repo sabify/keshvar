@@ -24,12 +24,13 @@ pub mod consts {
     pub const IOC: Option<IOC> = Some(IOC::FIJ);
     pub const ISO_SHORT_NAME: &str = "Fiji";
     pub const ISO_LONG_NAME: &str = "The Republic of Fiji";
-    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi", "ur"];
+    pub const OFFICIAL_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi"];
     pub const SPOKEN_LANGUAGE_LIST: &[&str] = &["en", "fj", "hi", "ur"];
     pub const NATIONAL_DESTINATION_CODE_LENGTH_LIST: &[usize] = &[2];
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Fijian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("FJI");
     pub const NUMBER: &str = "242";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(929766);
@@ -413,7 +415,7 @@ pub mod subdivisions {
                         ("hi", "लओओ प\u{94d}रान\u{94d}त\u{94d}"),
                         ("it", "Provincia di Lau"),
                         ("ja", "ラウ州"),
-                        ("kn", "ಲಾವ\u{ccd} ಪ\u{ccd}ರೋವ\u{cbf}ನ\u{ccd}ಸ\u{ccd}"),
+                        ("kn", "ಲಾವ\u{ccd} ಪ\u{ccd}ರ\u{ccb}ವ\u{cbf}ನ\u{ccd}ಸ\u{ccd}"),
                         ("ko", "라우 주"),
                         ("nb", "Lau Province"),
                         ("nl", "Lau"),
@@ -603,7 +605,7 @@ pub mod subdivisions {
                         ("hi", "नमोसि प\u{94d}रन\u{94d}त\u{94d}"),
                         ("it", "Provincia di Namosi"),
                         ("ja", "ナモシ州"),
-                        ("kn", "ನಮೋಸ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ನಮ\u{ccb}ಸ\u{cbf} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "나모시 주"),
                         ("nb", "Namosi Province"),
                         ("nl", "Namosi"),
@@ -677,7 +679,7 @@ pub mod subdivisions {
                         ("it", "Provincia di Rewa"),
                         ("ja", "レワ州"),
                         ("ka", "რევის პროვინცია"),
-                        ("kn", "ರೇವಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ರ\u{cc7}ವಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "레와 주"),
                         ("nb", "Rewa Province"),
                         ("nl", "Rewa"),
@@ -752,7 +754,7 @@ pub mod subdivisions {
                         ("hi", "ताळीव प\u{94d}रा\u{902}त\u{94d}"),
                         ("it", "Provincia di Tailevu"),
                         ("ja", "タイレブ州"),
-                        ("kn", "ತೈಲ\u{cc6}ವ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ತ\u{cc8}ಲ\u{cc6}ವ\u{ccd} ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "타일레부 주"),
                         ("nb", "Tailevu Province"),
                         ("nl", "Tailevu"),
@@ -805,7 +807,7 @@ pub mod subdivisions {
                         ("it", "divisione Centrale"),
                         ("ja", "中央地域 (フィジー)"),
                         ("ka", "ცენტრალური ოლქი"),
-                        ("kn", "ಕೇಂದ\u{ccd}ರ ವ\u{cbf}ಭಾಗ"),
+                        ("kn", "ಕ\u{cc7}ಂದ\u{ccd}ರ ವ\u{cbf}ಭಾಗ"),
                         ("ko", "중부 구"),
                         ("lt", "Centrinis Fidžio padalinys"),
                         ("lv", "Centrālais apgabals"),
@@ -1015,7 +1017,7 @@ pub mod subdivisions {
                         ("it", "Rotuma"),
                         ("ja", "ロツマ島"),
                         ("ka", "როტუმა"),
-                        ("kn", "ರೊಟುಮಾ"),
+                        ("kn", "ರ\u{cca}ಟುಮಾ"),
                         ("ko", "로투마 섬"),
                         ("lt", "Rotuma"),
                         ("lv", "Rotuma"),
@@ -1138,12 +1140,13 @@ pub fn new() -> Country {
         maybe_ioc: Some(IOC::FIJ),
         iso_long_name: "The Republic of Fiji",
         iso_short_name: "Fiji",
-        official_language_list: ["en", "fj", "hi", "ur"].to_vec(),
+        official_language_list: ["en", "fj", "hi"].to_vec(),
         spoken_language_list: ["en", "fj", "hi", "ur"].to_vec(),
         national_destination_code_length_list: [2].to_vec(),
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Fijian"),
+        maybe_vehicle_registration_code: Some("FJI"),
         number: "242",
         postal_code: false,
         postal_code_format: None,
@@ -1297,6 +1300,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

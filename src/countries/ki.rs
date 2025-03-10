@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("I-Kiribati");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("KIR");
     pub const NUMBER: &str = "296";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(131232);
@@ -254,7 +256,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::GroupOfIslands,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "جزر جلبرت"), ("be", "Астравы Гілберта"), ("bg", "Гилбъртови острови"), ("ca", "Illes Gilbert"), ("ccp", "𑄉\u{11128}𑄣\u{11134}𑄝𑄢\u{11134}𑄑\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}𑄥\u{11134}"), ("ceb", "Gilbert Islands (kapuloan)"), ("cs", "Gilbertovy ostrovy"), ("cy", "Ynysoedd Gilbert"), ("da", "Gilbertøerne"), ("de", "Gilbertinseln"), ("el", "Νησιά Γκίλμπερτ"), ("en", "Gilbert Islands"), ("es", "Islas Gilbert"), ("et", "Gilberti saared"), ("eu", "Gilbert Uharteak"), ("fa", "جزایر گیلبرت"), ("fi", "Gilbertsaaret"), ("fr", "Îles Gilbert"), ("gl", "Illas Gilbert"), ("he", "איי גילברט"), ("hi", "गिल\u{94d}बर\u{94d}ट द\u{94d}वीप सम\u{942}ह"), ("hr", "Gilbertovi otoci"), ("hu", "Gilbert-szigetek"), ("hy", "Գիլբերտի կղզիներ"), ("id", "Kepulauan Gilbert"), ("is", "Gilbertseyjar"), ("it", "Isole Gilbert"), ("ja", "ギルバート諸島"), ("ka", "გილბერტის კუნძულები"), ("kk", "Гилберт аралдары"), ("kn", "ಗ\u{cbf}ಲ\u{ccd}ಬರ\u{ccd}ಟ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"), ("ko", "길버트 제도"), ("ky", "Гилберт аралдары"), ("lt", "Gilberto salos"), ("lv", "Gilberta salas"), ("mk", "Гилбертови Острови"), ("mr", "गिल\u{94d}बर\u{94d}ट द\u{94d}वीपसम\u{942}ह"), ("nb", "Gilbertøyene"), ("nl", "Gilberteilanden"), ("no", "Gilbertøyene"), ("pl", "Wyspy Gilberta"), ("pt", "Ilhas Gilbert"), ("ru", "Острова Гилберта"), ("sk", "Gilbertove ostrovy"), ("sl", "Gilbertovi otoki"), ("sv", "Gilbertöarna"), ("th", "หม\u{e39}\u{e48}เกาะก\u{e34}ลเบ\u{e34}ร\u{e4c}ต"), ("tr", "Gilbert Adaları"), ("uk", "Острови Гілберта"), ("uz", "Gilbert orollari"), ("vi", "Quần đảo Gilbert"), ("yue", "驕拔群島"), ("yue_Hans", "骄拔群岛"), ("zh", "吉尔伯特群岛")]),
+                        translations: HashMap::from([("ar", "جزر جلبرت"), ("be", "Астравы Гілберта"), ("bg", "Гилбъртови острови"), ("ca", "Illes Gilbert"), ("ccp", "𑄉\u{11128}𑄣\u{11134}𑄝𑄢\u{11134}𑄑\u{11134} 𑄃\u{11128}𑄌\u{11134}𑄣\u{11133}𑄠𑄚\u{11133}𑄓\u{11134}𑄥\u{11134}"), ("ceb", "Gilbert Islands (kapuloan)"), ("cs", "Gilbertovy ostrovy"), ("cy", "Ynysoedd Gilbert"), ("da", "Gilbertøerne"), ("de", "Gilbertinseln"), ("el", "Νησιά Γκίλμπερτ"), ("en", "Gilbert Islands"), ("es", "Islas Gilbert"), ("et", "Gilberti saared"), ("eu", "Gilbert Uharteak"), ("fa", "جزایر گیلبرت"), ("fi", "Gilbertsaaret"), ("fr", "Îles Gilbert"), ("gl", "Illas Gilbert"), ("he", "איי גילברט"), ("hi", "गिल\u{94d}बर\u{94d}ट द\u{94d}वीप सम\u{942}ह"), ("hr", "Gilbertovi otoci"), ("hu", "Gilbert-szigetek"), ("hy", "Գիլբերտի կղզիներ"), ("id", "Kepulauan Gilbert"), ("is", "Gilbertseyjar"), ("it", "Isole Gilbert"), ("ja", "ギルバート諸島"), ("ka", "გილბერტის კუნძულები"), ("kk", "Гилберт аралдары"), ("kn", "ಗ\u{cbf}ಲ\u{ccd}ಬರ\u{ccd}ಟ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"), ("ko", "길버트 제도"), ("ky", "Гилберт аралдары"), ("lt", "Gilberto salos"), ("lv", "Gilberta salas"), ("mk", "Гилбертови Острови"), ("mr", "गिल\u{94d}बर\u{94d}ट द\u{94d}वीपसम\u{942}ह"), ("nb", "Gilbertøyene"), ("nl", "Gilberteilanden"), ("no", "Gilbertøyene"), ("pl", "Wyspy Gilberta"), ("pt", "Ilhas Gilbert"), ("ru", "Острова Гилберта"), ("sk", "Gilbertove ostrovy"), ("sl", "Gilbertovi otoki"), ("sv", "Gilbertöarna"), ("th", "หม\u{e39}\u{e48}เกาะก\u{e34}ลเบ\u{e34}ร\u{e4c}ต"), ("tr", "Gilbert Adaları"), ("uk", "Острови Гілберта"), ("uz", "Gilbert orollari"), ("vi", "Quần đảo Gilbert"), ("yue", "驕拔群島"), ("yue_Hans", "骄拔群岛"), ("zh", "吉尔伯特群岛")]),
                         unofficial_name_list: ["Gilbert Islands"].to_vec(),
                     }
                 ),
@@ -323,6 +325,7 @@ pub fn new() -> Country {
         national_number_length_list: [5].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("I-Kiribati"),
+        maybe_vehicle_registration_code: Some("KIR"),
         number: "296",
         postal_code: false,
         postal_code_format: None,
@@ -476,6 +479,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

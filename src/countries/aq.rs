@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[];
     pub const NATIONAL_PREFIX: &str = "";
     pub const NATIONALITY: Option<&str> = None;
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "010";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
@@ -276,6 +278,7 @@ pub fn new() -> Country {
         national_number_length_list: [].to_vec(),
         national_prefix: "",
         maybe_nationality: None,
+        maybe_vehicle_registration_code: None,
         number: "010",
         postal_code: false,
         postal_code_format: None,
@@ -433,6 +436,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

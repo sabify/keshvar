@@ -31,6 +31,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Israeli");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("IL");
     pub const NUMBER: &str = "376";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{5}(?:\\d{2})?");
@@ -43,6 +44,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(9557500);
@@ -114,7 +116,7 @@ pub mod consts {
         ("kk", "Израиль"),
         ("kl", "Israel"),
         ("km", "អ\u{17ca}\u{17b8}ស\u{17d2}រាអែល"),
-        ("kn", "ಇಸ\u{ccd}ರೇಲ\u{ccd}"),
+        ("kn", "ಇಸ\u{ccd}ರ\u{cc7}ಲ\u{ccd}"),
         ("ko", "이스라엘"),
         ("ku", "Îsraîl"),
         ("kv", "Израиль"),
@@ -267,7 +269,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Haifa distrik"), ("ar", "منطقة حيفا"), ("az", "Hayfa dairəsi"), ("be", "Хайфская акруга"), ("bg", "Хайфски окръг"), ("bn", "হ\u{9be}ইফ\u{9be} জেল\u{9be}"), ("ca", "Districte de Haifa"), ("ccp", "𑄦\u{1112d}𑄜 𑄎𑄬𑄣"), ("ceb", "Haifa (distrito)"), ("cs", "Haifský distrikt"), ("da", "Haifa-distriktet"), ("de", "Bezirk Haifa"), ("el", "Χαΐφα"), ("en", "Haifa District"), ("es", "Distrito de Haifa"), ("et", "Haifa ringkond"), ("eu", "Haifa barrutia"), ("fa", "استان حیفا"), ("fi", "Haifan hallintoalue"), ("fr", "district de Haïfa"), ("gu", "હ\u{ac8}ફા જિલ\u{acd}લો"), ("he", "מחוז חיפה"), ("hi", "ह\u{948}फा जिला"), ("hr", "Okrug Haifa"), ("hu", "Haifai körzet"), ("hy", "Հայֆայի մարզ"), ("id", "Distrik Haifa"), ("it", "distretto di Haifa"), ("ja", "ハイファ地区"), ("ka", "ხაიფის რაიონი"), ("kk", "Хайфа округі"), ("kn", "ಹೈಫಾ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "하이파 구"), ("lt", "Haifos apskritis"), ("lv", "Haifas apgabals"), ("mk", "Хаифа"), ("mn", "Хайфа дүүрэг"), ("mr", "ह\u{948}फा जिल\u{94d}हा"), ("ms", "Daerah Haifa"), ("nb", "Haifa-distriktet"), ("nl", "Haifa"), ("no", "Haifa-distriktet"), ("pl", "Dystrykt Hajfy"), ("pt", "Haifa"), ("ro", "Districtul Haifa"), ("ru", "Хайфский округ"), ("si", "හය\u{dd2}ෆ\u{dcf} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Хаифа"), ("sr_Latn", "Haifa"), ("sv", "Haifa"), ("ta", "ஹேப\u{bcd}பிய\u{bbe} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "హ\u{c48}ఫ\u{c3e} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตไฮฟา"), ("tr", "Hayfa Bölgesi"), ("uk", "Хайфський округ"), ("ur", "حیفا ضلع"), ("vi", "Quận Haifa"), ("zh", "海法区")]),
+                        translations: HashMap::from([("af", "Haifa distrik"), ("ar", "منطقة حيفا"), ("az", "Hayfa dairəsi"), ("be", "Хайфская акруга"), ("bg", "Хайфски окръг"), ("bn", "হ\u{9be}ইফ\u{9be} জেল\u{9be}"), ("ca", "Districte de Haifa"), ("ccp", "𑄦\u{1112d}𑄜 𑄎𑄬𑄣"), ("ceb", "Haifa (distrito)"), ("cs", "Haifský distrikt"), ("da", "Haifa-distriktet"), ("de", "Bezirk Haifa"), ("el", "Χαΐφα"), ("en", "Haifa District"), ("es", "Distrito de Haifa"), ("et", "Haifa ringkond"), ("eu", "Haifa barrutia"), ("fa", "استان حیفا"), ("fi", "Haifan hallintoalue"), ("fr", "district de Haïfa"), ("gu", "હ\u{ac8}ફા જિલ\u{acd}લો"), ("he", "מחוז חיפה"), ("hi", "ह\u{948}फा जिला"), ("hr", "Okrug Haifa"), ("hu", "Haifai körzet"), ("hy", "Հայֆայի մարզ"), ("id", "Distrik Haifa"), ("it", "distretto di Haifa"), ("ja", "ハイファ地区"), ("ka", "ხაიფის რაიონი"), ("kk", "Хайфа округі"), ("kn", "ಹ\u{cc8}ಫಾ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "하이파 구"), ("lt", "Haifos apskritis"), ("lv", "Haifas apgabals"), ("mk", "Хаифа"), ("mn", "Хайфа дүүрэг"), ("mr", "ह\u{948}फा जिल\u{94d}हा"), ("ms", "Daerah Haifa"), ("nb", "Haifa-distriktet"), ("nl", "Haifa"), ("no", "Haifa-distriktet"), ("pl", "Dystrykt Hajfy"), ("pt", "Haifa"), ("ro", "Districtul Haifa"), ("ru", "Хайфский округ"), ("si", "හය\u{dd2}ෆ\u{dcf} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Хаифа"), ("sr_Latn", "Haifa"), ("sv", "Haifa"), ("ta", "ஹேப\u{bcd}பிய\u{bbe} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "హ\u{c48}ఫ\u{c3e} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตไฮฟา"), ("tr", "Hayfa Bölgesi"), ("uk", "Хайфський округ"), ("ur", "حیفا ضلع"), ("vi", "Quận Haifa"), ("zh", "海法区")]),
                         unofficial_name_list: ["Haifa", "Haifa", "Haifa", "Hefa", "H\u{331}efa"].to_vec(),
                     }
                 ),
@@ -297,7 +299,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Sentrale distrik"), ("ar", "المنطقة الوسطى"), ("az", "İsrail mərkəzi dairəsi"), ("be", "Цэнтральная акруга"), ("bg", "Централен окръг"), ("bn", "সেন\u{9cd}ট\u{9cd}র\u{9be}ল জেল\u{9be}"), ("ca", "Districte Central"), ("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11133}𑄢𑄣\u{11134} 𑄎𑄬𑄣"), ("ceb", "Central District"), ("cs", "Centrální distrikt"), ("cy", "Ardal Canolog"), ("da", "Centraldistriktet"), ("de", "Zentralbezirk"), ("el", "Σέντραλ Ντίστρικτ, Ισραήλ"), ("en", "Central District"), ("es", "Distrito Central"), ("et", "Keskringkond"), ("eu", "Erdialdeko barrutia"), ("fa", "استان مرکز"), ("fi", "Keski-Israelin hallintoalue"), ("fr", "district centre"), ("gu", "સ\u{ac7}ન\u{acd}ટ\u{acd}રલ જિલ\u{acd}લો"), ("he", "מחוז המרכז"), ("hi", "मध\u{94d}य जिला (इज\u{93c}राइल)"), ("hu", "Központi körzet"), ("hy", "Կենտրոնական մարզ"), ("id", "Distrik Tengah"), ("it", "distretto Centrale"), ("ja", "中央地区"), ("ka", "ცენტრალური რაიონი"), ("kk", "Израильдің орталық округі"), ("kn", "ಕೇಂದ\u{ccd}ರ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "중부 구"), ("lt", "Centrinė apskritis"), ("lv", "Centra apgabals"), ("mk", "Централен округ"), ("mn", "Израилын төв дүүрэг"), ("mr", "मध\u{94d}यवर\u{94d}ती जिल\u{94d}हा"), ("ms", "Daerah Tengah"), ("nb", "Sentraldistriktet"), ("nl", "Centrum"), ("no", "Sentraldistriktet"), ("pl", "Dystrykt Centralny"), ("pt", "Distrito Central"), ("ro", "Districtul Central"), ("ru", "Центральный округ"), ("si", "මද\u{dca}\u{200d}යම ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Централни округ"), ("sr_Latn", "Centralni okrug"), ("sv", "Centrala distriktet"), ("ta", "சென\u{bcd}ட\u{bcd}ரல\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "స\u{c46}ంట\u{c4d}రల\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตเซนทร\u{e31}ล"), ("tr", "Merkez Bölge"), ("uk", "Центральний округ"), ("ur", "مرکزی ضلع (اسرائیل)"), ("vi", "Quận Trung"), ("zh", "中央区")]),
+                        translations: HashMap::from([("af", "Sentrale distrik"), ("ar", "المنطقة الوسطى"), ("az", "İsrail mərkəzi dairəsi"), ("be", "Цэнтральная акруга"), ("bg", "Централен окръг"), ("bn", "সেন\u{9cd}ট\u{9cd}র\u{9be}ল জেল\u{9be}"), ("ca", "Districte Central"), ("ccp", "𑄥𑄬𑄚\u{11134}𑄑\u{11133}𑄢𑄣\u{11134} 𑄎𑄬𑄣"), ("ceb", "Central District"), ("cs", "Centrální distrikt"), ("cy", "Ardal Canolog"), ("da", "Centraldistriktet"), ("de", "Zentralbezirk"), ("el", "Σέντραλ Ντίστρικτ, Ισραήλ"), ("en", "Central District"), ("es", "Distrito Central"), ("et", "Keskringkond"), ("eu", "Erdialdeko barrutia"), ("fa", "استان مرکز"), ("fi", "Keski-Israelin hallintoalue"), ("fr", "district centre"), ("gu", "સ\u{ac7}ન\u{acd}ટ\u{acd}રલ જિલ\u{acd}લો"), ("he", "מחוז המרכז"), ("hi", "मध\u{94d}य जिला (इज\u{93c}राइल)"), ("hu", "Központi körzet"), ("hy", "Կենտրոնական մարզ"), ("id", "Distrik Tengah"), ("it", "distretto Centrale"), ("ja", "中央地区"), ("ka", "ცენტრალური რაიონი"), ("kk", "Израильдің орталық округі"), ("kn", "ಕ\u{cc7}ಂದ\u{ccd}ರ ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "중부 구"), ("lt", "Centrinė apskritis"), ("lv", "Centra apgabals"), ("mk", "Централен округ"), ("mn", "Израилын төв дүүрэг"), ("mr", "मध\u{94d}यवर\u{94d}ती जिल\u{94d}हा"), ("ms", "Daerah Tengah"), ("nb", "Sentraldistriktet"), ("nl", "Centrum"), ("no", "Sentraldistriktet"), ("pl", "Dystrykt Centralny"), ("pt", "Distrito Central"), ("ro", "Districtul Central"), ("ru", "Центральный округ"), ("si", "මද\u{dca}\u{200d}යම ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sr", "Централни округ"), ("sr_Latn", "Centralni okrug"), ("sv", "Centrala distriktet"), ("ta", "சென\u{bcd}ட\u{bcd}ரல\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "స\u{c46}ంట\u{c4d}రల\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตเซนทร\u{e31}ล"), ("tr", "Merkez Bölge"), ("uk", "Центральний округ"), ("ur", "مرکزی ضلع (اسرائیل)"), ("vi", "Quận Trung"), ("zh", "中央区")]),
                         unofficial_name_list: ["Central"].to_vec(),
                     }
                 ),
@@ -366,6 +368,7 @@ pub fn new() -> Country {
         national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Israeli"),
+        maybe_vehicle_registration_code: Some("IL"),
         number: "376",
         postal_code: true,
         postal_code_format: Some("\\d{5}(?:\\d{2})?"),
@@ -443,7 +446,7 @@ pub fn new() -> Country {
             ("kk", "Израиль"),
             ("kl", "Israel"),
             ("km", "អ\u{17ca}\u{17b8}ស\u{17d2}រាអែល"),
-            ("kn", "ಇಸ\u{ccd}ರೇಲ\u{ccd}"),
+            ("kn", "ಇಸ\u{ccd}ರ\u{cc7}ಲ\u{ccd}"),
             ("ko", "이스라엘"),
             ("ku", "Îsraîl"),
             ("kv", "Израиль"),
@@ -516,6 +519,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: Some(VatRates {
             standard: 17.0,

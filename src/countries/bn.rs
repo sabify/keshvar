@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Bruneian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("BRU");
     pub const NUMBER: &str = "096";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("[A-Z]{2} ?\\d{4}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(449002);
@@ -119,7 +121,7 @@ pub mod consts {
             "km",
             "ប\u{17d2}រ\u{17ca}\u{17bb}យណេ\u{200b}ដារ\u{17bb}យសាឡ\u{17b9}ម",
         ),
-        ("kn", "ಬ\u{ccd}ರ\u{cc2}ನೈ ದಾರುಸ\u{ccd}ಸಲಾಂ"),
+        ("kn", "ಬ\u{ccd}ರ\u{cc2}ನ\u{cc8} ದಾರುಸ\u{ccd}ಸಲಾಂ"),
         ("ko", "브루나이 다루살람"),
         ("ku", "Brûney Darûssalam"),
         ("kv", "Brunei Darussalam"),
@@ -260,7 +262,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة بيلايت"), ("bg", "Белайт"), ("bn", "বেল\u{9be}তি জেল\u{9be}"), ("ca", "Districte de Belait"), ("ccp", "𑄝𑄬𑄣\u{1112d}𑄖\u{11134}"), ("ceb", "Belait District"), ("da", "Belait District"), ("de", "Belait"), ("el", "Μπελάιτ"), ("en", "Belait"), ("es", "Distrito de Belait"), ("eu", "Belait barrutia"), ("fa", "استان بلائیت"), ("fi", "Belait"), ("fr", "Belait"), ("gl", "Belait"), ("gu", "બ\u{ac7}લ\u{ac7}ટ\u{ac7} જિલ\u{acd}લો"), ("he", "בלייט"), ("hi", "ब\u{947}ल\u{948}त जिला"), ("id", "Distrik Belait"), ("it", "distretto di Belait"), ("ja", "ブライト地区"), ("kn", "ಬೇಲೈತ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "블라잇 구"), ("lt", "Belaito rajonas"), ("lv", "Belaitas distrikts"), ("mr", "ब\u{947}ल\u{947}ट जिल\u{94d}हा"), ("ms", "Daerah Belait"), ("nb", "Belait distrikt"), ("nl", "Belait"), ("no", "Belait distrikt"), ("pl", "Dystrykt Belait"), ("ps", "بيلائت ولسوالۍ"), ("pt", "Belait"), ("ru", "Белайт"), ("si", "බෙලය\u{dd2}ට\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Belait District"), ("ta", "பெட\u{bcd}லைட\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "బ\u{c46}ల\u{c46}య\u{c3f}ట\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตเบอไลต\u{e4c}"), ("tr", "Belait District"), ("uk", "Белайт"), ("ur", "بیلائت ضلع"), ("vi", "Quận Belait"), ("yue", "馬來奕縣"), ("yue_Hans", "马来奕县"), ("zh", "马来奕县")]),
+                        translations: HashMap::from([("ar", "مقاطعة بيلايت"), ("bg", "Белайт"), ("bn", "বেল\u{9be}তি জেল\u{9be}"), ("ca", "Districte de Belait"), ("ccp", "𑄝𑄬𑄣\u{1112d}𑄖\u{11134}"), ("ceb", "Belait District"), ("da", "Belait District"), ("de", "Belait"), ("el", "Μπελάιτ"), ("en", "Belait"), ("es", "Distrito de Belait"), ("eu", "Belait barrutia"), ("fa", "استان بلائیت"), ("fi", "Belait"), ("fr", "Belait"), ("gl", "Belait"), ("gu", "બ\u{ac7}લ\u{ac7}ટ\u{ac7} જિલ\u{acd}લો"), ("he", "בלייט"), ("hi", "ब\u{947}ल\u{948}त जिला"), ("id", "Distrik Belait"), ("it", "distretto di Belait"), ("ja", "ブライト地区"), ("kn", "ಬ\u{cc7}ಲ\u{cc8}ತ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "블라잇 구"), ("lt", "Belaito rajonas"), ("lv", "Belaitas distrikts"), ("mr", "ब\u{947}ल\u{947}ट जिल\u{94d}हा"), ("ms", "Daerah Belait"), ("nb", "Belait distrikt"), ("nl", "Belait"), ("no", "Belait distrikt"), ("pl", "Dystrykt Belait"), ("ps", "بيلائت ولسوالۍ"), ("pt", "Belait"), ("ru", "Белайт"), ("si", "බෙලය\u{dd2}ට\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Belait District"), ("ta", "பெட\u{bcd}லைட\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "బ\u{c46}ల\u{c46}య\u{c3f}ట\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตเบอไลต\u{e4c}"), ("tr", "Belait District"), ("uk", "Белайт"), ("ur", "بیلائت ضلع"), ("vi", "Quận Belait"), ("yue", "馬來奕縣"), ("yue_Hans", "马来奕县"), ("zh", "马来奕县")]),
                         unofficial_name_list: ["Belait"].to_vec(),
                     }
                 ),
@@ -305,7 +307,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة توتونغ"), ("bg", "Тутонг"), ("bn", "ত\u{9c1}তং জেল\u{9be}"), ("ca", "Districte de Tutong"), ("ccp", "𑄑\u{11128}𑄅\u{1112a}𑄖\u{11127}\u{11101}"), ("ceb", "Tutong District"), ("da", "Tutong District"), ("de", "Tutong"), ("el", "Τουτόνγκ"), ("en", "Tutong"), ("es", "Distrito de Tutong"), ("eu", "Tutong barrutia"), ("fa", "منطقه توتنگ"), ("fi", "Tutong"), ("fr", "Tutong"), ("gl", "Tutong"), ("gu", "ટ\u{ac1}ટૉ\u{a82}ગ જિલ\u{acd}લો"), ("he", "טוטונג"), ("hi", "ट\u{942}टो\u{902}ग जिला"), ("id", "Distrik Tutong"), ("it", "distretto di Tutong"), ("ja", "ツトン地区"), ("kn", "ಟುಟೊಂಗ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "투통 구"), ("lt", "Tutongo rajonas"), ("lv", "Tutonas distrikts"), ("mr", "त\u{941}टो\u{902}ग जिल\u{94d}हा"), ("ms", "Daerah Tutong"), ("nb", "Tutong"), ("nl", "Tutong"), ("no", "Tutong"), ("pl", "Dystrykt Tutong"), ("ps", "توتنگ ولسوالۍ"), ("pt", "Tutong"), ("ru", "Тутонг"), ("si", "ට\u{dd4}ටොන\u{dca}ග\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Tutong District"), ("ta", "டுடோங\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "ట\u{c4d}యుట\u{c3e}ంగ\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "ต\u{e39}ตง"), ("tr", "Tutong District"), ("uk", "Тутонг"), ("ur", "توتنگ ضلع"), ("vi", "Quận Tutong"), ("yue", "都東縣"), ("yue_Hans", "都东县"), ("zh", "都东县")]),
+                        translations: HashMap::from([("ar", "مقاطعة توتونغ"), ("bg", "Тутонг"), ("bn", "ত\u{9c1}তং জেল\u{9be}"), ("ca", "Districte de Tutong"), ("ccp", "𑄑\u{11128}𑄅\u{1112a}𑄖\u{11127}\u{11101}"), ("ceb", "Tutong District"), ("da", "Tutong District"), ("de", "Tutong"), ("el", "Τουτόνγκ"), ("en", "Tutong"), ("es", "Distrito de Tutong"), ("eu", "Tutong barrutia"), ("fa", "منطقه توتنگ"), ("fi", "Tutong"), ("fr", "Tutong"), ("gl", "Tutong"), ("gu", "ટ\u{ac1}ટૉ\u{a82}ગ જિલ\u{acd}લો"), ("he", "טוטונג"), ("hi", "ट\u{942}टो\u{902}ग जिला"), ("id", "Distrik Tutong"), ("it", "distretto di Tutong"), ("ja", "ツトン地区"), ("kn", "ಟುಟ\u{cca}ಂಗ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "투통 구"), ("lt", "Tutongo rajonas"), ("lv", "Tutonas distrikts"), ("mr", "त\u{941}टो\u{902}ग जिल\u{94d}हा"), ("ms", "Daerah Tutong"), ("nb", "Tutong"), ("nl", "Tutong"), ("no", "Tutong"), ("pl", "Dystrykt Tutong"), ("ps", "توتنگ ولسوالۍ"), ("pt", "Tutong"), ("ru", "Тутонг"), ("si", "ට\u{dd4}ටොන\u{dca}ග\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Tutong District"), ("ta", "டுடோங\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "ట\u{c4d}యుట\u{c3e}ంగ\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "ต\u{e39}ตง"), ("tr", "Tutong District"), ("uk", "Тутонг"), ("ur", "توتنگ ضلع"), ("vi", "Quận Tutong"), ("yue", "都東縣"), ("yue_Hans", "都东县"), ("zh", "都东县")]),
                         unofficial_name_list: ["Tutong"].to_vec(),
                     }
                 ),
@@ -344,6 +346,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Bruneian"),
+        maybe_vehicle_registration_code: Some("BRU"),
         number: "096",
         postal_code: true,
         postal_code_format: Some("[A-Z]{2} ?\\d{4}"),
@@ -427,7 +430,7 @@ pub fn new() -> Country {
                 "km",
                 "ប\u{17d2}រ\u{17ca}\u{17bb}យណេ\u{200b}ដារ\u{17bb}យសាឡ\u{17b9}ម",
             ),
-            ("kn", "ಬ\u{ccd}ರ\u{cc2}ನೈ ದಾರುಸ\u{ccd}ಸಲಾಂ"),
+            ("kn", "ಬ\u{ccd}ರ\u{cc2}ನ\u{cc8} ದಾರುಸ\u{ccd}ಸಲಾಂ"),
             ("ko", "브루나이 다루살람"),
             ("ku", "Brûney Darûssalam"),
             ("kv", "Brunei Darussalam"),
@@ -503,6 +506,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

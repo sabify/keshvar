@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5, 6, 7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Tongan");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("TON");
     pub const NUMBER: &str = "776";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(106858);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Тонга"),
         ("kl", "Tonga"),
         ("km", "ត\u{17bb}ងហ\u{17d2}គោ"),
-        ("kn", "ಟೋಂಗಾ"),
+        ("kn", "ಟ\u{ccb}ಂಗಾ"),
         ("ko", "통가"),
         ("ku", "Tonga"),
         ("kv", "Tonga"),
@@ -403,7 +405,7 @@ pub mod subdivisions {
                         ("it", "Niuas"),
                         ("ja", "ニウアス諸島"),
                         ("ka", "ნიუასის კუნძულები"),
-                        ("kn", "ನ\u{cbf}ಯೋವಾಸ\u{ccd}"),
+                        ("kn", "ನ\u{cbf}ಯ\u{ccb}ವಾಸ\u{ccd}"),
                         ("ko", "니우아스 제도"),
                         ("lt", "Niuasas"),
                         ("lv", "Niuasa"),
@@ -470,7 +472,7 @@ pub mod subdivisions {
                         ("it", "Tongatapu"),
                         ("ja", "トンガタプ島"),
                         ("ka", "ტონგატაპუ"),
-                        ("kn", "ಟೋಂಗಟಾಪು"),
+                        ("kn", "ಟ\u{ccb}ಂಗಟಾಪು"),
                         ("ko", "통가타푸 섬"),
                         ("lt", "Tongatapu"),
                         ("mr", "टो\u{902}गाटाप\u{942}"),
@@ -594,6 +596,7 @@ pub fn new() -> Country {
         national_number_length_list: [5, 6, 7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Tongan"),
+        maybe_vehicle_registration_code: Some("TON"),
         number: "776",
         postal_code: false,
         postal_code_format: None,
@@ -671,7 +674,7 @@ pub fn new() -> Country {
             ("kk", "Тонга"),
             ("kl", "Tonga"),
             ("km", "ត\u{17bb}ងហ\u{17d2}គោ"),
-            ("kn", "ಟೋಂಗಾ"),
+            ("kn", "ಟ\u{ccb}ಂಗಾ"),
             ("ko", "통가"),
             ("ku", "Tonga"),
             ("kv", "Tonga"),
@@ -747,6 +750,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

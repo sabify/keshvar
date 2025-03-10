@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5];
     pub const NATIONAL_PREFIX: &str = "00";
     pub const NATIONALITY: Option<&str> = Some("Cook Islander");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "184";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
@@ -120,7 +122,7 @@ pub mod consts {
         ("kk", "Кук аралдары"),
         ("kl", "Cook Islands"),
         ("km", "កោះក\u{17bc}ក"),
-        ("kn", "ಕುಕ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+        ("kn", "ಕುಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
         ("ko", "쿡 제도"),
         ("ku", "Giravên Cook"),
         ("kv", "Cook Islands"),
@@ -280,6 +282,7 @@ pub fn new() -> Country {
         national_number_length_list: [5].to_vec(),
         national_prefix: "00",
         maybe_nationality: Some("Cook Islander"),
+        maybe_vehicle_registration_code: None,
         number: "184",
         postal_code: false,
         postal_code_format: None,
@@ -365,7 +368,7 @@ pub fn new() -> Country {
             ("kk", "Кук аралдары"),
             ("kl", "Cook Islands"),
             ("km", "កោះក\u{17bc}ក"),
-            ("kn", "ಕುಕ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+            ("kn", "ಕುಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
             ("ko", "쿡 제도"),
             ("ku", "Giravên Cook"),
             ("kv", "Cook Islands"),
@@ -441,6 +444,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

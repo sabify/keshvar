@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Dutch");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "535";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -47,6 +48,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
@@ -256,7 +258,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::SpecialMunicipality,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("af", "Bonaire"), ("ar", "بونير"), ("az", "Boneyr adası"), ("be", "Востраў Банайрэ"), ("bg", "Бонер"), ("bn", "বোন\u{9be}ইর"), ("ca", "Bonaire"), ("ccp", "𑄝\u{11127}𑄚\u{1112d}𑄢\u{11128}"), ("ceb", "Bonaire (pulo ug munisipyo espesyal)"), ("cs", "Bonaire"), ("cy", "Bonaire"), ("da", "Bonaire"), ("de", "Bonaire"), ("el", "Μποναίρ"), ("en", "Bonaire"), ("es", "Bonaire"), ("et", "Bonaire"), ("eu", "Bonaire"), ("fa", "بونیر"), ("fi", "Bonaire"), ("fr", "Bonaire"), ("gl", "Bonaire"), ("gu", "બોનાર\u{ac7}"), ("he", "בונייר"), ("hi", "बोन\u{947}य\u{947}र"), ("hr", "Bonaire"), ("hu", "Bonaire"), ("hy", "Բոնեյրե"), ("id", "Bonaire"), ("it", "Bonaire"), ("ja", "ボネール島"), ("ka", "ბონეირი"), ("kk", "Бонэйр"), ("kn", "ಬೊನೈರ\u{ccd}"), ("ko", "보네르 섬"), ("lt", "Boneras"), ("lv", "Bonaire"), ("mk", "Бонер"), ("mr", "बोनर\u{947}"), ("ms", "Bonaire"), ("nb", "Bonaire"), ("nl", "Bonaire"), ("no", "Bonaire"), ("pa", "ਬ\u{a4b}ਨ\u{a47}ਅਰ"), ("pl", "Bonaire"), ("pt", "Bonaire"), ("ro", "Bonaire"), ("ru", "Бонэйр"), ("si", "බොනය\u{dd2}රේ"), ("sk", "Bonaire"), ("sr", "Бонер"), ("sr_Latn", "Boner"), ("sv", "Bonaire"), ("sw", "Bonaire"), ("ta", "பொனெய\u{bcd}ர\u{bcd}"), ("te", "బ\u{c4b}న\u{c46}య\u{c3f}ర\u{c4d}"), ("th", "โบแนเรอ"), ("tr", "Bonaire"), ("uk", "Бонайре"), ("ur", "بونایر"), ("uz", "Bonayre"), ("vi", "Bonaire"), ("yo", "Bonaire"), ("yo_BJ", "Bonaire"), ("yue", "博奈爾島"), ("yue_Hans", "博奈尔岛"), ("zh", "波内赫")]),
+                        translations: HashMap::from([("af", "Bonaire"), ("ar", "بونير"), ("az", "Boneyr adası"), ("be", "Востраў Банайрэ"), ("bg", "Бонер"), ("bn", "বোন\u{9be}ইর"), ("ca", "Bonaire"), ("ccp", "𑄝\u{11127}𑄚\u{1112d}𑄢\u{11128}"), ("ceb", "Bonaire (pulo ug munisipyo espesyal)"), ("cs", "Bonaire"), ("cy", "Bonaire"), ("da", "Bonaire"), ("de", "Bonaire"), ("el", "Μποναίρ"), ("en", "Bonaire"), ("es", "Bonaire"), ("et", "Bonaire"), ("eu", "Bonaire"), ("fa", "بونیر"), ("fi", "Bonaire"), ("fr", "Bonaire"), ("gl", "Bonaire"), ("gu", "બોનાર\u{ac7}"), ("he", "בונייר"), ("hi", "बोन\u{947}य\u{947}र"), ("hr", "Bonaire"), ("hu", "Bonaire"), ("hy", "Բոնեյրե"), ("id", "Bonaire"), ("it", "Bonaire"), ("ja", "ボネール島"), ("ka", "ბონეირი"), ("kk", "Бонэйр"), ("kn", "ಬ\u{cca}ನ\u{cc8}ರ\u{ccd}"), ("ko", "보네르 섬"), ("lt", "Boneras"), ("lv", "Bonaire"), ("mk", "Бонер"), ("mr", "बोनर\u{947}"), ("ms", "Bonaire"), ("nb", "Bonaire"), ("nl", "Bonaire"), ("no", "Bonaire"), ("pa", "ਬ\u{a4b}ਨ\u{a47}ਅਰ"), ("pl", "Bonaire"), ("pt", "Bonaire"), ("ro", "Bonaire"), ("ru", "Бонэйр"), ("si", "බොනය\u{dd2}රේ"), ("sk", "Bonaire"), ("sr", "Бонер"), ("sr_Latn", "Boner"), ("sv", "Bonaire"), ("sw", "Bonaire"), ("ta", "பொனெய\u{bcd}ர\u{bcd}"), ("te", "బ\u{c4b}న\u{c46}య\u{c3f}ర\u{c4d}"), ("th", "โบแนเรอ"), ("tr", "Bonaire"), ("uk", "Бонайре"), ("ur", "بونایر"), ("uz", "Bonayre"), ("vi", "Bonaire"), ("yo", "Bonaire"), ("yo_BJ", "Bonaire"), ("yue", "博奈爾島"), ("yue_Hans", "博奈尔岛"), ("zh", "波内赫")]),
                         unofficial_name_list: ["Bonaire"].to_vec(),
                     }
                 ),
@@ -325,6 +327,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Dutch"),
+        maybe_vehicle_registration_code: None,
         number: "535",
         postal_code: false,
         postal_code_format: None,
@@ -343,6 +346,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

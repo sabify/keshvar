@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Nigerian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RN");
     pub const NUMBER: &str = "562";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{4}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(26207977);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Нигер"),
         ("kl", "Niger"),
         ("km", "ន\u{17b8}ហ\u{17d2}សេរ"),
-        ("kn", "ನೈಜರ\u{ccd}"),
+        ("kn", "ನ\u{cc8}ಜರ\u{ccd}"),
         ("ko", "니제르"),
         ("ku", "Nîjer"),
         ("kv", "Niger"),
@@ -282,7 +284,7 @@ pub mod subdivisions {
                         ("it", "regione di Agadez"),
                         ("ja", "アガデス州"),
                         ("ka", "აგადესის რეგიონი"),
-                        ("kn", "ಅಗಡ\u{cc6}ಜ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಅಗಡ\u{cc6}ಜ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "아가데즈 주"),
                         ("lt", "Agadezo regionas"),
                         ("lv", "Agadesas reģions"),
@@ -350,7 +352,7 @@ pub mod subdivisions {
                         ("it", "regione di Diffa"),
                         ("ja", "ディファ州"),
                         ("ka", "დიფის რეგიონი"),
-                        ("kn", "ಡ\u{cbf}ಫಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಡ\u{cbf}ಫಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "디파 주"),
                         ("lt", "Difos regionas"),
                         ("lv", "Difas reģions"),
@@ -419,7 +421,7 @@ pub mod subdivisions {
                         ("it", "regione di Dosso"),
                         ("ja", "ドッソ州"),
                         ("ka", "დოსოს რეგიონი"),
-                        ("kn", "ಡೋಸ\u{ccd}ಸೋ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಡ\u{ccb}ಸ\u{ccd}ಸ\u{ccb} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "도소 주"),
                         ("lt", "Doso regionas"),
                         ("lv", "Doso reģions"),
@@ -487,7 +489,7 @@ pub mod subdivisions {
                         ("it", "regione di Maradi"),
                         ("ja", "マラディ州"),
                         ("ka", "მარადის რეგიონი"),
-                        ("kn", "ಮರಾದ\u{cbf} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಮರಾದ\u{cbf} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "마라디 주"),
                         ("lt", "Maradžio regionas"),
                         ("lv", "Maradi reģions"),
@@ -555,7 +557,7 @@ pub mod subdivisions {
                         ("it", "regione di Tahoua"),
                         ("ja", "タウア州"),
                         ("ka", "ტაჰუის რეგიონი"),
-                        ("kn", "ತಾಹ\u{ccc} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ತಾಹ\u{ccc} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "타우아 주"),
                         ("lt", "Tahovos regionas"),
                         ("lv", "Tahua reģions"),
@@ -623,7 +625,7 @@ pub mod subdivisions {
                         ("it", "regione di Tillabéri"),
                         ("ja", "ティラベリ州"),
                         ("ka", "ტილაბერის რეგიონი"),
-                        ("kn", "ಟ\u{cbf}ಲ\u{ccd}ಲಬ\u{cc6}ರ\u{cbf} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಟ\u{cbf}ಲ\u{ccd}ಲಬ\u{cc6}ರ\u{cbf} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "틸라베리 주"),
                         ("lt", "Tilaberio regionas"),
                         ("lv", "Tilaberi reģions"),
@@ -693,7 +695,7 @@ pub mod subdivisions {
                         ("it", "regione di Zinder"),
                         ("ja", "ザンデール州"),
                         ("ka", "ზინდერის რეგიონი"),
-                        ("kn", "ಝ\u{cbf}ಂಡರ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಝ\u{cbf}ಂಡರ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "잔데르 주"),
                         ("lt", "Zinderio regionas"),
                         ("lv", "Zinderas reģions"),
@@ -857,6 +859,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Nigerian"),
+        maybe_vehicle_registration_code: Some("RN"),
         number: "562",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -934,7 +937,7 @@ pub fn new() -> Country {
             ("kk", "Нигер"),
             ("kl", "Niger"),
             ("km", "ន\u{17b8}ហ\u{17d2}សេរ"),
-            ("kn", "ನೈಜರ\u{ccd}"),
+            ("kn", "ನ\u{cc8}ಜರ\u{ccd}"),
             ("ko", "니제르"),
             ("ku", "Nîjer"),
             ("kv", "Niger"),
@@ -1010,6 +1013,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Palauan");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("PAL");
     pub const NUMBER: &str = "585";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("(969(?:39|40))(?:[ \\-](\\d{4}))?");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(18055);
@@ -479,7 +481,7 @@ pub mod subdivisions {
                         ("id", "Hatohobei"),
                         ("it", "Hatohobei"),
                         ("ja", "ハトホベイ州"),
-                        ("kn", "ಹ\u{ccd}ಯಾಟೊಹೋಬ\u{cbf}ಯ\u{cbf}"),
+                        ("kn", "ಹ\u{ccd}ಯಾಟ\u{cca}ಹ\u{ccb}ಬ\u{cbf}ಯ\u{cbf}"),
                         ("ko", "하토호베이 주"),
                         ("lt", "Hatohobėjus"),
                         ("lv", "Hatohobei"),
@@ -614,7 +616,7 @@ pub mod subdivisions {
                         ("it", "Koror"),
                         ("ja", "コロール"),
                         ("ka", "კორორი (კუნძული)"),
-                        ("kn", "ಕೊರೋರ\u{ccd}"),
+                        ("kn", "ಕ\u{cca}ರ\u{ccb}ರ\u{ccd}"),
                         ("ko", "코로르"),
                         ("lt", "Kororas"),
                         ("lv", "Korora"),
@@ -687,7 +689,7 @@ pub mod subdivisions {
                         ("ja", "マルキョク州"),
                         ("ka", "მელეკეოკი"),
                         ("kk", "Мелекеок"),
-                        ("kn", "ಮ\u{cc6}ಲ\u{cc6}ಕೊಕ\u{ccd}"),
+                        ("kn", "ಮ\u{cc6}ಲ\u{cc6}ಕ\u{cca}ಕ\u{ccd}"),
                         ("ko", "멜레케오크 주"),
                         ("lt", "Melekokas"),
                         ("lv", "Melegeoka"),
@@ -814,7 +816,7 @@ pub mod subdivisions {
                         ("id", "Ngarchelong"),
                         ("it", "Ngarchelong"),
                         ("ja", "アルコロン州"),
-                        ("kn", "ನ\u{cc2}ರ\u{ccd}ಚ\u{cc6}ಲೋಂಗ\u{ccd}"),
+                        ("kn", "ನ\u{cc2}ರ\u{ccd}ಚ\u{cc6}ಲ\u{ccb}ಂಗ\u{ccd}"),
                         ("ko", "가르첼롱 주"),
                         ("lt", "Ngarčelongas"),
                         ("lv", "Narelona"),
@@ -1007,7 +1009,7 @@ pub mod subdivisions {
                         ("id", "Ngchesar"),
                         ("it", "Ngchesar"),
                         ("ja", "エサール州"),
-                        ("kn", "ನ\u{ccd}ಗ\u{cc6}ಶೇಸಾರ\u{ccd}"),
+                        ("kn", "ನ\u{ccd}ಗ\u{cc6}ಶ\u{cc7}ಸಾರ\u{ccd}"),
                         ("ko", "체사르 주"),
                         ("lt", "Ngčesaras"),
                         ("lv", "Nesara"),
@@ -1268,7 +1270,7 @@ pub mod subdivisions {
                         ("id", "Sonsorol"),
                         ("it", "Sonsorol"),
                         ("ja", "ソンソロール州"),
-                        ("kn", "ಸನ\u{ccd}ಸೋರಾಲ\u{ccd}"),
+                        ("kn", "ಸನ\u{ccd}ಸ\u{ccb}ರಾಲ\u{ccd}"),
                         ("ko", "손소롤 주"),
                         ("lt", "Sonsorolis"),
                         ("lv", "Sonsorola"),
@@ -1328,6 +1330,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Palauan"),
+        maybe_vehicle_registration_code: Some("PAL"),
         number: "585",
         postal_code: true,
         postal_code_format: Some("(969(?:39|40))(?:[ \\-](\\d{4}))?"),
@@ -1478,6 +1481,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

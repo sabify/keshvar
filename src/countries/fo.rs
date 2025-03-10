@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Faroese");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("FO");
     pub const NUMBER: &str = "234";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{3}");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(53090);
@@ -123,7 +125,7 @@ pub mod consts {
         ("kk", "Фарер аралдары"),
         ("kl", "Faroe Islands"),
         ("km", "កោះ\u{200b}ហ\u{17d2}វារ\u{17c9}\u{17bc}"),
-        ("kn", "ಪರೋ ದ\u{ccd}ವೀಪಗಳು"),
+        ("kn", "ಪರ\u{ccb} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
         ("ko", "페로 제도"),
         ("ku", "Giravên Faroye"),
         ("kv", "Фарер діяс"),
@@ -280,6 +282,7 @@ pub fn new() -> Country {
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Faroese"),
+        maybe_vehicle_registration_code: Some("FO"),
         number: "234",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
@@ -368,7 +371,7 @@ pub fn new() -> Country {
             ("kk", "Фарер аралдары"),
             ("kl", "Faroe Islands"),
             ("km", "កោះ\u{200b}ហ\u{17d2}វារ\u{17c9}\u{17bc}"),
-            ("kn", "ಪರೋ ದ\u{ccd}ವೀಪಗಳು"),
+            ("kn", "ಪರ\u{ccb} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
             ("ko", "페로 제도"),
             ("ku", "Giravên Faroye"),
             ("kv", "Фарер діяс"),
@@ -441,6 +444,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

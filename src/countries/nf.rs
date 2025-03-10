@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Norfolk Islander");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "574";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("2899");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = None;
@@ -120,7 +122,7 @@ pub mod consts {
         ("kk", "Норфолк аралы"),
         ("kl", "Norfolk Island"),
         ("km", "កោះណរហ\u{17d2}វក"),
-        ("kn", "ನಾರ\u{ccd}ಫೋಕ\u{ccd} ದ\u{ccd}ವೀಪ"),
+        ("kn", "ನಾರ\u{ccd}ಫ\u{ccb}ಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ"),
         ("ko", "노퍽 섬"),
         ("ku", "Girava Norfolk"),
         ("kv", "Norfolk Island"),
@@ -280,6 +282,7 @@ pub fn new() -> Country {
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Norfolk Islander"),
+        maybe_vehicle_registration_code: None,
         number: "574",
         postal_code: true,
         postal_code_format: Some("2899"),
@@ -365,7 +368,7 @@ pub fn new() -> Country {
             ("kk", "Норфолк аралы"),
             ("kl", "Norfolk Island"),
             ("km", "កោះណរហ\u{17d2}វក"),
-            ("kn", "ನಾರ\u{ccd}ಫೋಕ\u{ccd} ದ\u{ccd}ವೀಪ"),
+            ("kn", "ನಾರ\u{ccd}ಫ\u{ccb}ಕ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪ"),
             ("ko", "노퍽 섬"),
             ("ku", "Girava Norfolk"),
             ("kv", "Norfolk Island"),
@@ -441,6 +444,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

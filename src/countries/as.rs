@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
     pub const NATIONAL_PREFIX: &str = "1";
     pub const NATIONALITY: Option<&str> = Some("American Samoan");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "016";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("(96799)(?:[ \\-](\\d{4}))?");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(44273);
@@ -123,7 +125,7 @@ pub mod consts {
         ("kk", "Шығыс Самоа (АҚШ)"),
         ("kl", "American Samoa"),
         ("km", "អាមេរ\u{17b7}ក\u{200b}សាម\u{17bc}អា"),
-        ("kn", "ಅಮೇರ\u{cbf}ಕನ\u{ccd} ಸಮೋಆ"),
+        ("kn", "ಅಮ\u{cc7}ರ\u{cbf}ಕನ\u{ccd} ಸಮ\u{ccb}ಆ"),
         ("ko", "아메리칸사모아"),
         ("ku", "Samoya Emerîkî"),
         ("kv", "American Samoa"),
@@ -280,6 +282,7 @@ pub fn new() -> Country {
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
         maybe_nationality: Some("American Samoan"),
+        maybe_vehicle_registration_code: None,
         number: "016",
         postal_code: true,
         postal_code_format: Some("(96799)(?:[ \\-](\\d{4}))?"),
@@ -368,7 +371,7 @@ pub fn new() -> Country {
             ("kk", "Шығыс Самоа (АҚШ)"),
             ("kl", "American Samoa"),
             ("km", "អាមេរ\u{17b7}ក\u{200b}សាម\u{17bc}អា"),
-            ("kn", "ಅಮೇರ\u{cbf}ಕನ\u{ccd} ಸಮೋಆ"),
+            ("kn", "ಅಮ\u{cc7}ರ\u{cbf}ಕನ\u{ccd} ಸಮ\u{ccb}ಆ"),
             ("ko", "아메리칸사모아"),
             ("ku", "Samoya Emerîkî"),
             ("kv", "American Samoa"),
@@ -441,6 +444,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,

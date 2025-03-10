@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Cameroonian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("CAM");
     pub const NUMBER: &str = "120";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(27914536);
@@ -363,7 +365,7 @@ pub mod subdivisions {
                         ("it", "regione Centrale"),
                         ("ja", "中央州"),
                         ("ka", "ცენტრალური რეგიონი"),
-                        ("kn", "ಕೇಂದ\u{ccd}ರ"),
+                        ("kn", "ಕ\u{cc7}ಂದ\u{ccd}ರ"),
                         ("ko", "중앙 주"),
                         ("lt", "Centrinis regionas"),
                         ("lv", "Centrālais reģions"),
@@ -582,7 +584,7 @@ pub mod subdivisions {
                         ("it", "regione del Litorale"),
                         ("ja", "リトラル州"),
                         ("ka", "სანაპირო რეგიონი"),
-                        ("kn", "ಲ\u{cbf}ಟೊರಲ\u{ccd}"),
+                        ("kn", "ಲ\u{cbf}ಟ\u{cca}ರಲ\u{ccd}"),
                         ("ko", "리토랄 주"),
                         ("lt", "Pakrantės regionas"),
                         ("lv", "Piekrastes reģions"),
@@ -728,7 +730,7 @@ pub mod subdivisions {
                         ("ka", "ჩრდილო-დასავლეთის რეგიონი"),
                         (
                             "kn",
-                            "ವಾಯುವ\u{ccd}ಯ ಕ\u{ccd}ಯಾಮರ\u{cc2}ನ\u{ccd} ಪ\u{ccd}ರದೇಶ",
+                            "ವಾಯುವ\u{ccd}ಯ ಕ\u{ccd}ಯಾಮರ\u{cc2}ನ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ",
                         ),
                         ("ko", "북서부 주"),
                         ("lt", "Šiaurės Vakarų regionas"),
@@ -947,7 +949,7 @@ pub mod subdivisions {
                         ("it", "regione del Sudovest"),
                         ("ja", "南西州"),
                         ("ka", "სამხრეთ-დასავლეთის რეგიონი"),
-                        ("kn", "ನೈಋತ\u{ccd}ಯ"),
+                        ("kn", "ನ\u{cc8}ಋತ\u{ccd}ಯ"),
                         ("ko", "남서부 주"),
                         ("lt", "Pietvakarių regionas"),
                         ("lv", "Dienvidrietumu reģions"),
@@ -1008,6 +1010,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Cameroonian"),
+        maybe_vehicle_registration_code: Some("CAM"),
         number: "120",
         postal_code: false,
         postal_code_format: None,
@@ -1169,6 +1172,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

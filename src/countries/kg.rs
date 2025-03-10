@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Kirghiz");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("KG");
     pub const NUMBER: &str = "417";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{6}");
@@ -50,6 +51,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(6974900);
@@ -298,7 +300,10 @@ pub mod subdivisions {
                         ("ja", "バトケン州"),
                         ("ka", "ბატკენის ოლქი"),
                         ("kk", "Баткен облысы"),
-                        ("kn", "ಬ\u{ccd}ಯಾಟ\u{ccd}ಕ\u{cc6}ನ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        (
+                            "kn",
+                            "ಬ\u{ccd}ಯಾಟ\u{ccd}ಕ\u{cc6}ನ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ",
+                        ),
                         ("ko", "밧켄 주"),
                         ("ky", "Баткен облусу"),
                         ("lt", "Batkeno sritis"),
@@ -381,7 +386,7 @@ pub mod subdivisions {
                         ("ja", "チュイ州"),
                         ("ka", "ჩუის ოლქი"),
                         ("kk", "Шу облысы"),
-                        ("kn", "ಚಾಯ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಚಾಯ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "추이 주"),
                         ("ky", "Чүй облусу"),
                         ("lt", "Ču sritis"),
@@ -654,7 +659,7 @@ pub mod subdivisions {
                         ("ja", "ジャララバード州"),
                         ("ka", "ჯალალაბადის ოლქი"),
                         ("kk", "Жалалабат облысы"),
-                        ("kn", "ಜಲಾಲ\u{ccd}-ಅಬಾದ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಜಲಾಲ\u{ccd}-ಅಬಾದ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "잘랄아바트 주"),
                         ("ky", "Жалал-Абад облусу"),
                         ("lt", "Džalal Abado sritis"),
@@ -738,7 +743,7 @@ pub mod subdivisions {
                         ("ja", "ナルイン州"),
                         ("ka", "ნარინის ოლქი"),
                         ("kk", "Нарын облысы"),
-                        ("kn", "ನರ\u{cbf}ನ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ನರ\u{cbf}ನ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "나린 주"),
                         ("ky", "Нарын облусу"),
                         ("lt", "Naryno sritis"),
@@ -823,7 +828,7 @@ pub mod subdivisions {
                         ("ja", "オシ州"),
                         ("ka", "ოშის ოლქი"),
                         ("kk", "Ош облысы"),
-                        ("kn", "ಓಶ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಓಶ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "오시 주"),
                         ("ky", "Ош облусу"),
                         ("lt", "Ošo sritis"),
@@ -902,7 +907,7 @@ pub mod subdivisions {
                         ("ja", "タラス州"),
                         ("ka", "თალასის ოლქი"),
                         ("kk", "Талас облысы"),
-                        ("kn", "ತಲಾಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ತಲಾಸ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "탈라스 주"),
                         ("ky", "Талас облусу"),
                         ("lt", "Talaso sritis"),
@@ -982,7 +987,10 @@ pub mod subdivisions {
                         ("ja", "イシク・クル州"),
                         ("ka", "ისიკ-ყულის ოლქი"),
                         ("kk", "Ыстықкөл облысы"),
-                        ("kn", "ಇಸ\u{ccd}ಸ\u{cbf}ಕ\u{ccd}-ಕುಲ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        (
+                            "kn",
+                            "ಇಸ\u{ccd}ಸ\u{cbf}ಕ\u{ccd}-ಕುಲ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ",
+                        ),
                         ("ko", "이식쿨 주"),
                         ("ky", "Ысык-Көл областы"),
                         ("lt", "Isyk Kulio sritis"),
@@ -1050,6 +1058,7 @@ pub fn new() -> Country {
         national_number_length_list: [9].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Kirghiz"),
+        maybe_vehicle_registration_code: Some("KG"),
         number: "417",
         postal_code: true,
         postal_code_format: Some("\\d{6}"),
@@ -1215,6 +1224,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

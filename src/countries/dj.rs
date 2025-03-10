@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Djibouti");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("DJI");
     pub const NUMBER: &str = "262";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(1120849);
@@ -285,7 +287,7 @@ pub mod subdivisions {
                         ("it", "regione di Arta"),
                         ("ja", "アルタ州"),
                         ("ka", "არტის რეგიონი"),
-                        ("kn", "ಆರ\u{ccd}ಟಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಆರ\u{ccd}ಟಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "아르타 주"),
                         ("lt", "Artos regionas"),
                         ("lv", "Artas reģions"),
@@ -358,7 +360,7 @@ pub mod subdivisions {
                         ("it", "regione di Ali Sabieh"),
                         ("ja", "アリ・サビエ州"),
                         ("ka", "ალი-საბიეს რეგიონი"),
-                        ("kn", "ಅಲ\u{cbf} ಸಬೀಹ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಅಲ\u{cbf} ಸಬ\u{cc0}ಹ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "알리사비에 주"),
                         ("lt", "Ali Sabiho regionas"),
                         ("lv", "Alī Sabīhas reģions"),
@@ -432,7 +434,7 @@ pub mod subdivisions {
                         ("it", "regione di Dikhil"),
                         ("ja", "ディキル州"),
                         ("ka", "დიკილის რეგიონი"),
-                        ("kn", "ಡ\u{cbf}ಖ\u{cbf}ಲ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಡ\u{cbf}ಖ\u{cbf}ಲ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "디킬 주"),
                         ("lt", "Dikilio regionas"),
                         ("lv", "Dihilas reģions"),
@@ -608,7 +610,7 @@ pub mod subdivisions {
                         ("it", "regione di Obock"),
                         ("ja", "オボック州"),
                         ("ka", "ობოკის რეგიონი"),
-                        ("kn", "ಒಬಾಕ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಒಬಾಕ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "오보크 주"),
                         ("lt", "Oboko regionas"),
                         ("lv", "Ubukas reģions"),
@@ -680,7 +682,7 @@ pub mod subdivisions {
                         ("it", "regione di Tagiura"),
                         ("ja", "タジュラ州"),
                         ("ka", "ტაჯურის რეგიონი"),
-                        ("kn", "ಟಾಡ\u{ccd}ಜ\u{ccc}ರಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಟಾಡ\u{ccd}ಜ\u{ccc}ರಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "타주라 주"),
                         ("lt", "Tadžuros regionas"),
                         ("lv", "Tedžūras reģions"),
@@ -743,6 +745,7 @@ pub fn new() -> Country {
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Djibouti"),
+        maybe_vehicle_registration_code: Some("DJI"),
         number: "262",
         postal_code: false,
         postal_code_format: None,
@@ -896,6 +899,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Monegasque");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MC");
     pub const NUMBER: &str = "492";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("980\\d{2}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(36469);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Монако"),
         ("kl", "Monaco"),
         ("km", "ម\u{17c9}\u{17bc}ណាក\u{17bc}"),
-        ("kn", "ಮೊನಾಕೋ"),
+        ("kn", "ಮ\u{cca}ನಾಕ\u{ccb}"),
         ("ko", "모나코"),
         ("ku", "Monako"),
         ("kv", "Монако"),
@@ -533,6 +535,7 @@ pub fn new() -> Country {
         national_number_length_list: [8, 9].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Monegasque"),
+        maybe_vehicle_registration_code: Some("MC"),
         number: "492",
         postal_code: true,
         postal_code_format: Some("980\\d{2}"),
@@ -610,7 +613,7 @@ pub fn new() -> Country {
             ("kk", "Монако"),
             ("kl", "Monaco"),
             ("km", "ម\u{17c9}\u{17bc}ណាក\u{17bc}"),
-            ("kn", "ಮೊನಾಕೋ"),
+            ("kn", "ಮ\u{cca}ನಾಕ\u{ccb}"),
             ("ko", "모나코"),
             ("ku", "Monako"),
             ("kv", "Монако"),
@@ -686,6 +689,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

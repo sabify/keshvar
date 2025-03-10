@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Haitian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RH");
     pub const NUMBER: &str = "332";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{4}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(11584996);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Гаити"),
         ("kl", "Haiti"),
         ("km", "ហៃទ\u{17b8}"),
-        ("kn", "ಹೈಟ\u{cbf}"),
+        ("kn", "ಹ\u{cc8}ಟ\u{cbf}"),
         ("ko", "아이티"),
         ("ku", "Haîtî"),
         ("kv", "Гаити"),
@@ -277,7 +279,7 @@ pub mod subdivisions {
                         ("id", "Departemen Artibonite"),
                         ("it", "dipartimento dell’Artibonite"),
                         ("ja", "アルティボニット県"),
-                        ("kn", "ಆರ\u{ccd}ಟ\u{cbf}ಬೋನೈಟ\u{ccd}"),
+                        ("kn", "ಆರ\u{ccd}ಟ\u{cbf}ಬ\u{ccb}ನ\u{cc8}ಟ\u{ccd}"),
                         ("ko", "아르티보니트 주"),
                         ("lt", "Artibonitas"),
                         ("lv", "Artibonita"),
@@ -343,7 +345,7 @@ pub mod subdivisions {
                         ("id", "Departemen Centre"),
                         ("it", "dipartimento del Centro"),
                         ("ja", "中央県"),
-                        ("kn", "ಕೇಂದ\u{ccd}ರ"),
+                        ("kn", "ಕ\u{cc7}ಂದ\u{ccd}ರ"),
                         ("ko", "중앙 주"),
                         ("lt", "Centras"),
                         ("lv", "Centrs"),
@@ -927,6 +929,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Haitian"),
+        maybe_vehicle_registration_code: Some("RH"),
         number: "332",
         postal_code: true,
         postal_code_format: Some("\\d{4}"),
@@ -1004,7 +1007,7 @@ pub fn new() -> Country {
             ("kk", "Гаити"),
             ("kl", "Haiti"),
             ("km", "ហៃទ\u{17b8}"),
-            ("kn", "ಹೈಟ\u{cbf}"),
+            ("kn", "ಹ\u{cc8}ಟ\u{cbf}"),
             ("ko", "아이티"),
             ("ku", "Haîtî"),
             ("kv", "Гаити"),
@@ -1077,6 +1080,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

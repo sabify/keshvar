@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "1";
     pub const NATIONALITY: Option<&str> = Some("Micronesian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("FSM");
     pub const NUMBER: &str = "583";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("(9694[1-4])(?:[ \\-](\\d{4}))?");
@@ -48,6 +49,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(114164);
@@ -288,7 +290,7 @@ pub mod subdivisions {
                         ("it", "Kosrae"),
                         ("ja", "コスラエ州"),
                         ("ka", "კოსრაე (შტატი)"),
-                        ("kn", "ಕೊಸ\u{ccd}ರೇ"),
+                        ("kn", "ಕ\u{cca}ಸ\u{ccd}ರ\u{cc7}"),
                         ("ko", "코스라에 주"),
                         ("lt", "Kosraė"),
                         ("mr", "कोसर\u{947}"),
@@ -356,7 +358,7 @@ pub mod subdivisions {
                         ("it", "Pohnpei"),
                         ("ja", "ポンペイ州"),
                         ("ka", "პონპეი"),
-                        ("kn", "ಪೋನ\u{ccd}ಪೈ ರಾಜ\u{ccd}ಯ"),
+                        ("kn", "ಪ\u{ccb}ನ\u{ccd}ಪ\u{cc8} ರಾಜ\u{ccd}ಯ"),
                         ("ko", "폰페이 주"),
                         ("lt", "Ponpėjaus valstija"),
                         ("lv", "Ponpejas štats"),
@@ -541,6 +543,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "1",
         maybe_nationality: Some("Micronesian"),
+        maybe_vehicle_registration_code: Some("FSM"),
         number: "583",
         postal_code: true,
         postal_code_format: Some("(9694[1-4])(?:[ \\-](\\d{4}))?"),
@@ -559,6 +562,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

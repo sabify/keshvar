@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Somali");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("SO");
     pub const NUMBER: &str = "706";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("[A-Z]{2} ?\\d{5}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(17597511);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Сомали"),
         ("kl", "Somalia"),
         ("km", "ស\u{17bc}ម\u{17c9}ាល\u{17b8}"),
-        ("kn", "ಸೋಮಾಲ\u{cbf}ಯಾ"),
+        ("kn", "ಸ\u{ccb}ಮಾಲ\u{cbf}ಯಾ"),
         ("ko", "소말리아"),
         ("ku", "Somalî"),
         ("kv", "Somalia"),
@@ -551,7 +553,7 @@ pub mod subdivisions {
                         ("ja", "ベイ州"),
                         ("jv", "Bay, Somalia"),
                         ("ka", "ბეის რეგიონი"),
-                        ("kn", "ಬೇ"),
+                        ("kn", "ಬ\u{cc7}"),
                         ("ko", "바이 주"),
                         ("lt", "Baja"),
                         ("lv", "Bāja"),
@@ -695,7 +697,7 @@ pub mod subdivisions {
                         ("ja", "ゲド州"),
                         ("jv", "Gedo"),
                         ("ka", "გედოს რეგიონი"),
-                        ("kn", "ಗ\u{cc6}ಡೋ"),
+                        ("kn", "ಗ\u{cc6}ಡ\u{ccb}"),
                         ("ko", "게도 주"),
                         ("lt", "Gedas"),
                         ("lv", "Gedo"),
@@ -907,7 +909,7 @@ pub mod subdivisions {
                         ("it", "Basso Giuba"),
                         ("ja", "下部ジュバ州"),
                         ("ka", "ქვემო ჯუბის რეგიონი"),
-                        ("kn", "ಲೋ ಜುಬಾ"),
+                        ("kn", "ಲ\u{ccb} ಜುಬಾ"),
                         ("ko", "주바다호세 주"),
                         ("lt", "Žemutinė Džuba"),
                         ("lv", "Lejasdžūba"),
@@ -1249,7 +1251,7 @@ pub mod subdivisions {
                         ("ja", "下部シャベレ州"),
                         ("jv", "Shabeellaha Hoose"),
                         ("ka", "ქვემო შაბელეს რეგიონი"),
-                        ("kn", "ಲೋಯರ\u{ccd} ಶ\u{cc6}ಬ\u{cc6}ಲ\u{ccd}"),
+                        ("kn", "ಲ\u{ccb}ಯರ\u{ccd} ಶ\u{cc6}ಬ\u{cc6}ಲ\u{ccd}"),
                         ("ko", "샤벨라하호세 주"),
                         ("lt", "Žamutinė Šebelė"),
                         ("lv", "Lejasšabele"),
@@ -1478,6 +1480,7 @@ pub fn new() -> Country {
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Somali"),
+        maybe_vehicle_registration_code: Some("SO"),
         number: "706",
         postal_code: true,
         postal_code_format: Some("[A-Z]{2} ?\\d{5}"),
@@ -1555,7 +1558,7 @@ pub fn new() -> Country {
             ("kk", "Сомали"),
             ("kl", "Somalia"),
             ("km", "ស\u{17bc}ម\u{17c9}ាល\u{17b8}"),
-            ("kn", "ಸೋಮಾಲ\u{cbf}ಯಾ"),
+            ("kn", "ಸ\u{ccb}ಮಾಲ\u{cbf}ಯಾ"),
             ("ko", "소말리아"),
             ("ku", "Somalî"),
             ("kv", "Somalia"),
@@ -1631,6 +1634,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

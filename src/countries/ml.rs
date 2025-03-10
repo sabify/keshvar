@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Malian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RMM");
     pub const NUMBER: &str = "466";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(22593590);
@@ -281,7 +283,7 @@ pub mod subdivisions {
                         ("it", "regione di Kayes"),
                         ("ja", "カイ州"),
                         ("ka", "კაესის რეგიონი"),
-                        ("kn", "ಕೇಯ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕ\u{cc7}ಯ\u{ccd}ಸ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "케이스 주"),
                         ("lt", "Kajeso regionas"),
                         ("lv", "Kajesas reģions"),
@@ -385,7 +387,7 @@ pub mod subdivisions {
                         ("it", "regione di Koulikoro"),
                         ("ja", "クリコロ州"),
                         ("ka", "კულიკოროს რეგიონი"),
-                        ("kn", "ಕ\u{ccc}ಲ\u{cbf}ಕೊರೋ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕ\u{ccc}ಲ\u{cbf}ಕ\u{cca}ರ\u{ccb} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "쿨리코로 주"),
                         ("lt", "Kulikoro regionas"),
                         ("lv", "Kulikoro reģions"),
@@ -456,7 +458,7 @@ pub mod subdivisions {
                         ("it", "regione di Sikasso"),
                         ("ja", "シカソ州"),
                         ("ka", "სიკასოს რეგიონი"),
-                        ("kn", "ಸ\u{cbf}ಕಸ\u{ccd}ಸೊ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಸ\u{cbf}ಕಸ\u{ccd}ಸ\u{cca} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "시카소 주"),
                         ("lt", "Sikaso regionas"),
                         ("lv", "Sikaso reģions"),
@@ -524,7 +526,7 @@ pub mod subdivisions {
                         ("it", "regione di Ségou"),
                         ("ja", "セグー州"),
                         ("ka", "სეგუს რეგიონი"),
-                        ("kn", "ಸ\u{cc6}ಗಾವ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಸ\u{cc6}ಗಾವ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "세구 주"),
                         ("lt", "Segu regionas"),
                         ("lv", "Segu reģions"),
@@ -595,7 +597,7 @@ pub mod subdivisions {
                         ("it", "regione di Mopti"),
                         ("ja", "モプティ州"),
                         ("ka", "მოპტის რეგიონი"),
-                        ("kn", "ಮೊಪ\u{ccd}ಟ\u{cbf} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಮ\u{cca}ಪ\u{ccd}ಟ\u{cbf} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "몹티 주"),
                         ("lt", "Mopčio regionas"),
                         ("lv", "Mopti reģions"),
@@ -665,7 +667,7 @@ pub mod subdivisions {
                         ("it", "regione di Timbuctù"),
                         ("ja", "トンブクトゥ州"),
                         ("ka", "ტომბუქტუს რეგიონი"),
-                        ("kn", "ಟೊಂಬ\u{ccc}ಕ\u{ccd}ಟ\u{ccc} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಟ\u{cca}ಂಬ\u{ccc}ಕ\u{ccd}ಟ\u{ccc} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "통북투 주"),
                         ("lt", "Tombuktu regionas"),
                         ("lv", "Tombuktu reģions"),
@@ -740,7 +742,7 @@ pub mod subdivisions {
                         ("it", "regione di Gao"),
                         ("ja", "ガオ州"),
                         ("ka", "გაოს რეგიონი"),
-                        ("kn", "ಗಾವೊ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಗಾವ\u{cca} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "가오 주"),
                         ("lt", "Gao regionas"),
                         ("lv", "Gao reģions"),
@@ -812,7 +814,7 @@ pub mod subdivisions {
                         ("it", "regione di Kidal"),
                         ("ja", "キダル州"),
                         ("ka", "კიდალის რეგიონი"),
-                        ("kn", "ಕ\u{cbf}ಡಾಲ\u{ccd} ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಕ\u{cbf}ಡಾಲ\u{ccd} ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "키달 주"),
                         ("lt", "Kidalio regionas"),
                         ("lv", "Kidalas reģions"),
@@ -924,7 +926,7 @@ pub mod subdivisions {
                         ("jv", "Bamako"),
                         ("ka", "ბამაკო"),
                         ("kk", "Бамако"),
-                        ("kn", "ಬಮಾಕೋ"),
+                        ("kn", "ಬಮಾಕ\u{ccb}"),
                         ("ko", "바마코"),
                         ("ky", "Бамако"),
                         ("lt", "Bamakas"),
@@ -1003,6 +1005,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Malian"),
+        maybe_vehicle_registration_code: Some("RMM"),
         number: "466",
         postal_code: false,
         postal_code_format: None,
@@ -1153,6 +1156,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

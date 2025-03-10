@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Malagasy");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RM");
     pub const NUMBER: &str = "450";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{3}");
@@ -47,6 +48,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(29611714);
@@ -625,6 +627,7 @@ pub fn new() -> Country {
         national_number_length_list: [9].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Malagasy"),
+        maybe_vehicle_registration_code: Some("RM"),
         number: "450",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
@@ -781,6 +784,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

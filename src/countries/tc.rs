@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
     pub const NATIONAL_PREFIX: &str = "1";
     pub const NATIONALITY: Option<&str> = Some("Turks and Caicos Islander");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "796";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("TKCA 1ZZ");
@@ -50,6 +51,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(45703);
@@ -278,6 +280,7 @@ pub fn new() -> Country {
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
         maybe_nationality: Some("Turks and Caicos Islander"),
+        maybe_vehicle_registration_code: None,
         number: "796",
         postal_code: true,
         postal_code_format: Some("TKCA 1ZZ"),
@@ -296,6 +299,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,

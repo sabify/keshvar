@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Mosotho");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("LS");
     pub const NUMBER: &str = "426";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{3}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(2305825);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Лесото"),
         ("kl", "Lesotho"),
         ("km", "ឡេស\u{17bc}ត\u{17bc}"),
-        ("kn", "ಲ\u{cc6}ಸೋಥೋ"),
+        ("kn", "ಲ\u{cc6}ಸ\u{ccb}ಥ\u{ccb}"),
         ("ko", "레소토"),
         ("ku", "Lesoto"),
         ("kv", "Lesotho"),
@@ -329,7 +331,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة موهيلز هوك"), ("bg", "Мохалес-Хук"), ("bn", "মোহ\u{9be}লেস হোয\u{9bc}েক জেল\u{9be}"), ("ca", "Mohale’s Hoek"), ("ccp", "𑄟\u{11127}𑄦𑄣\u{11128}𑄌\u{11134} 𑄦\u{1112e}𑄠𑄬𑄇\u{11134}"), ("ceb", "Mohale’s Hoek District"), ("da", "Mohale’s Hoek District"), ("de", "Mohale’s Hoek"), ("el", "Μοχάλες Χόεκ"), ("en", "Mohale’s Hoek"), ("es", "Distrito de Mohale’s Hoek"), ("et", "Mohale’s Hoeki ringkond"), ("fi", "Mohale’s Hoekin kaupunginosa"), ("fr", "District de Mohale’s Hoek"), ("gu", "મોહાલ\u{ac7}સ હોક જિલ\u{acd}લો"), ("hi", "मोहाल\u{947}ज\u{93c} होएक जिला"), ("hy", "Մոհալես Հուկ"), ("id", "Distrik Mohale’s Hoek"), ("it", "distretto di Mohale’s Hoek"), ("ja", "モハレス・フーク県"), ("ka", "მოჰალეს ჰუკის ოლქი"), ("kn", "ಮೊಹೇಲ\u{ccd}ನ ಹೋಯ\u{cc6}ಕ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "모할레스후크 구"), ("lt", "Mohales Huko rajonas"), ("lv", "Mohaleshukas distrikts"), ("mr", "मोह\u{947}ल होक\u{947} जिल\u{94d}हा"), ("ms", "Daerah Mohale’s Hoek"), ("nb", "Mohale’s Hoek"), ("nl", "Mohale’s Hoek"), ("no", "Mohale’s Hoek"), ("pl", "Dystrykt Mohale’s Hoek"), ("pt", "Mohale’s Hoek"), ("ro", "Districtul Mohale’s Hoek"), ("ru", "Мохалес-Хук"), ("si", "මොහ\u{dcf}ල\u{dd2}ස\u{dca} හොඑක\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Mohale’s Hoek District"), ("ta", "மொஹல\u{bcd}‘ஸ\u{bcd} ஹோஏக\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "మ\u{c4b}హ\u{c47}ల\u{c4d}స\u{c4d} హ\u{c4b}య\u{c46}క\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตมอเฮล โฮเอค"), ("tr", "Mohale’s Hoek District"), ("uk", "Мохалес-Хук"), ("vi", "Quận Mohale’s Hoek"), ("zh", "莫哈萊斯胡克區")]),
+                        translations: HashMap::from([("ar", "مقاطعة موهيلز هوك"), ("bg", "Мохалес-Хук"), ("bn", "মোহ\u{9be}লেস হোয\u{9bc}েক জেল\u{9be}"), ("ca", "Mohale’s Hoek"), ("ccp", "𑄟\u{11127}𑄦𑄣\u{11128}𑄌\u{11134} 𑄦\u{1112e}𑄠𑄬𑄇\u{11134}"), ("ceb", "Mohale’s Hoek District"), ("da", "Mohale’s Hoek District"), ("de", "Mohale’s Hoek"), ("el", "Μοχάλες Χόεκ"), ("en", "Mohale’s Hoek"), ("es", "Distrito de Mohale’s Hoek"), ("et", "Mohale’s Hoeki ringkond"), ("fi", "Mohale’s Hoekin kaupunginosa"), ("fr", "District de Mohale’s Hoek"), ("gu", "મોહાલ\u{ac7}સ હોક જિલ\u{acd}લો"), ("hi", "मोहाल\u{947}ज\u{93c} होएक जिला"), ("hy", "Մոհալես Հուկ"), ("id", "Distrik Mohale’s Hoek"), ("it", "distretto di Mohale’s Hoek"), ("ja", "モハレス・フーク県"), ("ka", "მოჰალეს ჰუკის ოლქი"), ("kn", "ಮ\u{cca}ಹ\u{cc7}ಲ\u{ccd}ನ ಹ\u{ccb}ಯ\u{cc6}ಕ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "모할레스후크 구"), ("lt", "Mohales Huko rajonas"), ("lv", "Mohaleshukas distrikts"), ("mr", "मोह\u{947}ल होक\u{947} जिल\u{94d}हा"), ("ms", "Daerah Mohale’s Hoek"), ("nb", "Mohale’s Hoek"), ("nl", "Mohale’s Hoek"), ("no", "Mohale’s Hoek"), ("pl", "Dystrykt Mohale’s Hoek"), ("pt", "Mohale’s Hoek"), ("ro", "Districtul Mohale’s Hoek"), ("ru", "Мохалес-Хук"), ("si", "මොහ\u{dcf}ල\u{dd2}ස\u{dca} හොඑක\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Mohale’s Hoek District"), ("ta", "மொஹல\u{bcd}‘ஸ\u{bcd} ஹோஏக\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "మ\u{c4b}హ\u{c47}ల\u{c4d}స\u{c4d} హ\u{c4b}య\u{c46}క\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "เขตมอเฮล โฮเอค"), ("tr", "Mohale’s Hoek District"), ("uk", "Мохалес-Хук"), ("vi", "Quận Mohale’s Hoek"), ("zh", "莫哈萊斯胡克區")]),
                         unofficial_name_list: ["Mohale's Hoek"].to_vec(),
                     }
                 ),
@@ -374,7 +376,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::District,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "مقاطعة موخوتلنغ"), ("bg", "Мокотлонг"), ("bn", "মোক\u{9c1}লং জেল\u{9be}"), ("ca", "Mokhotlong"), ("ccp", "𑄟\u{1112e}𑄈\u{1112e}𑄖\u{11134}𑄣\u{11127}\u{11101}"), ("ceb", "Mokhotlong"), ("da", "Mokhotlong District"), ("de", "Mokhotlong"), ("el", "Μοκχοτλόνγκ"), ("en", "Mokhotlong"), ("es", "Distrito de Mokhotlong"), ("fa", "منطقه موکاتلانگ"), ("fi", "Mokhotlong"), ("fr", "District de Mokhotlong"), ("gu", "મોખોટલો\u{a82}ગ જિલ\u{acd}લો"), ("hi", "मोखोटला\u{902}ग जिला"), ("hy", "Մոկոտլոնգ"), ("id", "Distrik Mokhotlong"), ("it", "distretto di Mokhotlong"), ("ja", "モコトロング県"), ("ka", "მოკჰოტლონგის ოლქი"), ("kn", "ಮೊಕೊಟ\u{ccd}ಲಾಂಗ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "모코틀롱 구"), ("lt", "Mokotlongo rajonas"), ("lv", "Mohothlonas distrikts"), ("mr", "मोखोटला\u{901}ग जिल\u{94d}हा"), ("ms", "Daerah Mokhotlong"), ("nb", "Mokhotlong"), ("nl", "Mokhotlong"), ("no", "Mokhotlong"), ("pl", "Dystrykt Mokhotlong"), ("pt", "Mokhotlong"), ("ro", "Districtul Mokhotlong"), ("ru", "Мокотлонг"), ("si", "මොකොට\u{dca}ලොන\u{dca}ග\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Mokhotlongdistriktet"), ("ta", "மோக\u{bcd}ஹோட\u{bcd}டலோங\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "మ\u{c3e}ఖ\u{c4b}ట\u{c4d}ల\u{c3e}ంగ\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "โมคอตลอง"), ("tr", "Mokhotlong District"), ("uk", "Мокотлонг"), ("ur", "موخوتلونگ ضلع"), ("vi", "Quận Mokhotlong"), ("zh", "莫霍特隆區")]),
+                        translations: HashMap::from([("ar", "مقاطعة موخوتلنغ"), ("bg", "Мокотлонг"), ("bn", "মোক\u{9c1}লং জেল\u{9be}"), ("ca", "Mokhotlong"), ("ccp", "𑄟\u{1112e}𑄈\u{1112e}𑄖\u{11134}𑄣\u{11127}\u{11101}"), ("ceb", "Mokhotlong"), ("da", "Mokhotlong District"), ("de", "Mokhotlong"), ("el", "Μοκχοτλόνγκ"), ("en", "Mokhotlong"), ("es", "Distrito de Mokhotlong"), ("fa", "منطقه موکاتلانگ"), ("fi", "Mokhotlong"), ("fr", "District de Mokhotlong"), ("gu", "મોખોટલો\u{a82}ગ જિલ\u{acd}લો"), ("hi", "मोखोटला\u{902}ग जिला"), ("hy", "Մոկոտլոնգ"), ("id", "Distrik Mokhotlong"), ("it", "distretto di Mokhotlong"), ("ja", "モコトロング県"), ("ka", "მოკჰოტლონგის ოლქი"), ("kn", "ಮ\u{cca}ಕ\u{cca}ಟ\u{ccd}ಲಾಂಗ\u{ccd} ಜ\u{cbf}ಲ\u{ccd}ಲ\u{cc6}"), ("ko", "모코틀롱 구"), ("lt", "Mokotlongo rajonas"), ("lv", "Mohothlonas distrikts"), ("mr", "मोखोटला\u{901}ग जिल\u{94d}हा"), ("ms", "Daerah Mokhotlong"), ("nb", "Mokhotlong"), ("nl", "Mokhotlong"), ("no", "Mokhotlong"), ("pl", "Dystrykt Mokhotlong"), ("pt", "Mokhotlong"), ("ro", "Districtul Mokhotlong"), ("ru", "Мокотлонг"), ("si", "මොකොට\u{dca}ලොන\u{dca}ග\u{dca} ද\u{dd2}ස\u{dca}ත\u{dca}\u{200d}ර\u{dd2}ක\u{dca}කය"), ("sv", "Mokhotlongdistriktet"), ("ta", "மோக\u{bcd}ஹோட\u{bcd}டலோங\u{bcd} ம\u{bbe}வட\u{bcd}டம\u{bcd}"), ("te", "మ\u{c3e}ఖ\u{c4b}ట\u{c4d}ల\u{c3e}ంగ\u{c4d} జ\u{c3f}ల\u{c4d}ల\u{c3e}"), ("th", "โมคอตลอง"), ("tr", "Mokhotlong District"), ("uk", "Мокотлонг"), ("ur", "موخوتلونگ ضلع"), ("vi", "Quận Mokhotlong"), ("zh", "莫霍特隆區")]),
                         unofficial_name_list: ["Mokhotlong"].to_vec(),
                     }
                 ),
@@ -428,6 +430,7 @@ pub fn new() -> Country {
         national_number_length_list: [8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Mosotho"),
+        maybe_vehicle_registration_code: Some("LS"),
         number: "426",
         postal_code: true,
         postal_code_format: Some("\\d{3}"),
@@ -505,7 +508,7 @@ pub fn new() -> Country {
             ("kk", "Лесото"),
             ("kl", "Lesotho"),
             ("km", "ឡេស\u{17bc}ត\u{17bc}"),
-            ("kn", "ಲ\u{cc6}ಸೋಥೋ"),
+            ("kn", "ಲ\u{cc6}ಸ\u{ccb}ಥ\u{ccb}"),
             ("ko", "레소토"),
             ("ku", "Lesoto"),
             ("kv", "Lesotho"),
@@ -581,6 +584,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

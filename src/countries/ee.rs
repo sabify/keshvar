@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Estonian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("EST");
     pub const NUMBER: &str = "233";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{5}");
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = true;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = true;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(1348840);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Эстония"),
         ("kl", "Estonia"),
         ("km", "អេស\u{17d2}ត\u{17bc}ន\u{17b8}"),
-        ("kn", "ಎಸ\u{ccd}ತೋನ\u{cbf}ಯಾ"),
+        ("kn", "ಎಸ\u{ccd}ತ\u{ccb}ನ\u{cbf}ಯಾ"),
         ("ko", "에스토니아"),
         ("ku", "Estonya"),
         ("kv", "Estonia"),
@@ -746,7 +748,7 @@ pub mod subdivisions {
                         ("it", "Hiiumaa"),
                         ("ja", "ヒーウ県"),
                         ("ka", "ჰიიუმაა"),
-                        ("kn", "ಹೈಯು ಕ\u{ccc}ಂಟ\u{cbf}"),
+                        ("kn", "ಹ\u{cc8}ಯು ಕ\u{ccc}ಂಟ\u{cbf}"),
                         ("ko", "히우 주"),
                         ("lt", "Hyju apskritis"),
                         ("lv", "Hījumā apriņķis"),
@@ -930,7 +932,7 @@ pub mod subdivisions {
                         ("id", "County Ida-Viru"),
                         ("it", "Ida-Virumaa"),
                         ("ka", "იდა-ვირუმაა"),
-                        ("kn", "ಇಡಾ-ವೀರು ಕ\u{ccc}ಂಟ\u{cbf}"),
+                        ("kn", "ಇಡಾ-ವ\u{cc0}ರು ಕ\u{ccc}ಂಟ\u{cbf}"),
                         ("ko", "이다비루 주"),
                         ("lt", "Rytų Viru apskritis"),
                         ("lv", "Austrumviru apriņķis"),
@@ -1062,7 +1064,7 @@ pub mod subdivisions {
                         ("it", "Jõgevamaa"),
                         ("ja", "ヨゲヴァ県"),
                         ("ka", "იიგევამაა"),
-                        ("kn", "ಜೊಗ\u{ccd}ವಾ ಕ\u{ccc}ಂಟ\u{cbf}"),
+                        ("kn", "ಜ\u{cca}ಗ\u{ccd}ವಾ ಕ\u{ccc}ಂಟ\u{cbf}"),
                         ("ko", "여게바 주"),
                         ("lt", "Jegevos apskritis"),
                         ("lv", "Jegevas apriņķis"),
@@ -1560,7 +1562,7 @@ pub mod subdivisions {
                         ("it", "Põlvamaa"),
                         ("ja", "ポルヴァ県"),
                         ("ka", "პილვამაა"),
-                        ("kn", "ಪೊಲ\u{ccd}ವಾ ಕ\u{ccc}ಂಟ\u{cbf}"),
+                        ("kn", "ಪ\u{cca}ಲ\u{ccd}ವಾ ಕ\u{ccc}ಂಟ\u{cbf}"),
                         ("ko", "펄바 주"),
                         ("lt", "Pelvos apskritis"),
                         ("lv", "Pelvas apriņķis"),
@@ -2660,6 +2662,7 @@ pub fn new() -> Country {
         national_number_length_list: [7, 8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Estonian"),
+        maybe_vehicle_registration_code: Some("EST"),
         number: "233",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -2737,7 +2740,7 @@ pub fn new() -> Country {
             ("kk", "Эстония"),
             ("kl", "Estonia"),
             ("km", "អេស\u{17d2}ត\u{17bc}ន\u{17b8}"),
-            ("kn", "ಎಸ\u{ccd}ತೋನ\u{cbf}ಯಾ"),
+            ("kn", "ಎಸ\u{ccd}ತ\u{ccb}ನ\u{cbf}ಯಾ"),
             ("ko", "에스토니아"),
             ("ku", "Estonya"),
             ("kv", "Estonia"),
@@ -2810,9 +2813,10 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: true,
+        un_member: true,
         eea_member: true,
         maybe_vat_rates: Some(VatRates {
-            standard: 20.0,
+            standard: 22.0,
             reduced: Vec::from([9.0]),
             super_reduced: None,
             parking: None,

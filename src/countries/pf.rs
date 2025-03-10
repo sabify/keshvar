@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("French Polynesian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "258";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("987\\d{2}");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(306279);
@@ -129,7 +131,10 @@ pub mod consts {
             "km",
             "ប\u{17c9}\u{17bc}ល\u{17b8}នេស\u{17ca}\u{17b8}\u{200b}បារា\u{17c6}ង",
         ),
-        ("kn", "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪೊಲ\u{cbf}ನೇಸ\u{cbf}ಯಾ"),
+        (
+            "kn",
+            "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪ\u{cca}ಲ\u{cbf}ನ\u{cc7}ಸ\u{cbf}ಯಾ",
+        ),
         ("ko", "프랑스령 폴리네시아"),
         ("ku", "Polînesya Fransî"),
         ("kv", "French Polynesia"),
@@ -292,6 +297,7 @@ pub fn new() -> Country {
         national_number_length_list: [6].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("French Polynesian"),
+        maybe_vehicle_registration_code: None,
         number: "258",
         postal_code: true,
         postal_code_format: Some("987\\d{2}"),
@@ -386,7 +392,10 @@ pub fn new() -> Country {
                 "km",
                 "ប\u{17c9}\u{17bc}ល\u{17b8}នេស\u{17ca}\u{17b8}\u{200b}បារា\u{17c6}ង",
             ),
-            ("kn", "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪೊಲ\u{cbf}ನೇಸ\u{cbf}ಯಾ"),
+            (
+                "kn",
+                "ಫ\u{ccd}ರ\u{cc6}ಂಚ\u{ccd} ಪ\u{cca}ಲ\u{cbf}ನ\u{cc7}ಸ\u{cbf}ಯಾ",
+            ),
             ("ko", "프랑스령 폴리네시아"),
             ("ku", "Polînesya Fransî"),
             ("kv", "French Polynesia"),
@@ -465,6 +474,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

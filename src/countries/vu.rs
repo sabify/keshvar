@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5, 6, 7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Ni-Vanuatu");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("VAN");
     pub const NUMBER: &str = "548";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(326740);
@@ -656,7 +658,7 @@ pub mod subdivisions {
                         ("it", "Torba"),
                         ("ja", "トルバ州"),
                         ("ka", "ტორბა"),
-                        ("kn", "ಟೊರ\u{ccd}ಬಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
+                        ("kn", "ಟ\u{cca}ರ\u{ccd}ಬಾ ಪ\u{ccd}ರಾಂತ\u{ccd}ಯ"),
                         ("ko", "토르바 주"),
                         ("lt", "Torba"),
                         ("lv", "Torbas province"),
@@ -719,6 +721,7 @@ pub fn new() -> Country {
         national_number_length_list: [5, 6, 7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Ni-Vanuatu"),
+        maybe_vehicle_registration_code: Some("VAN"),
         number: "548",
         postal_code: false,
         postal_code_format: None,
@@ -872,6 +875,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

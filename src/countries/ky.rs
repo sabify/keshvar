@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[10];
     pub const NATIONAL_PREFIX: &str = "1";
     pub const NATIONALITY: Option<&str> = Some("Caymanian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = None;
     pub const NUMBER: &str = "136";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("KY\\d-\\d{4}");
@@ -49,6 +50,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = false;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(68706);
@@ -123,7 +125,7 @@ pub mod consts {
         ("kk", "Кайман аралдары"),
         ("kl", "Cayman Islands"),
         ("km", "កោះ\u{200b}កៃម\u{17c9}ាន"),
-        ("kn", "ಕೇಮನ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+        ("kn", "ಕ\u{cc7}ಮನ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
         ("ko", "케이맨 제도"),
         ("ku", "Giravên Kayman"),
         ("kv", "Cayman Islands"),
@@ -283,6 +285,7 @@ pub fn new() -> Country {
         national_number_length_list: [10].to_vec(),
         national_prefix: "1",
         maybe_nationality: Some("Caymanian"),
+        maybe_vehicle_registration_code: None,
         number: "136",
         postal_code: true,
         postal_code_format: Some("KY\\d-\\d{4}"),
@@ -371,7 +374,7 @@ pub fn new() -> Country {
             ("kk", "Кайман аралдары"),
             ("kl", "Cayman Islands"),
             ("km", "កោះ\u{200b}កៃម\u{17c9}ាន"),
-            ("kn", "ಕೇಮನ\u{ccd} ದ\u{ccd}ವೀಪಗಳು"),
+            ("kn", "ಕ\u{cc7}ಮನ\u{ccd} ದ\u{ccd}ವ\u{cc0}ಪಗಳು"),
             ("ko", "케이맨 제도"),
             ("ku", "Giravên Kayman"),
             ("kv", "Cayman Islands"),
@@ -447,6 +450,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: false,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,

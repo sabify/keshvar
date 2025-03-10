@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[6, 7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Samoan");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("WS");
     pub const NUMBER: &str = "882";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Mi;
     pub const POPULATION: Option<u64> = Some(222382);
@@ -113,7 +115,7 @@ pub mod consts {
         ("kk", "Самоа"),
         ("kl", "Samoa"),
         ("km", "សាម\u{17bc}អា"),
-        ("kn", "ಸಮೋಆ"),
+        ("kn", "ಸಮ\u{ccb}ಆ"),
         ("ko", "사모아"),
         ("ku", "Samoa"),
         ("kv", "Samoa"),
@@ -346,7 +348,7 @@ pub mod subdivisions {
                         ("it", "Aiga-i-le-Tai"),
                         ("ja", "アイガイレタイ"),
                         ("ka", "აიგა-ი-ლე-ტაი"),
-                        ("kn", "ಐಗಾ-ಇ-ಲ\u{cc6}-ತೈ"),
+                        ("kn", "ಐಗಾ-ಇ-ಲ\u{cc6}-ತ\u{cc8}"),
                         ("ko", "아이가이레타이 구"),
                         ("lt", "Aiga-i-le-Tajus"),
                         ("lv", "Aiga-i-le-Tai"),
@@ -478,7 +480,7 @@ pub mod subdivisions {
                         ("it", "Fa’asaleleaga"),
                         ("ja", "ファアセールリーガ"),
                         ("ka", "ფაასალელეაგა"),
-                        ("kn", "ಫಾಸಲೇಲ\u{cbf}ಗಾ"),
+                        ("kn", "ಫಾಸಲ\u{cc7}ಲ\u{cbf}ಗಾ"),
                         ("ko", "파아살렐레아가 구"),
                         ("lt", "Faasalelaga"),
                         ("lv", "Faasaleleaga"),
@@ -614,7 +616,7 @@ pub mod subdivisions {
                         ("it", "Gaga’ifomauga"),
                         ("ja", "ガガイフォモーガ"),
                         ("ka", "გაგაიფომაუგა"),
-                        ("kn", "ಗಾಗಾಫ\u{cbf}ಯೊಮಾಗ"),
+                        ("kn", "ಗಾಗಾಫ\u{cbf}ಯ\u{cca}ಮಾಗ"),
                         ("ko", "가가이포마우가 구"),
                         ("lt", "Gagaifaumaga"),
                         ("lv", "Gagaifomauga"),
@@ -882,7 +884,7 @@ pub mod subdivisions {
                         ("it", "Va’a-o-Fonoti"),
                         ("ja", "ヴァアオフォノチ"),
                         ("ka", "ვაა-ო-ფონოტი"),
-                        ("kn", "ವಾ-ಒ-ಫೋನೊಟ\u{cbf}"),
+                        ("kn", "ವಾ-ಒ-ಫ\u{ccb}ನ\u{cca}ಟ\u{cbf}"),
                         ("ko", "바아오포노티 구"),
                         ("lt", "Vao Fonotis"),
                         ("lv", "Vaa-o-Fonoti"),
@@ -950,7 +952,7 @@ pub mod subdivisions {
                         ("it", "Vaisigano"),
                         ("ja", "ベサイガーノ"),
                         ("ka", "ვაისიგანო"),
-                        ("kn", "ವೈಸ\u{cbf}ಗಾನೋ"),
+                        ("kn", "ವ\u{cc8}ಸ\u{cbf}ಗಾನ\u{ccb}"),
                         ("ko", "바이시가노 구"),
                         ("lt", "Vaisiganas"),
                         ("lv", "Vaisigano"),
@@ -1011,6 +1013,7 @@ pub fn new() -> Country {
         national_number_length_list: [6, 7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Samoan"),
+        maybe_vehicle_registration_code: Some("WS"),
         number: "882",
         postal_code: false,
         postal_code_format: None,
@@ -1088,7 +1091,7 @@ pub fn new() -> Country {
             ("kk", "Самоа"),
             ("kl", "Samoa"),
             ("km", "សាម\u{17bc}អា"),
-            ("kn", "ಸಮೋಆ"),
+            ("kn", "ಸಮ\u{ccb}ಆ"),
             ("ko", "사모아"),
             ("ku", "Samoa"),
             ("kv", "Samoa"),
@@ -1164,6 +1167,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Mi,

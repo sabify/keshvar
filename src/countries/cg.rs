@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Congolese");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("RCB");
     pub const NUMBER: &str = "178";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -43,11 +44,13 @@ pub mod consts {
         "コンゴ共和国",
         "Congo [Republiek]",
         "Congo, Republic of",
+        "Congo (Brazzaville)",
     ];
     pub const WORLD_REGION: WorldRegion = WorldRegion::EMEA;
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(5970424);
@@ -119,7 +122,7 @@ pub mod consts {
         ("kk", "Конго"),
         ("kl", "Congo"),
         ("km", "ក\u{17bb}ងហ\u{17d2}គោ"),
-        ("kn", "ಕಾಂಗೋ"),
+        ("kn", "ಕಾಂಗ\u{ccb}"),
         ("ko", "콩고"),
         ("ku", "Kongo"),
         ("kv", "Congo"),
@@ -257,7 +260,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Department,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إدارة بوينزا"), ("bg", "Буенза"), ("bn", "ব\u{9c1}য\u{9bc}েঞ\u{9cd}জ\u{9be} বিভ\u{9be}গ"), ("ca", "Bouenza"), ("ccp", "𑄝\u{1112f}𑄠𑄬𑄚\u{11134}𑄎"), ("ceb", "Région de la Bouenza"), ("da", "Bouenza Department"), ("de", "Bouenza"), ("el", "Μπουενζά"), ("en", "Bouenza"), ("es", "Bouenza"), ("fa", "بخش بوئنزا"), ("fi", "Bouenzan departmentti"), ("fr", "Bouenza"), ("gu", "બોઉ\u{a82}એન\u{acd}ઝા વિભાગ"), ("hi", "ब\u{941}ए\u{901}ज\u{93c}ा विभाग"), ("id", "Bouenza"), ("it", "Dipartimento di Bouenza"), ("ja", "ブエンザ地方"), ("ka", "ბუენზის დეპარტამენტი"), ("kn", "ಬೋವ\u{cc6}ಂಜ ಇಲಾಖ\u{cc6}"), ("ko", "부엔자 주"), ("lt", "Buenzos regionas"), ("lv", "Buenzas departaments"), ("mr", "बॉऊएन\u{94d}झा विभाग"), ("ms", "Bouenza"), ("nb", "Bouenza"), ("nl", "Bouenza"), ("no", "Bouenza"), ("pl", "Departament Bouenza"), ("pt", "Bouenza"), ("ro", "Bouenza"), ("ru", "Буэнза"), ("si", "බෝඑන\u{dca}ස\u{dcf} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Région de la Bouenza"), ("ta", "போன\u{bcd}ஜ\u{bbe} துறை"), ("te", "బ\u{c4b}య\u{c46}ంజ\u{c3e} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "บ\u{e39}อองซา"), ("tr", "Bouenza"), ("uk", "Регіон Буенза"), ("ur", "بؤینزا محکمہ"), ("vi", "Khu vực hành chính Bouenza"), ("zh", "布恩扎省")]),
+                        translations: HashMap::from([("ar", "إدارة بوينزا"), ("bg", "Буенза"), ("bn", "ব\u{9c1}য\u{9bc}েঞ\u{9cd}জ\u{9be} বিভ\u{9be}গ"), ("ca", "Bouenza"), ("ccp", "𑄝\u{1112f}𑄠𑄬𑄚\u{11134}𑄎"), ("ceb", "Région de la Bouenza"), ("da", "Bouenza Department"), ("de", "Bouenza"), ("el", "Μπουενζά"), ("en", "Bouenza"), ("es", "Bouenza"), ("fa", "بخش بوئنزا"), ("fi", "Bouenzan departmentti"), ("fr", "Bouenza"), ("gu", "બોઉ\u{a82}એન\u{acd}ઝા વિભાગ"), ("hi", "ब\u{941}ए\u{901}ज\u{93c}ा विभाग"), ("id", "Bouenza"), ("it", "Dipartimento di Bouenza"), ("ja", "ブエンザ地方"), ("ka", "ბუენზის დეპარტამენტი"), ("kn", "ಬ\u{ccb}ವ\u{cc6}ಂಜ ಇಲಾಖ\u{cc6}"), ("ko", "부엔자 주"), ("lt", "Buenzos regionas"), ("lv", "Buenzas departaments"), ("mr", "बॉऊएन\u{94d}झा विभाग"), ("ms", "Bouenza"), ("nb", "Bouenza"), ("nl", "Bouenza"), ("no", "Bouenza"), ("pl", "Departament Bouenza"), ("pt", "Bouenza"), ("ro", "Bouenza"), ("ru", "Буэнза"), ("si", "බෝඑන\u{dca}ස\u{dcf} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Région de la Bouenza"), ("ta", "போன\u{bcd}ஜ\u{bbe} துறை"), ("te", "బ\u{c4b}య\u{c46}ంజ\u{c3e} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "บ\u{e39}อองซา"), ("tr", "Bouenza"), ("uk", "Регіон Буенза"), ("ur", "بؤینزا محکمہ"), ("vi", "Khu vực hành chính Bouenza"), ("zh", "布恩扎省")]),
                         unofficial_name_list: ["Bouénza"].to_vec(),
                     }
                 ),
@@ -302,7 +305,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Department,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إدارة بلاتيوكس"), ("bg", "Плато"), ("bn", "প\u{9cd}লেট\u{9c1}ক\u{9cd}স বিভ\u{9be}গ"), ("ccp", "𑄛\u{11133}𑄣\u{11127}𑄑\u{1112e}𑄠𑄇\u{11134}"), ("ceb", "Plateaux (departamento sa Republika sa Congo)"), ("da", "Plateaux Department"), ("de", "Plateaux"), ("el", "Πλατώ"), ("en", "Plateaux"), ("es", "Plateaux"), ("fa", "ناحیه پلاتیوکس (جمهوری کنگو)"), ("fi", "Plateauxin departmentti"), ("fr", "Plateaux"), ("gu", "પ\u{acd}લ\u{ac7}ટોક\u{acd}સ વિભાગ"), ("hi", "प\u{94d}ल\u{947}टो विभाग"), ("id", "Plateaux Department"), ("it", "Dipartimento degli Altopiani"), ("ja", "プラトー地方"), ("ka", "პლატოს დეპარტამენტი"), ("kn", "ಪ\u{ccd}ಲೇಟ\u{cc6}ಕ\u{ccd}ಸ\u{ccd} ಡ\u{cbf}ಪಾರ\u{ccd}ಟ\u{ccd}ಮ\u{cc6}ಂಟ\u{ccd}"), ("ko", "플라토 주"), ("lt", "Plato regionas"), ("lv", "Plato departaments"), ("mr", "प\u{94d}ल\u{947}टोक\u{94d}स विभाग"), ("ms", "Plateaux Department"), ("nb", "Plateaux"), ("nl", "Plateaux"), ("no", "Plateaux"), ("pl", "Departament Plateaux"), ("pt", "Plateaux"), ("ro", "Departamentul Plateaux, Republica Congo"), ("ru", "Плато"), ("si", "ප\u{dca}ලටේඋක\u{dca}ස\u{dca}\u{200c} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Plateaux (departement i Kongo-Brazzaville)"), ("ta", "பிலட\u{bc0}ஸ\u{bcd} துறை"), ("te", "ప\u{c4d}ల\u{c3e}టూక\u{c4d}స\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "พลาโต ด\u{e35}พาทเม\u{e49}น"), ("tr", "Plateaux"), ("uk", "Регіон Плато"), ("ur", "پلاتو محکمہ"), ("vi", "Khu vực hành chính Plateaux"), ("yue", "高原省"), ("yue_Hans", "高原省"), ("zh", "高原省")]),
+                        translations: HashMap::from([("ar", "إدارة بلاتيوكس"), ("bg", "Плато"), ("bn", "প\u{9cd}লেট\u{9c1}ক\u{9cd}স বিভ\u{9be}গ"), ("ccp", "𑄛\u{11133}𑄣\u{11127}𑄑\u{1112e}𑄠𑄇\u{11134}"), ("ceb", "Plateaux (departamento sa Republika sa Congo)"), ("da", "Plateaux Department"), ("de", "Plateaux"), ("el", "Πλατώ"), ("en", "Plateaux"), ("es", "Plateaux"), ("fa", "ناحیه پلاتیوکس (جمهوری کنگو)"), ("fi", "Plateauxin departmentti"), ("fr", "Plateaux"), ("gu", "પ\u{acd}લ\u{ac7}ટોક\u{acd}સ વિભાગ"), ("hi", "प\u{94d}ल\u{947}टो विभाग"), ("id", "Plateaux Department"), ("it", "Dipartimento degli Altopiani"), ("ja", "プラトー地方"), ("ka", "პლატოს დეპარტამენტი"), ("kn", "ಪ\u{ccd}ಲ\u{cc7}ಟ\u{cc6}ಕ\u{ccd}ಸ\u{ccd} ಡ\u{cbf}ಪಾರ\u{ccd}ಟ\u{ccd}ಮ\u{cc6}ಂಟ\u{ccd}"), ("ko", "플라토 주"), ("lt", "Plato regionas"), ("lv", "Plato departaments"), ("mr", "प\u{94d}ल\u{947}टोक\u{94d}स विभाग"), ("ms", "Plateaux Department"), ("nb", "Plateaux"), ("nl", "Plateaux"), ("no", "Plateaux"), ("pl", "Departament Plateaux"), ("pt", "Plateaux"), ("ro", "Departamentul Plateaux, Republica Congo"), ("ru", "Плато"), ("si", "ප\u{dca}ලටේඋක\u{dca}ස\u{dca}\u{200c} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Plateaux (departement i Kongo-Brazzaville)"), ("ta", "பிலட\u{bc0}ஸ\u{bcd} துறை"), ("te", "ప\u{c4d}ల\u{c3e}టూక\u{c4d}స\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "พลาโต ด\u{e35}พาทเม\u{e49}น"), ("tr", "Plateaux"), ("uk", "Регіон Плато"), ("ur", "پلاتو محکمہ"), ("vi", "Khu vực hành chính Plateaux"), ("yue", "高原省"), ("yue_Hans", "高原省"), ("zh", "高原省")]),
                         unofficial_name_list: ["Plateaux"].to_vec(),
                     }
                 ),
@@ -362,7 +365,7 @@ pub mod subdivisions {
                         comments: None,
                         subdivision_type: SubdivisionType::Department,
                         #[cfg(feature = "translations")]
-                        translations: HashMap::from([("ar", "إدارة كويلو"), ("bg", "Куилу"), ("bn", "ক\u{9c1}ইল\u{9c1} বিভ\u{9be}গ"), ("ccp", "𑄇\u{1112f}𑄃\u{11128}𑄣\u{1112f}"), ("ceb", "Région du Kouilou"), ("da", "Kouilou Department"), ("de", "Kouilou"), ("el", "Κουιλού"), ("en", "Kouilou"), ("es", "Kouilou"), ("fa", "بخش کویلو"), ("fi", "Kouiloun depatermentti"), ("fr", "Kouilou"), ("gu", "કૌઇલૌ વિભાગ"), ("hi", "क\u{941}इल\u{942} विभाग"), ("id", "Kouilou"), ("it", "Dipartimento di Kouilou"), ("ja", "クイル地方"), ("ka", "კუილუს დეპარტამენტი"), ("kn", "ಕ\u{ccc}ಯ\u{cbf}ಲೊ ಇಲಾಖ\u{cc6}"), ("ko", "쿠일루 주"), ("lt", "Kvilu regionas"), ("lv", "Kuilu departaments"), ("mr", "कौइलोऊ विभाग"), ("ms", "Kouilou Department"), ("nb", "Kouilou"), ("nl", "Kouilou"), ("no", "Kouilou"), ("pl", "Departament Kouilou"), ("pt", "Kouilou"), ("ro", "Kouilou"), ("ru", "Куилу"), ("si", "කොය\u{dd2}ල\u{dd4} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Région du Kouilou"), ("ta", "கோயிலூ துறை"), ("te", "క\u{c4b}య\u{c3f}ల\u{c4b}వ\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "เม\u{e37}องค\u{e39}ล\u{e38}ย"), ("tr", "Kouilou"), ("uk", "Куілу"), ("ur", "کؤیلؤ محکمہ"), ("vi", "Khu vực hành chính Kouilou"), ("zh", "奎盧省")]),
+                        translations: HashMap::from([("ar", "إدارة كويلو"), ("bg", "Куилу"), ("bn", "ক\u{9c1}ইল\u{9c1} বিভ\u{9be}গ"), ("ccp", "𑄇\u{1112f}𑄃\u{11128}𑄣\u{1112f}"), ("ceb", "Région du Kouilou"), ("da", "Kouilou Department"), ("de", "Kouilou"), ("el", "Κουιλού"), ("en", "Kouilou"), ("es", "Kouilou"), ("fa", "بخش کویلو"), ("fi", "Kouiloun depatermentti"), ("fr", "Kouilou"), ("gu", "કૌઇલૌ વિભાગ"), ("hi", "क\u{941}इल\u{942} विभाग"), ("id", "Kouilou"), ("it", "Dipartimento di Kouilou"), ("ja", "クイル地方"), ("ka", "კუილუს დეპარტამენტი"), ("kn", "ಕ\u{ccc}ಯ\u{cbf}ಲ\u{cca} ಇಲಾಖ\u{cc6}"), ("ko", "쿠일루 주"), ("lt", "Kvilu regionas"), ("lv", "Kuilu departaments"), ("mr", "कौइलोऊ विभाग"), ("ms", "Kouilou Department"), ("nb", "Kouilou"), ("nl", "Kouilou"), ("no", "Kouilou"), ("pl", "Departament Kouilou"), ("pt", "Kouilou"), ("ro", "Kouilou"), ("ru", "Куилу"), ("si", "කොය\u{dd2}ල\u{dd4} දෙප\u{dcf}ර\u{dca}තමේන\u{dca}ත\u{dd4}ව"), ("sv", "Région du Kouilou"), ("ta", "கோயிலூ துறை"), ("te", "క\u{c4b}య\u{c3f}ల\u{c4b}వ\u{c4d} డ\u{c3f}ప\u{c3e}ర\u{c4d}ట\u{c4d}మ\u{c46}ంట\u{c4d}"), ("th", "เม\u{e37}องค\u{e39}ล\u{e38}ย"), ("tr", "Kouilou"), ("uk", "Куілу"), ("ur", "کؤیلؤ محکمہ"), ("vi", "Khu vực hành chính Kouilou"), ("zh", "奎盧省")]),
                         unofficial_name_list: ["Kouilou"].to_vec(),
                     }
                 ),
@@ -461,6 +464,7 @@ pub fn new() -> Country {
         national_number_length_list: [7].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Congolese"),
+        maybe_vehicle_registration_code: Some("RCB"),
         number: "178",
         postal_code: false,
         postal_code_format: None,
@@ -474,6 +478,7 @@ pub fn new() -> Country {
             "コンゴ共和国",
             "Congo [Republiek]",
             "Congo, Republic of",
+            "Congo (Brazzaville)",
         ]
         .to_vec(),
         world_region: WorldRegion::EMEA,
@@ -545,7 +550,7 @@ pub fn new() -> Country {
             ("kk", "Конго"),
             ("kl", "Congo"),
             ("km", "ក\u{17bb}ងហ\u{17d2}គោ"),
-            ("kn", "ಕಾಂಗೋ"),
+            ("kn", "ಕಾಂಗ\u{ccb}"),
             ("ko", "콩고"),
             ("ku", "Kongo"),
             ("kv", "Congo"),
@@ -618,6 +623,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

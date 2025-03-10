@@ -2,15 +2,12 @@
 
 #[allow(unused_imports)]
 use crate::{Alpha2, Continent, Region, SubRegion, WorldRegion};
-use lazy_static::lazy_static;
+use std::sync::LazyLock;
 pub const ALL_COUNTRIES_COUNT: usize = 249;
-lazy_static! {
-    pub static ref SUPPORTED_COUNTRIES_COUNT: usize = SUPPORTED_ALPHA2_LIST.len();
-}
-lazy_static! {
-    pub static ref UNSUPPORTED_COUNTRIES_COUNT: usize =
-        ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT;
-}
+pub static SUPPORTED_COUNTRIES_COUNT: LazyLock<usize> =
+    LazyLock::new(|| SUPPORTED_ALPHA2_LIST.len());
+pub static UNSUPPORTED_COUNTRIES_COUNT: LazyLock<usize> =
+    LazyLock::new(|| ALL_COUNTRIES_COUNT - *SUPPORTED_COUNTRIES_COUNT);
 #[cfg(all(
     feature = "ad",
     feature = "ae",

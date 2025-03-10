@@ -31,6 +31,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[7, 8, 9];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Emirian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("UAE");
     pub const NUMBER: &str = "784";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -51,6 +52,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(9441129);
@@ -122,7 +124,7 @@ pub mod consts {
         ("kk", "Біріккен Араб Әмірліктері"),
         ("kl", "United Arab Emirates"),
         ("km", "អារ\u{17c9}ាប\u{17cb}\u{200b}រ\u{17bd}ម"),
-        ("kn", "ಯುನೈಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರೇಟ\u{ccd}ಸ\u{ccd}"),
+        ("kn", "ಯುನ\u{cc8}ಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರ\u{cc7}ಟ\u{ccd}ಸ\u{ccd}"),
         ("ko", "아랍에미리트"),
         ("ku", "Mîrtiyên Ereb ên Yekbuyî"),
         ("kv", "Ӧтувтчӧм Араб Эмиратъяс"),
@@ -295,7 +297,7 @@ pub mod subdivisions {
                         ("ja", "アジュマーン"),
                         ("ka", "აჯმანის საამირო"),
                         ("kk", "Аджман"),
-                        ("kn", "ಅಜ\u{ccd}ಮಾನ\u{ccd} ಎಮ\u{cbf}ರೇಟ\u{ccd}"),
+                        ("kn", "ಅಜ\u{ccd}ಮಾನ\u{ccd} ಎಮ\u{cbf}ರ\u{cc7}ಟ\u{ccd}"),
                         ("ko", "아지만 토후국"),
                         ("lt", "Adžmanas"),
                         ("lv", "Adžmāna"),
@@ -387,7 +389,7 @@ pub mod subdivisions {
                         ("jv", "Abu Dhabi"),
                         ("ka", "აბუ-დაბის საამირო"),
                         ("kk", "Абу-Даби"),
-                        ("kn", "ಅಬುಧಾಬ\u{cbf} ಎಮ\u{cbf}ರೇಟ\u{ccd}"),
+                        ("kn", "ಅಬುಧಾಬ\u{cbf} ಎಮ\u{cbf}ರ\u{cc7}ಟ\u{ccd}"),
                         ("ko", "아부다비"),
                         ("ky", "Абу-Даби"),
                         ("lt", "Abu Dabio emyratas"),
@@ -569,7 +571,7 @@ pub mod subdivisions {
                         ("it", "Fujaira"),
                         ("ja", "フジャイラ"),
                         ("ka", "ალ-ფუჯაირას საამირო"),
-                        ("kn", "ಫುಜೈರಾ"),
+                        ("kn", "ಫುಜ\u{cc8}ರಾ"),
                         ("ko", "푸자이라 토후국"),
                         ("lt", "Fudžeira"),
                         ("lv", "Fudžeiras emirāts"),
@@ -657,7 +659,7 @@ pub mod subdivisions {
                         ("is", "Ras al-Kaíma"),
                         ("it", "Ras al-Khaima"),
                         ("ja", "ラアス・アル＝ハイマ"),
-                        ("kn", "ರಾಸ\u{ccd} ಅಲ\u{ccd} ಖೈಮಾ"),
+                        ("kn", "ರಾಸ\u{ccd} ಅಲ\u{ccd} ಖ\u{cc8}ಮಾ"),
                         ("ko", "라스알카이마 토후국"),
                         ("lt", "Ras al Chaima"),
                         ("lv", "Rāselhaima"),
@@ -835,7 +837,7 @@ pub mod subdivisions {
                         ("it", "Umm al-Qaywayn"),
                         ("ja", "ウンム・アル＝カイワイン"),
                         ("ka", "უმ-ელ-კაივაინის საამირო"),
-                        ("kn", "ಉಮ\u{ccd} ಅಲ\u{ccd} ಕ\u{ccd}ವೈನ\u{ccd}"),
+                        ("kn", "ಉಮ\u{ccd} ಅಲ\u{ccd} ಕ\u{ccd}ವ\u{cc8}ನ\u{ccd}"),
                         ("ko", "움알쿠와인 토후국"),
                         ("lt", "Um al Kuvainas"),
                         ("lv", "Ummelkaivainas emirāts"),
@@ -909,6 +911,7 @@ pub fn new() -> Country {
         national_number_length_list: [7, 8, 9].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Emirian"),
+        maybe_vehicle_registration_code: Some("UAE"),
         number: "784",
         postal_code: false,
         postal_code_format: None,
@@ -921,12 +924,13 @@ pub fn new() -> Country {
         #[cfg(feature = "emojis")]
         emoji: "🇦🇪",
         #[cfg(feature = "translations")]
-        translations: HashMap::from([("ab", "United Arab Emirates"), ("af", "Verenigde Arabiese Emirate"), ("ak", "United Arab Emirates"), ("am", "ፘተባበሩት ጐረብ ጔሤሳትስ"), ("an", "Emiratos Arabes Unius"), ("ar", "الإمارات العربي\u{651}ة المت\u{651}حدة"), ("as", "ইউন\u{9be}ইটেড আৰৱ ইমিৰেটছ"), ("ay", "United Arab Emirates"), ("az", "Birləşmiş Ərəb Əmirlikləri"), ("ba", "United Arab Emirates"), ("be", "Аб'яднаныя Арабскія Эміраты"), ("bg", "Обединени арабски емирства"), ("bi", "United Arab Emirates"), ("bn", "সংয\u{9c1}ক\u{9cd}ত আরব আমিরশ\u{9be}হী"), ("bn_IN", "সংয\u{9c1}ক\u{9cd}ত আরব আমিরশ\u{9be}হী"), ("br", "Emirelezhioù Arab Unanet"), ("bs", "Ujedinjeni Arapski Emirati"), ("ca", "Unió dels Emirats Àrabs"), ("ce", "Iаьрбийн Цхьаьнакхетта Эмираташ"), ("ch", "United Arab Emirates"), ("cs", "Spojené arabské emiráty"), ("cv", "Iаьрбийн Цхьаьнакхетта Эмираташ"), ("cy", "Emiriaethau Arabaidd Unedig"), ("da", "Forenede Arabiske Emirater"), ("de", "Vereinigte Arabische Emirate"), ("dv", "އ\u{7ac}ކ\u{7aa}ވ\u{7ac}ރ\u{7a8} ޢ\u{7a6}ރ\u{7a6}ބ\u{7a8} އ\u{7a8}މ\u{7a7}ރ\u{7a7}ތ\u{7aa}"), ("dz", "ཡ\u{f74}་ནའ\u{f72}་ཊ\u{f7a}ཊ་ ཨ་རབ་ ཨ\u{f72}་མ\u{f72}་ར\u{f7a}ཊ\u{f72}ས\u{f72}།"), ("ee", "United Arab Emirates"), ("el", "Ηνωμένα Αραβικά Εμιράτα"), ("en", "United Arab Emirates"), ("eo", "Unuiĝintaj Arabaj Emirlandoj"), ("es", "Emiratos Árabes Unidos"), ("et", "Araabia Ühendemiraadid"), ("eu", "Arabiar Emirerri Batuak"), ("fa", "امارات متحده عربی"), ("ff", "United Arab Emirates"), ("fi", "Yhdistyneet arabiemiirikunnat"), ("fo", "Sameindu arabisku emiratini"), ("fr", "Émirats arabes unis"), ("fy", "Feriene Arabyske Emiraten"), ("ga", "Aontas na nÉimíríochtaí Arabacha"), ("gl", "Emiratos Árabes Unidos"), ("gn", "United Arab Emirates"), ("gu", "ય\u{ac1}નાઇટ\u{ac7}ડ આરબ અમીરાત"), ("gv", "Ny h-Emmiraidyn Arabagh Unnaneysit"), ("ha", "Taraiyar larabawa"), ("he", "איחוד האמירויות הערביות"), ("hi", "स\u{902}य\u{941}क\u{94d}त अरब अमीरात"), ("hr", "Ujedinjeni Arapski Emirati"), ("ht", "Emira Arab Ini"), ("hu", "Egyesült Arab Emírségek"), ("hy", "Միացյալ Արաբական Էմիրաթներ"), ("ia", "Emiratos Arabe Unite"), ("id", "Uni Emirat Arab"), ("io", "Unionita Araba Emirati"), ("is", "Sameinuðu arabísku furstadæmin"), ("it", "Emirati Arabi Uniti"), ("iu", "United Arab Emirates"), ("ja", "アラブ首長国連邦"), ("ka", "არაბეთის გაერთიანებული ემირატები"), ("ki", "United Arab Emirates"), ("kk", "Біріккен Араб Әмірліктері"), ("kl", "United Arab Emirates"), ("km", "អារ\u{17c9}ាប\u{17cb}\u{200b}រ\u{17bd}ម"), ("kn", "ಯುನೈಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರೇಟ\u{ccd}ಸ\u{ccd}"), ("ko", "아랍에미리트"), ("ku", "Mîrtiyên Ereb ên Yekbuyî"), ("kv", "Ӧтувтчӧм Араб Эмиратъяс"), ("kw", "Pennternasedh Unys Arabek"), ("ky", "Бириккен Араб Эмирликтери"), ("lo", "United Arab Emirates"), ("lt", "Jungtiniai Arabų Emyratai"), ("lv", "Apvienotie Arābu Emirāti"), ("mi", "United Arab Emirates"), ("mk", "Обединети арапски емирати"), ("ml", "ഐക\u{d4d}യ അറബ\u{d4d} എമിറേറ\u{d4d}റ\u{d41}കള\u{d4d}\u{200d}"), ("mn", "Арабын нэгдсэн имерат"), ("mr", "स\u{902}य\u{941}क\u{94d}त अरब अमिराती"), ("ms", "Emiriah Arab Bersatu"), ("mt", "Emirati Għarab Maqgħuda"), ("my", "အာရပ\u{103a}စော\u{103a}ဘ\u{103d}ားများပြည\u{103a}ထောင\u{103a}စ\u{102f}"), ("na", "Emireitit Arabiya"), ("nb", "De forente arabiske emirater"), ("ne", "स\u{902}य\u{941}क\u{94d}त अरब इमिर\u{947}ट\u{94d}स"), ("nl", "Verenigde Arabische Emiraten"), ("nn", "Dei sameinte arabiske emirata"), ("nv", "Ásáí Dineʼé Bikéyah Yázhí Ałhidadiidzooígíí"), ("oc", "Emirats Arabs Units"), ("or", "ସଂଯ\u{b41}କ\u{b4d}ତ ଆରବ ଏମ\u{b3f}ରେଟ"), ("pa", "ਸ\u{a70}ਯ\u{a41}ਕਤ ਰਾਜ ਅਮੀਰਾਤ"), ("pi", "United Arab Emirates"), ("pl", "Zjednoczone Emiraty Arabskie"), ("ps", "عربي متحده امارات"), ("pt", "Emirados Árabes Unidos"), ("pt_BR", "Emirados Árabes Unidos"), ("ro", "Emiratele Arabe Unite"), ("ru", "Объединённые Арабские Эмираты"), ("rw", "Repubulika Nyarabu Zunze Ubumwe"), ("sc", "Emiratos Àrabos Unidos"), ("sd", "گڏيل عرب امارات"), ("si", "එක\u{dca}සත\u{dca} අර\u{dcf}බ\u{dd2} එම\u{dd3}ර\u{dca}"), ("sk", "Spojené arabské emiráty"), ("sl", "Združeni Arabski emirati"), ("so", "Imaaraadka Carabta ee Midoobay"), ("sq", "Emiratet e Bashkuara Arabe"), ("sr", "Уједињени Арапски Емирати"), ("sv", "Förenade Arabemiraten"), ("sw", "Falme za Kiarabu"), ("ta", "ஐக\u{bcd}கிய அர\u{bbe}பிய எமிரேட\u{bcd}சு"), ("te", "యున\u{c48}ట\u{c46}డ\u{c4d} అరబ\u{c4d} ఎమ\u{c3f}ర\u{c47}ట\u{c4d}స\u{c4d}"), ("tg", "Амороти Муттаҳидаи Араб"), ("th", "สหร\u{e31}ฐอาหร\u{e31}บเอม\u{e34}เรตส\u{e4c}"), ("ti", "የተባበሩት አረብ ኤምሬትስ"), ("tk", "Birleşen Arap Emirlikleri"), ("tl", "Mga Pinag-isang Arabong Emirado"), ("tr", "Birleşik Arap Emirlikleri"), ("tt", "Берләшкән Гәрәп Әмирлекләре"), ("ug", "ئەرەب بىرلەشمە خەلىپىلىكى"), ("uk", "Об’єднані Арабські Емірати"), ("ur", "متحدہ عرب امارات"), ("uz", "Birlashgan Arab Amirliklari"), ("ve", "United Arab Emirates"), ("vi", "Các Tiểu Vương Quốc A-rập Thống Nhất"), ("wa", "Emirats Arabes Unis"), ("wo", "Imaarati Araab yu Bennoo"), ("xh", "United Arab Emirates"), ("yo", "Àwọn Ẹ\u{301}mírétì Árábù Aṣọ\u{300}kan"), ("zh_CN", "阿联酋"), ("zh_HK", "阿拉伯聯合酋長國"), ("zh_TW", "阿拉伯聯合大公國"), ("zu", "United Arab Emirates")]),
+        translations: HashMap::from([("ab", "United Arab Emirates"), ("af", "Verenigde Arabiese Emirate"), ("ak", "United Arab Emirates"), ("am", "ፘተባበሩት ጐረብ ጔሤሳትስ"), ("an", "Emiratos Arabes Unius"), ("ar", "الإمارات العربي\u{651}ة المت\u{651}حدة"), ("as", "ইউন\u{9be}ইটেড আৰৱ ইমিৰেটছ"), ("ay", "United Arab Emirates"), ("az", "Birləşmiş Ərəb Əmirlikləri"), ("ba", "United Arab Emirates"), ("be", "Аб'яднаныя Арабскія Эміраты"), ("bg", "Обединени арабски емирства"), ("bi", "United Arab Emirates"), ("bn", "সংয\u{9c1}ক\u{9cd}ত আরব আমিরশ\u{9be}হী"), ("bn_IN", "সংয\u{9c1}ক\u{9cd}ত আরব আমিরশ\u{9be}হী"), ("br", "Emirelezhioù Arab Unanet"), ("bs", "Ujedinjeni Arapski Emirati"), ("ca", "Unió dels Emirats Àrabs"), ("ce", "Iаьрбийн Цхьаьнакхетта Эмираташ"), ("ch", "United Arab Emirates"), ("cs", "Spojené arabské emiráty"), ("cv", "Iаьрбийн Цхьаьнакхетта Эмираташ"), ("cy", "Emiriaethau Arabaidd Unedig"), ("da", "Forenede Arabiske Emirater"), ("de", "Vereinigte Arabische Emirate"), ("dv", "އ\u{7ac}ކ\u{7aa}ވ\u{7ac}ރ\u{7a8} ޢ\u{7a6}ރ\u{7a6}ބ\u{7a8} އ\u{7a8}މ\u{7a7}ރ\u{7a7}ތ\u{7aa}"), ("dz", "ཡ\u{f74}་ནའ\u{f72}་ཊ\u{f7a}ཊ་ ཨ་རབ་ ཨ\u{f72}་མ\u{f72}་ར\u{f7a}ཊ\u{f72}ས\u{f72}།"), ("ee", "United Arab Emirates"), ("el", "Ηνωμένα Αραβικά Εμιράτα"), ("en", "United Arab Emirates"), ("eo", "Unuiĝintaj Arabaj Emirlandoj"), ("es", "Emiratos Árabes Unidos"), ("et", "Araabia Ühendemiraadid"), ("eu", "Arabiar Emirerri Batuak"), ("fa", "امارات متحده عربی"), ("ff", "United Arab Emirates"), ("fi", "Yhdistyneet arabiemiirikunnat"), ("fo", "Sameindu arabisku emiratini"), ("fr", "Émirats arabes unis"), ("fy", "Feriene Arabyske Emiraten"), ("ga", "Aontas na nÉimíríochtaí Arabacha"), ("gl", "Emiratos Árabes Unidos"), ("gn", "United Arab Emirates"), ("gu", "ય\u{ac1}નાઇટ\u{ac7}ડ આરબ અમીરાત"), ("gv", "Ny h-Emmiraidyn Arabagh Unnaneysit"), ("ha", "Taraiyar larabawa"), ("he", "איחוד האמירויות הערביות"), ("hi", "स\u{902}य\u{941}क\u{94d}त अरब अमीरात"), ("hr", "Ujedinjeni Arapski Emirati"), ("ht", "Emira Arab Ini"), ("hu", "Egyesült Arab Emírségek"), ("hy", "Միացյալ Արաբական Էմիրաթներ"), ("ia", "Emiratos Arabe Unite"), ("id", "Uni Emirat Arab"), ("io", "Unionita Araba Emirati"), ("is", "Sameinuðu arabísku furstadæmin"), ("it", "Emirati Arabi Uniti"), ("iu", "United Arab Emirates"), ("ja", "アラブ首長国連邦"), ("ka", "არაბეთის გაერთიანებული ემირატები"), ("ki", "United Arab Emirates"), ("kk", "Біріккен Араб Әмірліктері"), ("kl", "United Arab Emirates"), ("km", "អារ\u{17c9}ាប\u{17cb}\u{200b}រ\u{17bd}ម"), ("kn", "ಯುನ\u{cc8}ಟ\u{cc6}ಡ\u{ccd} ಅರಬ\u{ccd} ಎಮ\u{cbf}ರ\u{cc7}ಟ\u{ccd}ಸ\u{ccd}"), ("ko", "아랍에미리트"), ("ku", "Mîrtiyên Ereb ên Yekbuyî"), ("kv", "Ӧтувтчӧм Араб Эмиратъяс"), ("kw", "Pennternasedh Unys Arabek"), ("ky", "Бириккен Араб Эмирликтери"), ("lo", "United Arab Emirates"), ("lt", "Jungtiniai Arabų Emyratai"), ("lv", "Apvienotie Arābu Emirāti"), ("mi", "United Arab Emirates"), ("mk", "Обединети арапски емирати"), ("ml", "ഐക\u{d4d}യ അറബ\u{d4d} എമിറേറ\u{d4d}റ\u{d41}കള\u{d4d}\u{200d}"), ("mn", "Арабын нэгдсэн имерат"), ("mr", "स\u{902}य\u{941}क\u{94d}त अरब अमिराती"), ("ms", "Emiriah Arab Bersatu"), ("mt", "Emirati Għarab Maqgħuda"), ("my", "အာရပ\u{103a}စော\u{103a}ဘ\u{103d}ားများပြည\u{103a}ထောင\u{103a}စ\u{102f}"), ("na", "Emireitit Arabiya"), ("nb", "De forente arabiske emirater"), ("ne", "स\u{902}य\u{941}क\u{94d}त अरब इमिर\u{947}ट\u{94d}स"), ("nl", "Verenigde Arabische Emiraten"), ("nn", "Dei sameinte arabiske emirata"), ("nv", "Ásáí Dineʼé Bikéyah Yázhí Ałhidadiidzooígíí"), ("oc", "Emirats Arabs Units"), ("or", "ସଂଯ\u{b41}କ\u{b4d}ତ ଆରବ ଏମ\u{b3f}ରେଟ"), ("pa", "ਸ\u{a70}ਯ\u{a41}ਕਤ ਰਾਜ ਅਮੀਰਾਤ"), ("pi", "United Arab Emirates"), ("pl", "Zjednoczone Emiraty Arabskie"), ("ps", "عربي متحده امارات"), ("pt", "Emirados Árabes Unidos"), ("pt_BR", "Emirados Árabes Unidos"), ("ro", "Emiratele Arabe Unite"), ("ru", "Объединённые Арабские Эмираты"), ("rw", "Repubulika Nyarabu Zunze Ubumwe"), ("sc", "Emiratos Àrabos Unidos"), ("sd", "گڏيل عرب امارات"), ("si", "එක\u{dca}සත\u{dca} අර\u{dcf}බ\u{dd2} එම\u{dd3}ර\u{dca}"), ("sk", "Spojené arabské emiráty"), ("sl", "Združeni Arabski emirati"), ("so", "Imaaraadka Carabta ee Midoobay"), ("sq", "Emiratet e Bashkuara Arabe"), ("sr", "Уједињени Арапски Емирати"), ("sv", "Förenade Arabemiraten"), ("sw", "Falme za Kiarabu"), ("ta", "ஐக\u{bcd}கிய அர\u{bbe}பிய எமிரேட\u{bcd}சு"), ("te", "యున\u{c48}ట\u{c46}డ\u{c4d} అరబ\u{c4d} ఎమ\u{c3f}ర\u{c47}ట\u{c4d}స\u{c4d}"), ("tg", "Амороти Муттаҳидаи Араб"), ("th", "สหร\u{e31}ฐอาหร\u{e31}บเอม\u{e34}เรตส\u{e4c}"), ("ti", "የተባበሩት አረብ ኤምሬትስ"), ("tk", "Birleşen Arap Emirlikleri"), ("tl", "Mga Pinag-isang Arabong Emirado"), ("tr", "Birleşik Arap Emirlikleri"), ("tt", "Берләшкән Гәрәп Әмирлекләре"), ("ug", "ئەرەب بىرلەشمە خەلىپىلىكى"), ("uk", "Об’єднані Арабські Емірати"), ("ur", "متحدہ عرب امارات"), ("uz", "Birlashgan Arab Amirliklari"), ("ve", "United Arab Emirates"), ("vi", "Các Tiểu Vương Quốc A-rập Thống Nhất"), ("wa", "Emirats Arabes Unis"), ("wo", "Imaarati Araab yu Bennoo"), ("xh", "United Arab Emirates"), ("yo", "Àwọn Ẹ\u{301}mírétì Árábù Aṣọ\u{300}kan"), ("zh_CN", "阿联酋"), ("zh_HK", "阿拉伯聯合酋長國"), ("zh_TW", "阿拉伯聯合大公國"), ("zu", "United Arab Emirates")]),
         #[cfg(feature = "subdivisions")]
         subdivisions: subdivisions::new(),
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: Some(VatRates{standard: 5.0, reduced: Vec::from([]), super_reduced: None, parking: None}),
         distance_unit: DistanceUnit::Km,

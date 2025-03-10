@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[9, 10];
     pub const NATIONAL_PREFIX: &str = "0";
     pub const NATIONALITY: Option<&str> = Some("Malaysian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("MAL");
     pub const NUMBER: &str = "458";
     pub const POSTAL_CODE: bool = true;
     pub const POSTAL_CODE_FORMAT: Option<&str> = Some("\\d{5}");
@@ -43,6 +44,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(33938221);
@@ -114,7 +116,7 @@ pub mod consts {
         ("kk", "Малайзия"),
         ("kl", "Malaysia"),
         ("km", "ម\u{17c9}ាឡេស\u{17ca}\u{17b8}"),
-        ("kn", "ಮಲೇಸ\u{cbf}ಯಾ"),
+        ("kn", "ಮಲ\u{cc7}ಸ\u{cbf}ಯಾ"),
         ("ko", "말레이시아"),
         ("ku", "Malezya"),
         ("kv", "Малайзия"),
@@ -287,7 +289,7 @@ pub mod subdivisions {
                         ("ja", "ジョホール州"),
                         ("jv", "Johor"),
                         ("ka", "ჯოჰორი"),
-                        ("kn", "ಜೊಹೊರ\u{ccd}"),
+                        ("kn", "ಜ\u{cca}ಹ\u{cca}ರ\u{ccd}"),
                         ("ko", "조호르 주"),
                         ("lt", "Džohoras"),
                         ("lv", "Džohora"),
@@ -974,7 +976,7 @@ pub mod subdivisions {
                         ("it", "Selangor"),
                         ("ja", "セランゴール州"),
                         ("jv", "Selangor"),
-                        ("kn", "ಸ\u{cc6}ಲಾಂಗೋರ\u{ccd}"),
+                        ("kn", "ಸ\u{cc6}ಲಾಂಗ\u{ccb}ರ\u{ccd}"),
                         ("ko", "슬랑오르 주"),
                         ("lt", "Selangoras"),
                         ("lv", "Selanora"),
@@ -1566,6 +1568,7 @@ pub fn new() -> Country {
         national_number_length_list: [9, 10].to_vec(),
         national_prefix: "0",
         maybe_nationality: Some("Malaysian"),
+        maybe_vehicle_registration_code: Some("MAL"),
         number: "458",
         postal_code: true,
         postal_code_format: Some("\\d{5}"),
@@ -1644,7 +1647,7 @@ pub fn new() -> Country {
             ("kk", "Малайзия"),
             ("kl", "Malaysia"),
             ("km", "ម\u{17c9}ាឡេស\u{17ca}\u{17b8}"),
-            ("kn", "ಮಲೇಸ\u{cbf}ಯಾ"),
+            ("kn", "ಮಲ\u{cc7}ಸ\u{cbf}ಯಾ"),
             ("ko", "말레이시아"),
             ("ku", "Malezya"),
             ("kv", "Малайзия"),
@@ -1717,6 +1720,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,

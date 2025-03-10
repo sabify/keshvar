@@ -30,6 +30,7 @@ pub mod consts {
     pub const NATIONAL_NUMBER_LENGTH_LIST: &[usize] = &[5, 6, 7, 8];
     pub const NATIONAL_PREFIX: &str = "None";
     pub const NATIONALITY: Option<&str> = Some("Ghanaian");
+    pub const VEHICLE_REGISTRATION_CODE: Option<&str> = Some("GH");
     pub const NUMBER: &str = "288";
     pub const POSTAL_CODE: bool = false;
     pub const POSTAL_CODE_FORMAT: Option<&str> = None;
@@ -42,6 +43,7 @@ pub mod consts {
     pub const G7_MEMBER: bool = false;
     pub const G20_MEMBER: bool = false;
     pub const EU_MEMBER: bool = false;
+    pub const UN_MEMBER: bool = true;
     pub const EEA_MEMBER: bool = false;
     pub const DISTANCE_UNIT: DistanceUnit = DistanceUnit::Km;
     pub const POPULATION: Option<u64> = Some(33475870);
@@ -282,7 +284,10 @@ pub mod subdivisions {
                         ("id", "Region Greater Accra"),
                         ("it", "regione della Grande Accra"),
                         ("ja", "グレーター・アクラ州"),
-                        ("kn", "ಗ\u{ccd}ರೇಟರ\u{ccd} ಅಕ\u{ccd}ರಾ ಪ\u{ccd}ರದೇಶ"),
+                        (
+                            "kn",
+                            "ಗ\u{ccd}ರ\u{cc7}ಟರ\u{ccd} ಅಕ\u{ccd}ರಾ ಪ\u{ccd}ರದ\u{cc7}ಶ",
+                        ),
                         ("ko", "그레이터아크라 주"),
                         ("lt", "Didžiosios Akros regionas"),
                         ("lv", "Lielās Akras reģions"),
@@ -534,7 +539,7 @@ pub mod subdivisions {
                         ("id", "Region Tengah"),
                         ("it", "regione Centrale"),
                         ("ja", "セントラル州"),
-                        ("kn", "ಮಧ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಮಧ\u{ccd}ಯ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "중앙 주"),
                         ("lt", "Vidurio regionas"),
                         ("lv", "Centrālais reģions"),
@@ -603,7 +608,7 @@ pub mod subdivisions {
                         ("id", "Region Timur"),
                         ("it", "regione Orientale"),
                         ("ja", "イースタン州"),
-                        ("kn", "ಪ\u{cc2}ರ\u{ccd}ವ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಪ\u{cc2}ರ\u{ccd}ವ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "동부 주"),
                         ("lt", "Rytų regionas"),
                         ("lv", "Austrumu reģions"),
@@ -710,7 +715,7 @@ pub mod subdivisions {
                         ("id", "Region Utara"),
                         ("it", "regione Settentrionale"),
                         ("ja", "ノーザン州"),
-                        ("kn", "ಉತ\u{ccd}ತರ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಉತ\u{ccd}ತರ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "북부 주"),
                         ("lt", "Šiaurės regionas"),
                         ("lv", "Ziemeļu reģions"),
@@ -843,7 +848,7 @@ pub mod subdivisions {
                         ("id", "Region Volta"),
                         ("it", "regione del Volta"),
                         ("ja", "ヴォルタ州"),
-                        ("kn", "ವೋಲ\u{ccd}ಟಾ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ವ\u{ccb}ಲ\u{ccd}ಟಾ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "볼타 주"),
                         ("lt", "Voltos regionas"),
                         ("lv", "Voltas reģions"),
@@ -913,7 +918,10 @@ pub mod subdivisions {
                         ("id", "Region Timur Atas"),
                         ("it", "regione Nordorientale"),
                         ("ja", "アッパー・イースト州"),
-                        ("kn", "ಅಪ\u{ccd}ಪರ\u{ccd} ಈಸ\u{ccd}ಟ\u{ccd} ರೀಜನ\u{ccd}"),
+                        (
+                            "kn",
+                            "ಅಪ\u{ccd}ಪರ\u{ccd} ಈಸ\u{ccd}ಟ\u{ccd} ರ\u{cc0}ಜನ\u{ccd}",
+                        ),
                         ("ko", "어퍼이스트 주"),
                         ("lt", "Aukštutinis Rytų regionas"),
                         ("lv", "Austrumaugšējais reģions"),
@@ -987,7 +995,7 @@ pub mod subdivisions {
                         ("ja", "アッパー・ウエスト州"),
                         (
                             "kn",
-                            "ಅಪ\u{ccd}ಪರ\u{ccd} ವ\u{cc6}ಸ\u{ccd}ಟ\u{ccd} ರೀಜನ\u{ccd}",
+                            "ಅಪ\u{ccd}ಪರ\u{ccd} ವ\u{cc6}ಸ\u{ccd}ಟ\u{ccd} ರ\u{cc0}ಜನ\u{ccd}",
                         ),
                         ("ko", "어퍼웨스트 주"),
                         ("lt", "Aukštutinis Vakarų regionas"),
@@ -1093,7 +1101,7 @@ pub mod subdivisions {
                         ("id", "Region Barat"),
                         ("it", "regione Occidentale"),
                         ("ja", "ウェスタン州"),
-                        ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದೇಶ"),
+                        ("kn", "ಪಾಶ\u{ccd}ಚಾತ\u{ccd}ಯ ಪ\u{ccd}ರದ\u{cc7}ಶ"),
                         ("ko", "서부 주"),
                         ("lt", "Vakarų regionas"),
                         ("lv", "Rietumu reģions"),
@@ -1154,6 +1162,7 @@ pub fn new() -> Country {
         national_number_length_list: [5, 6, 7, 8].to_vec(),
         national_prefix: "None",
         maybe_nationality: Some("Ghanaian"),
+        maybe_vehicle_registration_code: Some("GH"),
         number: "288",
         postal_code: false,
         postal_code_format: None,
@@ -1304,6 +1313,7 @@ pub fn new() -> Country {
         g7_member: false,
         g20_member: false,
         eu_member: false,
+        un_member: true,
         eea_member: false,
         maybe_vat_rates: None,
         distance_unit: DistanceUnit::Km,
