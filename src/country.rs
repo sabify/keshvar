@@ -41,6 +41,8 @@ pub struct Country {
     pub(crate) national_prefix: &'static str,
     #[cfg_attr(feature = "serde-derive", serde(rename = "nationality"))]
     pub(crate) maybe_nationality: Option<&'static str>,
+    #[cfg_attr(feature = "serde-derive", serde(rename = "vehicle_registration_code"))]
+    pub(crate) maybe_vehicle_registration_code: Option<&'static str>,
     pub(crate) number: &'static str,
     pub(crate) postal_code: bool,
     pub(crate) postal_code_format: Option<&'static str>,
@@ -67,6 +69,8 @@ pub struct Country {
     pub(crate) g20_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) eu_member: bool,
+    #[cfg_attr(feature = "serde-derive", serde(default))]
+    pub(crate) un_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(default))]
     pub(crate) eea_member: bool,
     #[cfg_attr(feature = "serde-derive", serde(rename = "vat_rates"))]
@@ -154,6 +158,10 @@ impl Country {
         self.maybe_nationality
     }
 
+    pub fn maybe_vehicle_registration_code(&self) -> Option<&'static str> {
+        self.maybe_vehicle_registration_code
+    }
+
     pub fn number(&self) -> &'static str {
         self.number
     }
@@ -221,6 +229,11 @@ impl Country {
     /// Is this country a member of [EU](https://en.wikipedia.org/wiki/European_Union)?
     pub fn eu_member(&self) -> bool {
         self.eu_member
+    }
+
+    /// Is this country a member of [UN](https://en.wikipedia.org/wiki/United_Nations)?
+    pub fn un_member(&self) -> bool {
+        self.un_member
     }
 
     /// Is this country a member of [EEA](https://en.wikipedia.org/wiki/European_Economic_Area)?
