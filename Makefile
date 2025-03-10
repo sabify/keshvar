@@ -41,6 +41,7 @@ generate:
 	@ cd ${CODE_GENERATOR_DIRECTORY} && cargo run -- ${INPUT_DIRECTORY} ${OUTPUT_DIRECTORY}
 	@ echo "Compiling newly generated codes"
 	@ ${MAKE} build
+	@ ${MAKE} format-style
 
 check-style:
 	@ echo "Checking code-generator style..."
