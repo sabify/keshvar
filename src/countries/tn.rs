@@ -1823,10 +1823,7 @@ pub mod subdivisions {
                         ("id", "Kegubernuran Medenine"),
                         ("it", "governatorato di Médenine"),
                         ("ja", "メドニン県"),
-                        (
-                            "kn",
-                            "ಮ\u{cc6}ಡ\u{cc6}ನ\u{cc6}ನ\u{ccd} ಗವರ\u{ccd}ನೇಟ\u{ccd}",
-                        ),
+                        ("kn", "ಮ\u{cc6}ಡ\u{cc6}ನ\u{cc6}ನ\u{ccd} ಗವರ\u{ccd}ನೇಟ\u{ccd}"),
                         ("ko", "메드닌 주"),
                         ("lt", "Medeninos gubernija"),
                         ("lv", "Medenīnas vilāja"),
